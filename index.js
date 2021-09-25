@@ -13,7 +13,7 @@ var findKthPositive = function (arr, k) {
 
 // 1636
 // var frequencySort = function (nums) {
-//   /*
+//
 //   const obj = {};
 
 //   for (let i = 0; i < nums.length; i++) {
@@ -32,7 +32,7 @@ var findKthPositive = function (arr, k) {
 //   for (let j = 0; j < values.length; j++) {
 //     console.log(values[j], keys[j] * 1);
 //   }
-//   */
+//
 
 //   let frequency = {};
 //   // find out frequency of every element
@@ -68,22 +68,22 @@ var findKthPositive = function (arr, k) {
 // // frequencySort([2, 3, 1, 3, 2]);
 
 // 1365
-// var smallerNumbersThanCurrent = function (nums) {
-//   const arr = [];
+var smallerNumbersThanCurrent = function (nums) {
+  const arr = [];
 
-//   for (var i = 0; i < nums.length; i++) {
-//     for (var j = 0; j < nums.length; j++) {
-//       if (nums[i] > nums[j + 1]) {
-//         if (!arr[i]) {
-//           arr[i] = 1;
-//         } else if (arr[i]) {
-//           arr[i] = arr[i] + 1;
-//         }
-//       }
-//     }
-//   }
-//   console.log(arr);
-// };
+  for (var i = 0; i < nums.length; i++) {
+    for (var j = 0; j < nums.length; j++) {
+      if (nums[i] > nums[j + 1]) {
+        if (!arr[i]) {
+          arr[i] = 1;
+        } else if (arr[i]) {
+          arr[i] = arr[i] + 1;
+        }
+      }
+    }
+  }
+  console.log(arr);
+};
 
 // smallerNumbersThanCurrent([8, 1, 2, 2, 3]);
 // smallerNumbersThanCurrent([6, 5, 4, 8]);
@@ -113,20 +113,20 @@ var findKthPositive = function (arr, k) {
 
 // checkBalance("())(");
 
-// var isOneBitCharacter = function (bits) {
-//   console.log(bits);
+var isOneBitCharacter = function (bits) {
+  console.log(bits);
 
-//   let lastElement = bits[bits.length - 1];
-//   console.log(lastElement);
+  let lastElement = bits[bits.length - 1];
+  console.log(lastElement);
 
-//   if (lastElement === 0) {
-//     if (bits[bits.length - 2] === 1) {
-//       console.log(false);
-//     }
-//   } else {
-//     console.log(true);
-//   }
-// };
+  if (lastElement === 0) {
+    if (bits[bits.length - 2] === 1) {
+      console.log(false);
+    }
+  } else {
+    console.log(true);
+  }
+};
 
 // isOneBitCharacter([1, 0, 0]);
 
@@ -141,57 +141,57 @@ var findKthPositive = function (arr, k) {
 
 //258
 
-// var addDigits = function (num) {
-//   let number = num + "";
-//   let number2 = 0;
-//   let number4 = [];
+var addDigits = function (num) {
+  let number = num + '';
+  let number2 = 0;
+  let number4 = [];
 
-//   if (number.length > 1) {
-//     for (let i = 0; i < number.length; i++) {
-//       number2 += number[i] * 1;
-//     }
-//     let number3 = number2 + "";
-//     if (number3.length > 1) {
-//       addDigits(number3);
-//     }
-//   } else {
-//     console.log("value one");
-//   }
-//   number4.push(number2 * 1);
-//   console.log(number4);
-// };
+  if (number.length > 1) {
+    for (let i = 0; i < number.length; i++) {
+      number2 += number[i] * 1;
+    }
+    let number3 = number2 + '';
+    if (number3.length > 1) {
+      addDigits(number3);
+    }
+  } else {
+    console.log('value one');
+  }
+  number4.push(number2 * 1);
+  console.log(number4);
+};
 
 // addDigits(38);
 
-// var threeSumClosest = function (nums, target) {
-//   if (!nums.includes(target)) {
-//     return target;
-//   }
+var threeSumClosest = function (nums, target) {
+  if (!nums.includes(target)) {
+    return target;
+  }
 
-//   const minArr = [];
-//   const maxArr = [];
+  const minArr = [];
+  const maxArr = [];
 
-//   for (let i = 0; i < nums.length; i++) {
-//     if (nums[i] < target) {
-//       minArr.push(nums[i]);
-//     } else if (nums[i] > target) {
-//       maxArr.push(nums[i]);
-//     }
-//   }
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] < target) {
+      minArr.push(nums[i]);
+    } else if (nums[i] > target) {
+      maxArr.push(nums[i]);
+    }
+  }
 
-//   //   const changedMinArr = Math.max(...minArr);
-//   //   const changedMaxArr = Math.min(...maxArr);
+  //   const changedMinArr = Math.max(...minArr);
+  //   const changedMaxArr = Math.min(...maxArr);
 
-//   if (Math.max(...minArr) === Infinity) {
-//     return Math.max(...minArr) + target;
-//   } else if (Math.min(...maxArr) === Infinity) {
-//     return Math.max(...minArr) + target;
-//   } else if (Math.min(...maxArr) === Infinity && Math.max(...minArr) === Infinity) {
-//     return target;
-//   } else {
-//     return Math.max(...minArr) + Math.min(...maxArr) + target;
-//   }
-// };
+  if (Math.max(...minArr) === Infinity) {
+    return Math.max(...minArr) + target;
+  } else if (Math.min(...maxArr) === Infinity) {
+    return Math.max(...minArr) + target;
+  } else if (Math.min(...maxArr) === Infinity && Math.max(...minArr) === Infinity) {
+    return target;
+  } else {
+    return Math.max(...minArr) + Math.min(...maxArr) + target;
+  }
+};
 
 // console.log(threeSumClosest([-1, 2, 1, -4], 1));
 // console.log(threeSumClosest([0, 1, 2], 3));
@@ -220,20 +220,20 @@ function main(input) {
 }
 */
 
-// function libraryFine(d1, m1, y1, d2, m2, y2) {
-//   let fine = 0;
+function libraryFine(d1, m1, y1, d2, m2, y2) {
+  let fine = 0;
 
-//   if (m1 === m2 && y1 === y2 && d1 > d2) {
-//     fine = (d1 - d2) * 15;
-//   } else if (m1 > m2 && y1 === y2) {
-//     fine = (m1 - m2) * 500;
-//   } else if (y1 > y2) {
-//     fine = 10000;
-//   } else if (m1 === m2 && y1 === y2 && d1 < d2) {
-//     fine = 0;
-//   }
-//   console.log(fine);
-// }
+  if (m1 === m2 && y1 === y2 && d1 > d2) {
+    fine = (d1 - d2) * 15;
+  } else if (m1 > m2 && y1 === y2) {
+    fine = (m1 - m2) * 500;
+  } else if (y1 > y2) {
+    fine = 10000;
+  } else if (m1 === m2 && y1 === y2 && d1 < d2) {
+    fine = 0;
+  }
+  console.log(fine);
+}
 
 // libraryFine(14, 7, 2018, 5, 7, 2018);
 // libraryFine(9, 6, 2015, 6, 6, 2015);
@@ -250,30 +250,30 @@ function main(input) {
 // }
 // findDigits(124);
 
-// function extraLongFactorials(n) {
-//   let fact = 1;
+function extraLongFactorials(n) {
+  let fact = 1;
 
-//   for (let i = n; i > 0; i--) {
-//     fact *= i;
-//   }
+  for (let i = n; i > 0; i--) {
+    fact *= i;
+  }
 
-//   if (Math.abs(fact) < 1.0) {
-//     var e = parseInt(fact.toString().split("e-")[1]);
-//     if (e) {
-//       fact *= Math.pow(10, e - 1);
-//       fact = "0." + new Array(e).join("0") + fact.toString().substring(2);
-//     }
-//   } else {
-//     var e = parseInt(fact.toString().split("+")[1]);
-//     if (e > 20) {
-//       e -= 20;
-//       fact /= Math.pow(10, e);
-//       fact += new Array(e + 1).join("0");
-//     }
-//   }
+  if (Math.abs(fact) < 1.0) {
+    var e = parseInt(fact.toString().split('e-')[1]);
+    if (e) {
+      fact *= Math.pow(10, e - 1);
+      fact = '0.' + new Array(e).join('0') + fact.toString().substring(2);
+    }
+  } else {
+    var e = parseInt(fact.toString().split('+')[1]);
+    if (e > 20) {
+      e -= 20;
+      fact /= Math.pow(10, e);
+      fact += new Array(e + 1).join('0');
+    }
+  }
 
-//   return parseInt(fact);
-// }
+  return parseInt(fact);
+}
 
 // console.log(extraLongFactorials(25));
 
@@ -310,27 +310,27 @@ function main(input) {
 //   console.log(n, cases);
 // }
 
-// function countApplesAndOranges(s, t, a, b, apples, oranges) {
-//   apples = apples.map((el) => el + a);
-//   oranges = oranges.map((el) => el + b);
+function countApplesAndOranges(s, t, a, b, apples, oranges) {
+  apples = apples.map((el) => el + a);
+  oranges = oranges.map((el) => el + b);
 
-//   let appleFellCount = 0;
-//   let orangeFellCount = 0;
+  let appleFellCount = 0;
+  let orangeFellCount = 0;
 
-//   for (let i = 0; i < apples.length; i++) {
-//     if (apples[i] >= s && apples[i] <= t) {
-//       appleFellCount++;
-//     }
-//   }
+  for (let i = 0; i < apples.length; i++) {
+    if (apples[i] >= s && apples[i] <= t) {
+      appleFellCount++;
+    }
+  }
 
-//   for (let j = 0; j < oranges.length; j++) {
-//     if (oranges[j] >= s && oranges[j] <= t) {
-//       orangeFellCount++;
-//     }
-//   }
+  for (let j = 0; j < oranges.length; j++) {
+    if (oranges[j] >= s && oranges[j] <= t) {
+      orangeFellCount++;
+    }
+  }
 
-//   console.log(appleFellCount, orangeFellCount);
-// }
+  console.log(appleFellCount, orangeFellCount);
+}
 
 // countApplesAndOranges(7, 10, 4, 12, [2, 3, -4], [3, -2, -4]);
 
@@ -2207,83 +2207,83 @@ exports.findClosestValueInBst = findClosestValueInBst;
 //   console.log(arr);
 //   console.log(rem);
 // }
-// function smallestDifference(arrayOne, arrayTwo) {
-//   const arr = [];
-//   let rem;
-//   for (let i = 0; i < arrayOne.length; i++) {
-//     for (let j = 0; j < arrayTwo.length; j++) {
-//       if (Math.sign(arrayOne[i]) === 1 && Math.sign(arrayTwo[j]) === 1) {
-//         if (rem === undefined) {
-//           rem = Math.abs(arrayOne[i] - arrayTwo[j]);
-//           arr[0] = arrayOne[i];
-//           arr[1] = arrayTwo[j];
-//         } else {
-//           if (Math.abs(arrayOne[i] - arrayTwo[j]) < rem) {
-//             rem = Math.abs(arrayOne[i] - arrayTwo[j]);
-//             arr[0] = arrayOne[i];
-//             arr[1] = arrayTwo[j];
-//           }
-//         }
-//       } else if (Math.sign(arrayOne[i]) === -1 && Math.sign(arrayTwo[j]) === -1) {
-//         if (rem === undefined) {
-//           rem = Math.abs(Math.abs(arrayOne[i]) - Math.abs(arrayTwo[j]));
-//           arr[0] = arrayOne[i];
-//           arr[1] = arrayTwo[j];
-//         } else {
-//           if (Math.abs(Math.abs(arrayOne[i]) - Math.abs(arrayTwo[j])) < rem) {
-//             rem = Math.abs(Math.abs(arrayOne[i]) - Math.abs(arrayTwo[j]));
-//             arr[0] = arrayOne[i];
-//             arr[1] = arrayTwo[j];
-//           }
-//         }
-//       } else if (Math.sign(arrayOne[i]) === -1 && Math.sign(arrayTwo[j]) === 1) {
-//         if (rem === undefined) {
-//           rem = Math.abs(arrayOne[i]) + Math.abs(arrayTwo[j]);
-//           arr[0] = arrayOne[i];
-//           arr[1] = arrayTwo[j];
-//         } else {
-//           if (Math.abs(arrayOne[i]) + Math.abs(arrayTwo[j]) < rem) {
-//             rem = Math.abs(arrayOne[i]) + Math.abs(arrayTwo[j]);
-//             arr[0] = arrayOne[i];
-//             arr[1] = arrayTwo[j];
-//           }
-//         }
-//       } else if (Math.sign(arrayOne[i]) === 1 && Math.sign(arrayTwo[j]) === -1) {
-//         if (rem === undefined) {
-//           rem = Math.abs(arrayOne[i]) + Math.abs(arrayTwo[j]);
-//           arr[0] = arrayOne[i];
-//           arr[1] = arrayTwo[j];
-//         } else {
-//           if (Math.abs(arrayOne[i]) + Math.abs(arrayTwo[j]) < rem) {
-//             rem = Math.abs(arrayOne[i]) + Math.abs(arrayTwo[j]);
-//             arr[0] = arrayOne[i];
-//             arr[1] = arrayTwo[j];
-//           }
-//         }
-//       }
-//     }
-//   }
-//   console.log(arr);
-//   console.log(rem);
-// }
+function smallestDifference(arrayOne, arrayTwo) {
+  const arr = [];
+  let rem;
+  for (let i = 0; i < arrayOne.length; i++) {
+    for (let j = 0; j < arrayTwo.length; j++) {
+      if (Math.sign(arrayOne[i]) === 1 && Math.sign(arrayTwo[j]) === 1) {
+        if (rem === undefined) {
+          rem = Math.abs(arrayOne[i] - arrayTwo[j]);
+          arr[0] = arrayOne[i];
+          arr[1] = arrayTwo[j];
+        } else {
+          if (Math.abs(arrayOne[i] - arrayTwo[j]) < rem) {
+            rem = Math.abs(arrayOne[i] - arrayTwo[j]);
+            arr[0] = arrayOne[i];
+            arr[1] = arrayTwo[j];
+          }
+        }
+      } else if (Math.sign(arrayOne[i]) === -1 && Math.sign(arrayTwo[j]) === -1) {
+        if (rem === undefined) {
+          rem = Math.abs(Math.abs(arrayOne[i]) - Math.abs(arrayTwo[j]));
+          arr[0] = arrayOne[i];
+          arr[1] = arrayTwo[j];
+        } else {
+          if (Math.abs(Math.abs(arrayOne[i]) - Math.abs(arrayTwo[j])) < rem) {
+            rem = Math.abs(Math.abs(arrayOne[i]) - Math.abs(arrayTwo[j]));
+            arr[0] = arrayOne[i];
+            arr[1] = arrayTwo[j];
+          }
+        }
+      } else if (Math.sign(arrayOne[i]) === -1 && Math.sign(arrayTwo[j]) === 1) {
+        if (rem === undefined) {
+          rem = Math.abs(arrayOne[i]) + Math.abs(arrayTwo[j]);
+          arr[0] = arrayOne[i];
+          arr[1] = arrayTwo[j];
+        } else {
+          if (Math.abs(arrayOne[i]) + Math.abs(arrayTwo[j]) < rem) {
+            rem = Math.abs(arrayOne[i]) + Math.abs(arrayTwo[j]);
+            arr[0] = arrayOne[i];
+            arr[1] = arrayTwo[j];
+          }
+        }
+      } else if (Math.sign(arrayOne[i]) === 1 && Math.sign(arrayTwo[j]) === -1) {
+        if (rem === undefined) {
+          rem = Math.abs(arrayOne[i]) + Math.abs(arrayTwo[j]);
+          arr[0] = arrayOne[i];
+          arr[1] = arrayTwo[j];
+        } else {
+          if (Math.abs(arrayOne[i]) + Math.abs(arrayTwo[j]) < rem) {
+            rem = Math.abs(arrayOne[i]) + Math.abs(arrayTwo[j]);
+            arr[0] = arrayOne[i];
+            arr[1] = arrayTwo[j];
+          }
+        }
+      }
+    }
+  }
+  console.log(arr);
+  console.log(rem);
+}
 // smallestDifference([0, 20], [21, -2]);
 // smallestDifference([-1, 5, 10, 20, 28, 3], [26, 134, 135, 15, 17]);
 
-// function largestRange(array) {
-//   const sortedArray = array.sort((a, b) => a - b);
-//   let arr = [[]];
-//   let rem = 0;
-//   for (let i = sortedArray[0]; i <= sortedArray[sortedArray.length - 1]; i++) {
-//     if (sortedArray.includes(i)) {
-//       arr[rem].push(i);
-//     } else {
-//       arr.push([]);
-//       rem += 1;
-//     }
-//   }
-//   const largeRange = arr.sort((a, b) => b.length - a.length);
-//   console.log([largeRange[0][0], largeRange[0][largeRange[0].length - 1]]);
-// }
+function largestRange(array) {
+  const sortedArray = array.sort((a, b) => a - b);
+  let arr = [[]];
+  let rem = 0;
+  for (let i = sortedArray[0]; i <= sortedArray[sortedArray.length - 1]; i++) {
+    if (sortedArray.includes(i)) {
+      arr[rem].push(i);
+    } else {
+      arr.push([]);
+      rem += 1;
+    }
+  }
+  const largeRange = arr.sort((a, b) => b.length - a.length);
+  console.log([largeRange[0][0], largeRange[0][largeRange[0].length - 1]]);
+}
 
 // largestRange([1, 1, 2, 11, 3, 0, 15, 5, 2, 4, 10, 7, 12, 6]);
 
@@ -2887,197 +2887,196 @@ tree.insert(7);
 
 // condition for binarysearch is the array should be the sorted array
 
-// function binarySearch(arr, elem) {
-//   var start = 0;
-//   var end = arr.length - 1;
-//   var middle = Math.floor((start + end) / 2);
-//   while (arr[middle] !== elem && start <= end) {
-//     if (elem < arr[middle]) {
-//       end = middle - 1;
-//     } else {
-//       start = middle + 1;
-//     }
-//     middle = Math.floor((start + end) / 2);
-//   }
-//   if (arr[middle] === elem) {
-//     return middle;
-//   }
-//   return -1;
-// }
+function binarySearch(arr, elem) {
+  var start = 0;
+  var end = arr.length - 1;
+  var middle = Math.floor((start + end) / 2);
+  while (arr[middle] !== elem && start <= end) {
+    if (elem < arr[middle]) {
+      end = middle - 1;
+    } else {
+      start = middle + 1;
+    }
+    middle = Math.floor((start + end) / 2);
+  }
+  if (arr[middle] === elem) {
+    return middle;
+  }
+  return -1;
+}
 
 // console.log(binarySearch([0, 1, 21, 33, 45, 45, 61, 71, 72, 73], 33));
 
-// function fourNumberSum(array, targetSum) {
-//   const result = [];
-//   const sortedArray = array.sort((a, b) => a - b);
-//   for (let i = 0; i < sortedArray.length; i++) {
-//     for (let j = i; j < sortedArray.length; j++) {
-//       for (let k = j; k < sortedArray.length; k++) {
-//         for (let l = k; l < sortedArray.length; l++) {
-//           if (
-//             array[i] + array[j] + array[k] + array[l] === targetSum &&
-//             array[i] !== array[j] &&
-//             array[j] !== array[k] &&
-//             array[k] !== array[l]
-//           ) {
-//             result.push([array[i], array[j], array[k], array[l]]);
-//           }
-//         }
-//       }
-//     }
-//   }
-//   return result;
-// }
+function fourNumberSum(array, targetSum) {
+  const result = [];
+  const sortedArray = array.sort((a, b) => a - b);
+  for (let i = 0; i < sortedArray.length; i++) {
+    for (let j = i; j < sortedArray.length; j++) {
+      for (let k = j; k < sortedArray.length; k++) {
+        for (let l = k; l < sortedArray.length; l++) {
+          if (
+            array[i] + array[j] + array[k] + array[l] === targetSum &&
+            array[i] !== array[j] &&
+            array[j] !== array[k] &&
+            array[k] !== array[l]
+          ) {
+            result.push([array[i], array[j], array[k], array[l]]);
+          }
+        }
+      }
+    }
+  }
+  return result;
+}
 
-// function threeNumberSum(array, targetSum) {
-//   // Write your code here.
-//   const result = [];
-//   const sortedArray = array.sort((a, b) => a - b); //[-8, -6, 1, 2, 3, 5, 6, 12]
-//   for (let i = 0; i < sortedArray.length; i++) {
-//     for (let j = i; j < sortedArray.length; j++) {
-//       for (let k = j; k < sortedArray.length; k++) {
-//         if (
-//           array[i] + array[j] + array[k] === targetSum &&
-//           array[i] !== array[j] &&
-//           array[j] !== array[k]
-//         ) {
-//           result.push([array[i], array[j], array[k]].sort((a, b) => a - b));
-//         }
-//       }
-//     }
-//   }
-//   return result;
-// }
+function threeNumberSum(array, targetSum) {
+  // Write your code here.
+  const result = [];
+  const sortedArray = array.sort((a, b) => a - b); //[-8, -6, 1, 2, 3, 5, 6, 12]
+  for (let i = 0; i < sortedArray.length; i++) {
+    for (let j = i; j < sortedArray.length; j++) {
+      for (let k = j; k < sortedArray.length; k++) {
+        if (
+          array[i] + array[j] + array[k] === targetSum &&
+          array[i] !== array[j] &&
+          array[j] !== array[k]
+        ) {
+          result.push([array[i], array[j], array[k]].sort((a, b) => a - b));
+        }
+      }
+    }
+  }
+  return result;
+}
 // threeNumberSum([12, 3, 1, 2, -6, 5, -8, 6], 0);
 
-// function isMonotonic(array) {
-//   // Write your code here.
-//   let temp;
-//   for (let i = 1; i < array.length; i++) {
-//     if (array[0] !== array[i]) {
-//       temp = array[i] > array[0];
-//       break;
-//       //temp=>// false=>decreasing array // true=>increasing array
-//     }
-//   }
+function isMonotonic(array) {
+  // Write your code here.
+  let temp;
+  for (let i = 1; i < array.length; i++) {
+    if (array[0] !== array[i]) {
+      temp = array[i] > array[0];
+      break;
+      //temp=>// false=>decreasing array // true=>increasing array
+    }
+  }
 
-//   if (temp) {
-//     for (let i = 1; i < array.length; i++) {
-//       if (array[i] < array[i - 1]) {
-//         return false;
-//       }
-//     }
-//     return true;
-//   } else {
-//     for (let i = 1; i < array.length; i++) {
-//       if (array[i] > array[i - 1]) {
-//         return false;
-//       }
-//     }
-//     return true;
-//   }
-// }
+  if (temp) {
+    for (let i = 1; i < array.length; i++) {
+      if (array[i] < array[i - 1]) {
+        return false;
+      }
+    }
+    return true;
+  } else {
+    for (let i = 1; i < array.length; i++) {
+      if (array[i] > array[i - 1]) {
+        return false;
+      }
+    }
+    return true;
+  }
+}
 
 // isMonotonic([-1, -5, -10, -1100, -1100, -1101, -1102, -9001]);
 
-// function minRewards(scores) {
-//   let arr = [];
-//   for (let i = 0; i < scores.length; i++) {
-//     if (i === 0) {
-//       arr.push(1);
-//     } else {
-//       if (scores[i] < scores[i - 1]) {
-//         arr.push(1);
-//         for (let j = arr.length - 2; j >= 0; j--) {
-//           if (arr[j + 1] + 1 >= arr[j]) {
-//             arr[j] = arr[j + 1] + 1;
-//           } else {
-//             break;
-//           }
-//         }
-//       } else if (scores[i] > scores[i - 1]) {
-//         arr.push(arr[i - 1] + 1);
-//       }
-//     }
-//   }
-//   console.log(arr);
-//   console.log(arr.reduce((a, b) => a + b, 0));
-// }
+function minRewards(scores) {
+  let arr = [];
+  for (let i = 0; i < scores.length; i++) {
+    if (i === 0) {
+      arr.push(1);
+    } else {
+      if (scores[i] < scores[i - 1]) {
+        arr.push(1);
+        for (let j = arr.length - 2; j >= 0; j--) {
+          if (arr[j + 1] + 1 >= arr[j]) {
+            arr[j] = arr[j + 1] + 1;
+          } else {
+            break;
+          }
+        }
+      } else if (scores[i] > scores[i - 1]) {
+        arr.push(arr[i - 1] + 1);
+      }
+    }
+  }
+  console.log(arr);
+  console.log(arr.reduce((a, b) => a + b, 0));
+}
 
 // // minRewards([8, 4, 2, 1, 3, 6, 7, 9, 5]);
 // minRewards([0, 4, 2, 1, 3]);
 
-// async function getStockInformation(date) {
-//   let result;
+async function getStockInformation(date) {
+  let result;
 
-//   try {
-//     let response = await fetch(`https://jsonmock.hackerrank.com/api/stocks?date=${date}`);
-//     result = await response.json();
-//   } catch (error) {
-//     result = [];
-//   }
+  try {
+    let response = await fetch(`https://jsonmock.hackerrank.com/api/stocks?date=${date}`);
+    result = await response.json();
+  } catch (error) {
+    result = [];
+  }
 
-//   console.log(result);
-//   console.log(result.data);
-//   console.log(result.data[0].open);
-//   console.log(result.data[0].high);
-//   console.log(result.data[0].low);
-//   console.log(result.data[0].close);
-// }
+  console.log(result);
+  console.log(result.data);
+  console.log(result.data[0].open);
+  console.log(result.data[0].high);
+  console.log(result.data[0].low);
+  console.log(result.data[0].close);
+}
 // getStockInformation('5-January-2000');
 
-// function preprocessDate(dates) {
-//   // console.log(dates.length);
-//   let months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-//   if (dates.length === 12) {
-//     let date = `0${dates[0]}`;
-//     let year = `${dates[8]}${dates[9]}${dates[10]}${dates[11]}`;
-//     let month = `${dates[4]}${dates[5]}${dates[6]}`;
+function preprocessDate(dates) {
+  // console.log(dates.length);
+  let months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  if (dates.length === 12) {
+    let date = `0${dates[0]}`;
+    let year = `${dates[8]}${dates[9]}${dates[10]}${dates[11]}`;
+    let month = `${dates[4]}${dates[5]}${dates[6]}`;
 
-//     let monthIndex = months.indexOf(month) + 1;
-//     if (monthIndex <= 9) {
-//       monthIndex = `0${monthIndex}`;
-//     }
+    let monthIndex = months.indexOf(month) + 1;
+    if (monthIndex <= 9) {
+      monthIndex = `0${monthIndex}`;
+    }
 
-//     console.log(`${year}-${monthIndex}-${date}`);
-//   } else if (dates.length === 13) {
-//     let date = `${dates[0]}${dates[1]}`;
-//     let year = `${dates[9]}${dates[10]}${dates[11]}${dates[12]}`;
-//     let month = `${dates[5]}${dates[6]}${dates[7]}`;
+    console.log(`${year}-${monthIndex}-${date}`);
+  } else if (dates.length === 13) {
+    let date = `${dates[0]}${dates[1]}`;
+    let year = `${dates[9]}${dates[10]}${dates[11]}${dates[12]}`;
+    let month = `${dates[5]}${dates[6]}${dates[7]}`;
 
-//     let monthIndex = months.indexOf(month) + 1;
-//     if (monthIndex <= 9) {
-//       monthIndex = `0${monthIndex}`;
-//     }
+    let monthIndex = months.indexOf(month) + 1;
+    if (monthIndex <= 9) {
+      monthIndex = `0${monthIndex}`;
+    }
 
-//     console.log(`${year}-${monthIndex}-${date}`);
-//   }
-// }
+    console.log(`${year}-${monthIndex}-${date}`);
+  }
+}
 
-// function preprocessDate(dates) {
-//   // console.log(dates.length);
-//   let months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-//   let bool = dates.length === 12;
+function preprocessDate(dates) {
+  // console.log(dates.length);
+  let months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  let bool = dates.length === 12;
 
-//   let date = bool ? `0${dates[0]}` : `${dates[0]}${dates[1]}`;
-//   let year = bool
-//     ? `${dates[8]}${dates[9]}${dates[10]}${dates[11]}`
-//     : `${dates[9]}${dates[10]}${dates[11]}${dates[12]}`;
-//   let month = bool ? `${dates[4]}${dates[5]}${dates[6]}` : `${dates[5]}${dates[6]}${dates[7]}`;
+  let date = bool ? `0${dates[0]}` : `${dates[0]}${dates[1]}`;
+  let year = bool
+    ? `${dates[8]}${dates[9]}${dates[10]}${dates[11]}`
+    : `${dates[9]}${dates[10]}${dates[11]}${dates[12]}`;
+  let month = bool ? `${dates[4]}${dates[5]}${dates[6]}` : `${dates[5]}${dates[6]}${dates[7]}`;
 
-//   let monthIndex = months.indexOf(month) + 1;
-//   if (monthIndex <= 9) {
-//     monthIndex = `0${monthIndex}`;
-//   }
+  let monthIndex = months.indexOf(month) + 1;
+  if (monthIndex <= 9) {
+    monthIndex = `0${monthIndex}`;
+  }
 
-//   console.log(`${year}-${monthIndex}-${date}`);
-// }
+  console.log(`${year}-${monthIndex}-${date}`);
+}
 // preprocessDate('1st Mar 1974');
 // preprocessDate('7th Apr 1904');
 // preprocessDate('22nd Jan 2013');
 
-/*
-  // bind polyfill
+// bind polyfill
 let reference = { name: 'Shiva shankar', age: 20, country: 'India' };
 
 function bio() {
@@ -3085,7 +3084,7 @@ function bio() {
 }
 
 let bindFunction = bio.bind(reference);
-bindFunction();
+// bindFunction();
 
 // Function.prototype.bindClone = (...args) => {
 //   console.log(args);
@@ -3105,10 +3104,8 @@ Function.prototype.bindClone = function (...args) {
   };
 };
 
-let bindFunction2 = bio.bindClone(reference, 'chennai');
-bindFunction2();
-
-*/
+// let bindFunction2 = bio.bindClone(reference, 'chennai');
+// bindFunction2();
 
 // polyfill for filter array methods
 
@@ -3117,34 +3114,33 @@ bindFunction2();
 // let filteredArray = numbers.filter((n) => n % 2 === 0);
 // console.log(filteredArray);
 
-// Array.prototype.filterClone = function (cb) {
-//   console.log(cb);
-//   let arr = [];
-//   // console.log(this);
-//   this.forEach((el) => {
-//     // if (el % 2 === 0) {
-//     if (cb(el)) {
-//       arr.push(el);
-//     }
-//   });
-//   return arr;
-// };
+Array.prototype.filterClone = function (cb) {
+  console.log(cb);
+  let arr = [];
+  // console.log(this);
+  this.forEach((el) => {
+    // if (el % 2 === 0) {
+    if (cb(el)) {
+      arr.push(el);
+    }
+  });
+  return arr;
+};
 
 // let filteredArray2 = numbers.filterClone((n) => n % 2 === 0);
 
 // console.log(filteredArray2);
 
-// function moveElementToEnd(array, toMove) {
-//   let filterNotEqualMove = array.filter((n) => n !== toMove);
-//   let filterEqualMove = array.filter((n) => n === toMove);
-//   console.log(filterNotEqualMove);
-//   console.log(filterEqualMove);
-//   console.log([...filterNotEqualMove, ...filterEqualMove]);
-// }
+function moveElementToEnd(array, toMove) {
+  let filterNotEqualMove = array.filter((n) => n !== toMove);
+  let filterEqualMove = array.filter((n) => n === toMove);
+  console.log(filterNotEqualMove);
+  console.log(filterEqualMove);
+  console.log([...filterNotEqualMove, ...filterEqualMove]);
+}
 
 // moveElementToEnd([2, 1, 2, 2, 2, 3, 4, 2], 2);
 
-/*
 function mergeOverlappingIntervals(array) {
   array.sort((a, b) => a[0] - b[0]);
 
@@ -3180,16 +3176,16 @@ function mergeOverlappingIntervals(array) {
   console.log(arr);
 }
 
-mergeOverlappingIntervals([
-  [20, 21],
-  [22, 23],
-  [0, 1],
-  [3, 4],
-  [23, 24],
-  [25, 27],
-  [5, 6],
-  [7, 19],
-]);
+// mergeOverlappingIntervals([
+//   [20, 21],
+//   [22, 23],
+//   [0, 1],
+//   [3, 4],
+//   [23, 24],
+//   [25, 27],
+//   [5, 6],
+//   [7, 19],
+// ]);
 
 // mergeOverlappingIntervals([
 //   [1, 2],
@@ -3198,7 +3194,6 @@ mergeOverlappingIntervals([
 //   [6, 8],
 //   [9, 10],
 // ]);
-*/
 
 // function zigzagTraverse(array) {
 //   console.log(array);
@@ -3211,10 +3206,10 @@ mergeOverlappingIntervals([
 //   [7, 13, 14, 16],
 // ]);
 
-// function lineThroughPoints(points) {
-//   points.sort((a, b) => a[0] - b[0]);
-//   console.log(points);
-// }
+function lineThroughPoints(points) {
+  points.sort((a, b) => a[0] - b[0]);
+  console.log(points);
+}
 
 // lineThroughPoints([
 //   [1, 1],
@@ -3226,294 +3221,294 @@ mergeOverlappingIntervals([
 //   [2, 1],
 // ]);
 
-// function caesarCipherEncryptor(string, key) {
-//   let str = string;
-//   const alphabets = [
-//     'a',
-//     'b',
-//     'c',
-//     'd',
-//     'e',
-//     'f',
-//     'g',
-//     'h',
-//     'i',
-//     'j',
-//     'k',
-//     'l',
-//     'm',
-//     'n',
-//     'o',
-//     'p',
-//     'q',
-//     'r',
-//     's',
-//     't',
-//     'u',
-//     'v',
-//     'w',
-//     'x',
-//     'y',
-//     'z',
-//   ];
-//   // console.log(alphabets.length);
-//   let lastElementIndex = alphabets.indexOf(str[str.length - 1]);
-//   console.log(str[str.length - 1]);
-//   console.log(lastElementIndex);
-//   for (let i = lastElementIndex + 1; i <= lastElementIndex + key; i++) {
-//     str += alphabets[i % 26];
-//   }
+function caesarCipherEncryptor(string, key) {
+  let str = string;
+  const alphabets = [
+    'a',
+    'b',
+    'c',
+    'd',
+    'e',
+    'f',
+    'g',
+    'h',
+    'i',
+    'j',
+    'k',
+    'l',
+    'm',
+    'n',
+    'o',
+    'p',
+    'q',
+    'r',
+    's',
+    't',
+    'u',
+    'v',
+    'w',
+    'x',
+    'y',
+    'z',
+  ];
+  // console.log(alphabets.length);
+  let lastElementIndex = alphabets.indexOf(str[str.length - 1]);
+  console.log(str[str.length - 1]);
+  console.log(lastElementIndex);
+  for (let i = lastElementIndex + 1; i <= lastElementIndex + key; i++) {
+    str += alphabets[i % 26];
+  }
 
-//   console.log(str);
-//   console.log(str.slice(key));
-// }
+  console.log(str);
+  console.log(str.slice(key));
+}
 
 // caesarCipherEncryptor('iwufqnkqkqoolxzzlzihqfm', 25);
 
-// function generateDocument(characters, document) {
-//   let char = {};
-//   let doc = {};
+function generateDocument(characters, document) {
+  let char = {};
+  let doc = {};
 
-//   for (let i = 0; i < characters.length; i++) {
-//     if (char[characters[i]]) {
-//       char[characters[i]] = char[characters[i]] + 1;
-//     } else {
-//       char[characters[i]] = 1;
-//     }
-//   }
+  for (let i = 0; i < characters.length; i++) {
+    if (char[characters[i]]) {
+      char[characters[i]] = char[characters[i]] + 1;
+    } else {
+      char[characters[i]] = 1;
+    }
+  }
 
-//   for (let i = 0; i < document.length; i++) {
-//     if (doc[document[i]]) {
-//       doc[document[i]] = doc[document[i]] + 1;
-//     } else {
-//       doc[document[i]] = 1;
-//     }
-//   }
+  for (let i = 0; i < document.length; i++) {
+    if (doc[document[i]]) {
+      doc[document[i]] = doc[document[i]] + 1;
+    } else {
+      doc[document[i]] = 1;
+    }
+  }
 
-//   console.log(char);
-//   console.log(doc);
-// }
+  console.log(char);
+  console.log(doc);
+}
 
 // generateDocument('Bste!hetsi ogEAxpelrt x ', 'AlgoExpert is the Best!');
 
-// function generateDocument(characters, document) {
-//   if (document === '') return true;
+function generateDocument(characters, document) {
+  if (document === '') return true;
 
-//   let char = {};
-//   let doc = {};
-//   const docKey = [];
-//   const charKey = [];
+  let char = {};
+  let doc = {};
+  const docKey = [];
+  const charKey = [];
 
-//   function generateObj(reference, holder) {
-//     for (let i = 0; i < reference.length; i++) {
-//       holder[reference[i]] ? (holder[reference[i]] += 1) : (holder[reference[i]] = 1);
-//     }
-//   }
-//   function generateKey(reference, holder) {
-//     for (const key in reference) {
-//       holder.push(key);
-//     }
-//   }
+  function generateObj(reference, holder) {
+    for (let i = 0; i < reference.length; i++) {
+      holder[reference[i]] ? (holder[reference[i]] += 1) : (holder[reference[i]] = 1);
+    }
+  }
+  function generateKey(reference, holder) {
+    for (const key in reference) {
+      holder.push(key);
+    }
+  }
 
-//   generateObj(characters, char);
-//   generateObj(document, doc);
-//   generateKey(char, charKey);
-//   generateKey(doc, docKey);
+  generateObj(characters, char);
+  generateObj(document, doc);
+  generateKey(char, charKey);
+  generateKey(doc, docKey);
 
-//   for (let i = 0; i < docKey.length; i++) {
-//     if (charKey.includes(docKey[i]) && !(char[docKey[i]] >= doc[docKey[i]])) {
-//       return false;
-//     } else {
-//       return false;
-//     }
-//   }
+  for (let i = 0; i < docKey.length; i++) {
+    if (charKey.includes(docKey[i]) && !(char[docKey[i]] >= doc[docKey[i]])) {
+      return false;
+    } else {
+      return false;
+    }
+  }
 
-//   return true;
-// }
+  return true;
+}
 
 // console.log(generateDocument('aheaollabbhb', 'hello'));
 
-// function groupAnagrams(words) {
-//   let duplicates = [...words];
-//   for (let i = 0; i < words.length; i++) {
-//     let arr = [];
-//     for (let j = 0; j < words[i].length; j++) {
-//       arr.push(words[i][j].charCodeAt());
-//       if (j === words[i].length - 1) {
-//         let str = '';
-//         arr
-//           .sort((a, b) => a - b)
-//           .forEach((el) => {
-//             str = str + String.fromCharCode(el);
-//           });
-//         words[i] = str;
-//         str = '';
-//         arr = [];
-//       }
-//     }
-//   }
-//   let keys = [];
-//   let temp = [];
+function groupAnagrams(words) {
+  let duplicates = [...words];
+  for (let i = 0; i < words.length; i++) {
+    let arr = [];
+    for (let j = 0; j < words[i].length; j++) {
+      arr.push(words[i][j].charCodeAt());
+      if (j === words[i].length - 1) {
+        let str = '';
+        arr
+          .sort((a, b) => a - b)
+          .forEach((el) => {
+            str = str + String.fromCharCode(el);
+          });
+        words[i] = str;
+        str = '';
+        arr = [];
+      }
+    }
+  }
+  let keys = [];
+  let temp = [];
 
-//   for (let i = 0; i < words.length; i++) {
-//     keys[i] = [];
-//     for (let j = 0; j < words.length; j++) {
-//       if (words[i] === words[j] && i === 0) {
-//         temp.push(j);
-//         keys[i].push(duplicates[j]);
-//       } else if (words[i] === words[j] && i !== 0 && !temp.includes(j)) {
-//         temp.push(j);
-//         keys[i].push(duplicates[j]);
-//       }
-//     }
-//   }
+  for (let i = 0; i < words.length; i++) {
+    keys[i] = [];
+    for (let j = 0; j < words.length; j++) {
+      if (words[i] === words[j] && i === 0) {
+        temp.push(j);
+        keys[i].push(duplicates[j]);
+      } else if (words[i] === words[j] && i !== 0 && !temp.includes(j)) {
+        temp.push(j);
+        keys[i].push(duplicates[j]);
+      }
+    }
+  }
 
-//   console.log(keys.filter((el) => el.length >= 1));
-// }
+  console.log(keys.filter((el) => el.length >= 1));
+}
 
 // groupAnagrams(['yo', 'act', 'flop', 'tac', 'foo', 'cat', 'oy', 'olfp']);
 
-// function findThreeLargestNumbers(array) {
-//   if (array.every((el) => el === array[0])) return Array(3).fill(array[0]);
-//   let arr = [];
-//   let largestNumber;
+function findThreeLargestNumbers(array) {
+  if (array.every((el) => el === array[0])) return Array(3).fill(array[0]);
+  let arr = [];
+  let largestNumber;
 
-//   for (let i = 1; i <= 3; i++) {
-//     largestNumber = Math.max(...array);
-//     arr.unshift(largestNumber);
-//     if (array.every((el) => el === array[0])) {
-//       let lengthArr = 3 - arr.length;
-//       return [...Array(lengthArr).fill(array[0]), ...arr];
-//     }
-//     array = array.filter((el) => el !== largestNumber);
-//   }
-//   console.log(arr);
-// }
+  for (let i = 1; i <= 3; i++) {
+    largestNumber = Math.max(...array);
+    arr.unshift(largestNumber);
+    if (array.every((el) => el === array[0])) {
+      let lengthArr = 3 - arr.length;
+      return [...Array(lengthArr).fill(array[0]), ...arr];
+    }
+    array = array.filter((el) => el !== largestNumber);
+  }
+  console.log(arr);
+}
 
 // console.log(findThreeLargestNumbers([7, 7, 7, 7, 7, 7, 8, 7, 7, 7, 7]));
 
-// function binarySearch(arr, elem) {
-//   var start = 0; //0
-//   var end = arr.length - 1; //9
-//   var middle = Math.floor((start + end) / 2); //4
-//   console.log(start, end, middle);
-//   while (arr[middle] !== elem && start <= end) {
-//     if (elem < arr[middle]) {
-//       end = middle - 1;
-//     } else {
-//       start = middle + 1;
-//     }
-//     middle = Math.floor((start + end) / 2);
-//   }
-//   if (arr[middle] === elem) {
-//     return arr[middle];
-//   }
-//   return -1;
-// }
+function binarySearch(arr, elem) {
+  var start = 0; //0
+  var end = arr.length - 1; //9
+  var middle = Math.floor((start + end) / 2); //4
+  console.log(start, end, middle);
+  while (arr[middle] !== elem && start <= end) {
+    if (elem < arr[middle]) {
+      end = middle - 1;
+    } else {
+      start = middle + 1;
+    }
+    middle = Math.floor((start + end) / 2);
+  }
+  if (arr[middle] === elem) {
+    return arr[middle];
+  }
+  return -1;
+}
 
-// function binarySearch(array, target) {
-//   let start = 0;
-//   let end = array.length - 1;
-//   let middle = Math.floor((start + end) / 2);
+function binarySearch(array, target) {
+  let start = 0;
+  let end = array.length - 1;
+  let middle = Math.floor((start + end) / 2);
 
-//   while (array[middle] !== target && start <= end) {
-//     if (target > array[middle]) {
-//       start = start + 1;
-//     } else if (target < array[middle]) {
-//       end = middle - 1;
-//     }
-//     middle = Math.floor((start + end) / 2);
-//   }
+  while (array[middle] !== target && start <= end) {
+    if (target > array[middle]) {
+      start = start + 1;
+    } else if (target < array[middle]) {
+      end = middle - 1;
+    }
+    middle = Math.floor((start + end) / 2);
+  }
 
-//   if (array[middle] === target) {
-//     return array[middle];
-//   }
+  if (array[middle] === target) {
+    return array[middle];
+  }
 
-//   return -1;
-// }
+  return -1;
+}
 
 // console.log(binarySearch([1, 3, 9, 27, 28, 29, 33, 38, 42, 50], 27));
 // console.log(binarySearch([0, 1, 21, 33, 45, 45, 61, 71, 72, 73], 33));
 
-// function searchInSortedMatrix(matrix, target) {
-//   let matrixCopy = JSON.parse(JSON.stringify([...matrix]));
+function searchInSortedMatrix(matrix, target) {
+  let matrixCopy = JSON.parse(JSON.stringify([...matrix]));
 
-//   let colCenter = Math.floor(matrix.length / 2);
-//   let rowCenter = Math.floor(matrix[0].length / 2);
-//   let middleElement = matrix[colCenter][rowCenter];
+  let colCenter = Math.floor(matrix.length / 2);
+  let rowCenter = Math.floor(matrix[0].length / 2);
+  let middleElement = matrix[colCenter][rowCenter];
 
-//   function findElement(num) {
-//     for (let i = 0; i < matrixCopy.length; i++) {
-//       for (let j = 0; j < matrixCopy[i].length; j++) {
-//         if (matrixCopy[i][j] === num) {
-//           return [i, j];
-//         }
-//       }
-//     }
-//   }
+  function findElement(num) {
+    for (let i = 0; i < matrixCopy.length; i++) {
+      for (let j = 0; j < matrixCopy[i].length; j++) {
+        if (matrixCopy[i][j] === num) {
+          return [i, j];
+        }
+      }
+    }
+  }
 
-//   function helper(colCenter, rowCenter) {
-//     matrix.splice(colCenter, 1);
+  function helper(colCenter, rowCenter) {
+    matrix.splice(colCenter, 1);
 
-//     for (let i = 0; i < matrix.length; i++) {
-//       matrix[i].splice(rowCenter, 1);
-//     }
-//     if (matrix.length === 0) {
-//       return [-1, -1];
-//     }
+    for (let i = 0; i < matrix.length; i++) {
+      matrix[i].splice(rowCenter, 1);
+    }
+    if (matrix.length === 0) {
+      return [-1, -1];
+    }
 
-//     colCenter = Math.floor(matrix.length / 2);
-//     rowCenter = Math.floor(matrix[0].length / 2);
-//     middleElement = matrix[colCenter][rowCenter];
-//   }
+    colCenter = Math.floor(matrix.length / 2);
+    rowCenter = Math.floor(matrix[0].length / 2);
+    middleElement = matrix[colCenter][rowCenter];
+  }
 
-//   while (matrix.length) {
-//     if (middleElement < target) {
-//       for (let i = rowCenter + 1; i <= matrix[colCenter].length - 1; i++) {
-//         if (matrix[colCenter][i] === target) {
-//           // return [colCenter, i];
-//           return findElement(target);
-//         }
-//       }
+  while (matrix.length) {
+    if (middleElement < target) {
+      for (let i = rowCenter + 1; i <= matrix[colCenter].length - 1; i++) {
+        if (matrix[colCenter][i] === target) {
+          // return [colCenter, i];
+          return findElement(target);
+        }
+      }
 
-//       for (let i = colCenter + 1; i <= matrix.length - 1; i++) {
-//         if (matrix[i][rowCenter] === target) {
-//           // return [i, rowCenter];
-//           return findElement(target);
-//         }
-//       }
-//       console.log(helper(colCenter, rowCenter));
-//       if (helper(colCenter, rowCenter)) {
-//         return helper(colCenter, rowCenter);
-//       } else {
-//         helper(colCenter, rowCenter);
-//       }
-//     } else if (middleElement > target) {
-//       for (let i = rowCenter - 1; i >= 0; i--) {
-//         if (matrix[colCenter][i] === target) {
-//           // return [colCenter, i];
-//           return findElement(target);
-//         }
-//       }
-//       for (let i = colCenter - 1; i >= 0; i--) {
-//         if (matrix[i][rowCenter] === target) {
-//           // return [i, rowCenter];
-//           return findElement(target);
-//         }
-//       }
+      for (let i = colCenter + 1; i <= matrix.length - 1; i++) {
+        if (matrix[i][rowCenter] === target) {
+          // return [i, rowCenter];
+          return findElement(target);
+        }
+      }
+      console.log(helper(colCenter, rowCenter));
+      if (helper(colCenter, rowCenter)) {
+        return helper(colCenter, rowCenter);
+      } else {
+        helper(colCenter, rowCenter);
+      }
+    } else if (middleElement > target) {
+      for (let i = rowCenter - 1; i >= 0; i--) {
+        if (matrix[colCenter][i] === target) {
+          // return [colCenter, i];
+          return findElement(target);
+        }
+      }
+      for (let i = colCenter - 1; i >= 0; i--) {
+        if (matrix[i][rowCenter] === target) {
+          // return [i, rowCenter];
+          return findElement(target);
+        }
+      }
 
-//       if (helper(colCenter, rowCenter).length) {
-//         return helper(colCenter, rowCenter);
-//       } else {
-//         helper(colCenter, rowCenter);
-//       }
-//     } else if (middleElement === target) {
-//       // return [colCenter, rowCenter];
-//       return findElement(target);
-//     }
-//   }
-//   return [-1, -1];
-// }
+      if (helper(colCenter, rowCenter).length) {
+        return helper(colCenter, rowCenter);
+      } else {
+        helper(colCenter, rowCenter);
+      }
+    } else if (middleElement === target) {
+      // return [colCenter, rowCenter];
+      return findElement(target);
+    }
+  }
+  return [-1, -1];
+}
 
 // console.log(
 //   searchInSortedMatrix(
@@ -3528,86 +3523,86 @@ mergeOverlappingIntervals([
 //   )
 // );
 
-// function searchInSortedMatrix(matrix, target) {
-//   // Write your code here.
-//   let matrixCopy = JSON.parse(JSON.stringify([...matrix]));
-//   let colCenter = Math.floor(matrix.length / 2);
-//   let rowCenter = Math.floor(matrix[0].length / 2);
-//   let middleElement = matrix[colCenter][rowCenter];
+function searchInSortedMatrix(matrix, target) {
+  // Write your code here.
+  let matrixCopy = JSON.parse(JSON.stringify([...matrix]));
+  let colCenter = Math.floor(matrix.length / 2);
+  let rowCenter = Math.floor(matrix[0].length / 2);
+  let middleElement = matrix[colCenter][rowCenter];
 
-//   function findElement(num) {
-//     for (let i = 0; i < matrixCopy.length; i++) {
-//       for (let j = 0; j < matrixCopy[i].length; j++) {
-//         if (matrixCopy[i][j] === num) {
-//           return [i, j];
-//         }
-//       }
-//     }
-//   }
+  function findElement(num) {
+    for (let i = 0; i < matrixCopy.length; i++) {
+      for (let j = 0; j < matrixCopy[i].length; j++) {
+        if (matrixCopy[i][j] === num) {
+          return [i, j];
+        }
+      }
+    }
+  }
 
-//   while (matrix.length) {
-//     if (middleElement < target) {
-//       for (let i = rowCenter + 1; i <= matrix[colCenter].length - 1; i++) {
-//         if (matrix[colCenter][i] === target) {
-//           // return [colCenter, i];
-//           return findElement(target);
-//         }
-//       }
+  while (matrix.length) {
+    if (middleElement < target) {
+      for (let i = rowCenter + 1; i <= matrix[colCenter].length - 1; i++) {
+        if (matrix[colCenter][i] === target) {
+          // return [colCenter, i];
+          return findElement(target);
+        }
+      }
 
-//       for (let i = colCenter + 1; i <= matrix.length - 1; i++) {
-//         if (matrix[i][rowCenter] === target) {
-//           // return [i, rowCenter];
-//           return findElement(target);
-//         }
-//       }
+      for (let i = colCenter + 1; i <= matrix.length - 1; i++) {
+        if (matrix[i][rowCenter] === target) {
+          // return [i, rowCenter];
+          return findElement(target);
+        }
+      }
 
-//       matrix.splice(colCenter, 1);
+      matrix.splice(colCenter, 1);
 
-//       for (let i = 0; i < matrix.length; i++) {
-//         matrix[i].splice(rowCenter, 1);
-//       }
+      for (let i = 0; i < matrix.length; i++) {
+        matrix[i].splice(rowCenter, 1);
+      }
 
-//       if (matrix.length === 0) {
-//         return [-1, -1];
-//       }
+      if (matrix.length === 0) {
+        return [-1, -1];
+      }
 
-//       colCenter = Math.floor(matrix.length / 2);
-//       rowCenter = Math.floor(matrix[0].length / 2);
-//       middleElement = matrix[colCenter][rowCenter];
-//     } else if (middleElement > target) {
-//       for (let i = rowCenter - 1; i >= 0; i--) {
-//         if (matrix[colCenter][i] === target) {
-//           // return [colCenter, i];
-//           return findElement(target);
-//         }
-//       }
-//       for (let i = colCenter - 1; i >= 0; i--) {
-//         if (matrix[i][rowCenter] === target) {
-//           // return [i, rowCenter];
-//           return findElement(target);
-//         }
-//       }
+      colCenter = Math.floor(matrix.length / 2);
+      rowCenter = Math.floor(matrix[0].length / 2);
+      middleElement = matrix[colCenter][rowCenter];
+    } else if (middleElement > target) {
+      for (let i = rowCenter - 1; i >= 0; i--) {
+        if (matrix[colCenter][i] === target) {
+          // return [colCenter, i];
+          return findElement(target);
+        }
+      }
+      for (let i = colCenter - 1; i >= 0; i--) {
+        if (matrix[i][rowCenter] === target) {
+          // return [i, rowCenter];
+          return findElement(target);
+        }
+      }
 
-//       matrix.splice(colCenter, 1);
+      matrix.splice(colCenter, 1);
 
-//       for (let i = 0; i < matrix.length; i++) {
-//         matrix[i].splice(rowCenter, 1);
-//       }
+      for (let i = 0; i < matrix.length; i++) {
+        matrix[i].splice(rowCenter, 1);
+      }
 
-//       if (matrix.length === 0) {
-//         return [-1, -1];
-//       }
+      if (matrix.length === 0) {
+        return [-1, -1];
+      }
 
-//       colCenter = Math.floor(matrix.length / 2);
-//       rowCenter = Math.floor(matrix[0].length / 2);
-//       middleElement = matrix[colCenter][rowCenter];
-//     } else if (middleElement === target) {
-//       // return [colCenter, rowCenter];
-//       return findElement(target);
-//     }
-//   }
-//   return [-1, -1];
-// }
+      colCenter = Math.floor(matrix.length / 2);
+      rowCenter = Math.floor(matrix[0].length / 2);
+      middleElement = matrix[colCenter][rowCenter];
+    } else if (middleElement === target) {
+      // return [colCenter, rowCenter];
+      return findElement(target);
+    }
+  }
+  return [-1, -1];
+}
 // console.log(
 //   searchInSortedMatrix(
 //     [
@@ -3621,86 +3616,86 @@ mergeOverlappingIntervals([
 //   )
 // );
 
-// function searchInSortedMatrix(matrix, target) {
-//   // Write your code here.
-//   let matrixCopy = JSON.parse(JSON.stringify([...matrix]));
-//   let colCenter = Math.floor(matrix.length / 2);
-//   let rowCenter = Math.floor(matrix[0].length / 2);
-//   let middleElement = matrix[colCenter][rowCenter];
+function searchInSortedMatrix(matrix, target) {
+  // Write your code here.
+  let matrixCopy = JSON.parse(JSON.stringify([...matrix]));
+  let colCenter = Math.floor(matrix.length / 2);
+  let rowCenter = Math.floor(matrix[0].length / 2);
+  let middleElement = matrix[colCenter][rowCenter];
 
-//   function findElement(num) {
-//     for (let i = 0; i < matrixCopy.length; i++) {
-//       for (let j = 0; j < matrixCopy[i].length; j++) {
-//         if (matrixCopy[i][j] === num) {
-//           return [i, j];
-//         }
-//       }
-//     }
-//   }
+  function findElement(num) {
+    for (let i = 0; i < matrixCopy.length; i++) {
+      for (let j = 0; j < matrixCopy[i].length; j++) {
+        if (matrixCopy[i][j] === num) {
+          return [i, j];
+        }
+      }
+    }
+  }
 
-//   while (matrix.length) {
-//     if (middleElement < target) {
-//       for (let i = rowCenter + 1; i <= matrix[colCenter].length - 1; i++) {
-//         if (matrix[colCenter][i] === target) {
-//           // return [colCenter, i];
-//           return findElement(target);
-//         }
-//       }
+  while (matrix.length) {
+    if (middleElement < target) {
+      for (let i = rowCenter + 1; i <= matrix[colCenter].length - 1; i++) {
+        if (matrix[colCenter][i] === target) {
+          // return [colCenter, i];
+          return findElement(target);
+        }
+      }
 
-//       for (let i = colCenter + 1; i <= matrix.length - 1; i++) {
-//         if (matrix[i][rowCenter] === target) {
-//           // return [i, rowCenter];
-//           return findElement(target);
-//         }
-//       }
+      for (let i = colCenter + 1; i <= matrix.length - 1; i++) {
+        if (matrix[i][rowCenter] === target) {
+          // return [i, rowCenter];
+          return findElement(target);
+        }
+      }
 
-//       matrix.splice(colCenter, 1);
+      matrix.splice(colCenter, 1);
 
-//       for (let i = 0; i < matrix.length; i++) {
-//         matrix[i].splice(rowCenter, 1);
-//       }
+      for (let i = 0; i < matrix.length; i++) {
+        matrix[i].splice(rowCenter, 1);
+      }
 
-//       if (matrix.length === 0) {
-//         return [-1, -1];
-//       }
+      if (matrix.length === 0) {
+        return [-1, -1];
+      }
 
-//       colCenter = Math.floor(matrix.length / 2);
-//       rowCenter = Math.floor(matrix[0].length / 2);
-//       middleElement = matrix[colCenter][rowCenter];
-//     } else if (middleElement > target) {
-//       for (let i = rowCenter - 1; i >= 0; i--) {
-//         if (matrix[colCenter][i] === target) {
-//           // return [colCenter, i];
-//           return findElement(target);
-//         }
-//       }
-//       for (let i = colCenter - 1; i >= 0; i--) {
-//         if (matrix[i][rowCenter] === target) {
-//           // return [i, rowCenter];
-//           return findElement(target);
-//         }
-//       }
+      colCenter = Math.floor(matrix.length / 2);
+      rowCenter = Math.floor(matrix[0].length / 2);
+      middleElement = matrix[colCenter][rowCenter];
+    } else if (middleElement > target) {
+      for (let i = rowCenter - 1; i >= 0; i--) {
+        if (matrix[colCenter][i] === target) {
+          // return [colCenter, i];
+          return findElement(target);
+        }
+      }
+      for (let i = colCenter - 1; i >= 0; i--) {
+        if (matrix[i][rowCenter] === target) {
+          // return [i, rowCenter];
+          return findElement(target);
+        }
+      }
 
-//       matrix.splice(colCenter, 1);
+      matrix.splice(colCenter, 1);
 
-//       for (let i = 0; i < matrix.length; i++) {
-//         matrix[i].splice(rowCenter, 1);
-//       }
+      for (let i = 0; i < matrix.length; i++) {
+        matrix[i].splice(rowCenter, 1);
+      }
 
-//       if (matrix.length === 0) {
-//         return [-1, -1];
-//       }
+      if (matrix.length === 0) {
+        return [-1, -1];
+      }
 
-//       colCenter = Math.floor(matrix.length / 2);
-//       rowCenter = Math.floor(matrix[0].length / 2);
-//       middleElement = matrix[colCenter][rowCenter];
-//     } else if (middleElement === target) {
-//       // return [colCenter, rowCenter];
-//       return findElement(target);
-//     }
-//   }
-//   return [-1, -1];
-// }
+      colCenter = Math.floor(matrix.length / 2);
+      rowCenter = Math.floor(matrix[0].length / 2);
+      middleElement = matrix[colCenter][rowCenter];
+    } else if (middleElement === target) {
+      // return [colCenter, rowCenter];
+      return findElement(target);
+    }
+  }
+  return [-1, -1];
+}
 
 // function indexEqualsValue(array) {
 //   // Write your code here.
@@ -3709,82 +3704,80 @@ mergeOverlappingIntervals([
 
 // console.log(indexEqualsValue([-5, -3, 0, 3, 4, 5, 9]));
 
-/*
 function bubbleSort(array) {
   for (let i = 0; i < array.length; i++) {
     for (let j = 0; j < array.length; j++) {
       if (array[j] > array[j + 1] && j !== array.length - 1) {
-        [array[j], array[j + 1]] = [array[j + 1], array[j]]
+        [array[j], array[j + 1]] = [array[j + 1], array[j]];
       }
     }
   }
   console.log(array);
 }
-
+/*
 bubbleSort([5, 3, 4, 1, 2])
 // let a = [5, 3, 4, 1, 2];
 // [a[0], a[1]] = [a[1], a[0]]
 // console.log(a);
 */
 
-// function insertionSort(arr) {
-//   for (let i = 1; i < arr.length; i++) {
-//     let currentVal = arr[i];
-//     for (var j = i - 1; j >= 0 && arr[j] > currentVal; j--) {
-//       arr[j + 1] = arr[j];
-//     }
-//     arr[j + 1] = currentVal;
-//   }
-//   console.log(arr);
-// }
+function insertionSort(arr) {
+  for (let i = 1; i < arr.length; i++) {
+    let currentVal = arr[i];
+    for (var j = i - 1; j >= 0 && arr[j] > currentVal; j--) {
+      arr[j + 1] = arr[j];
+    }
+    arr[j + 1] = currentVal;
+  }
+  console.log(arr);
+}
 
 // insertionSort([5, 3, 4, 1, 2]);
 
-// function selectionSort(array) {
-//   let minElement;
-//   let minIndex;
-//   for (let i = 0; i < array.length; i++) {
-//     for (let j = i + 1; j < array.length; j++) {
-//       if (array[j] < array[i] && !minElement) {
-//         minElement = array[j];
-//         minIndex = j;
-//       } else if (array[j] < array[i]) {
-//         if (array[j] < minElement) {
-//           minElement = array[j];
-//           minIndex = j;
-//         }
-//       }
-//     }
-//     if (minElement) {
-//       [array[i], array[minIndex]] = [array[minIndex], array[i]];
-//       minElement = undefined;
-//       minIndex = undefined;
-//     }
-//     // console.log(array);
-//   }
-//   console.log(array);
-// }
+function selectionSort(array) {
+  let minElement;
+  let minIndex;
+  for (let i = 0; i < array.length; i++) {
+    for (let j = i + 1; j < array.length; j++) {
+      if (array[j] < array[i] && !minElement) {
+        minElement = array[j];
+        minIndex = j;
+      } else if (array[j] < array[i]) {
+        if (array[j] < minElement) {
+          minElement = array[j];
+          minIndex = j;
+        }
+      }
+    }
+    if (minElement) {
+      [array[i], array[minIndex]] = [array[minIndex], array[i]];
+      minElement = undefined;
+      minIndex = undefined;
+    }
+    // console.log(array);
+  }
+  console.log(array);
+}
 
-// function selectionSort(arr) {
-//   for (var i = 0; i < arr.length; i++) {
-//     var lowest = i;
-//     for (var j = i + 1; j < arr.length; j++) {
-//       if (arr[j] < arr[lowest]) {
-//         lowest = j;
-//       }
-//     }
-//     if (i !== lowest) {
-//       //SWAP!
-//       var temp = arr[i];
-//       arr[i] = arr[lowest];
-//       arr[lowest] = temp;
-//     }
-//   }
-//   return arr;
-// }
+function selectionSort(arr) {
+  for (var i = 0; i < arr.length; i++) {
+    var lowest = i;
+    for (var j = i + 1; j < arr.length; j++) {
+      if (arr[j] < arr[lowest]) {
+        lowest = j;
+      }
+    }
+    if (i !== lowest) {
+      //SWAP!
+      var temp = arr[i];
+      arr[i] = arr[lowest];
+      arr[lowest] = temp;
+    }
+  }
+  return arr;
+}
 
 // selectionSort([19, 44, 38, 5, 47, 15]);
-/*
 
 function threeNumberSort(array, order) {
   let lengthOfArray = array.length;
@@ -3803,8 +3796,7 @@ function threeNumberSort(array, order) {
   console.log(array);
 }
 
-threeNumberSort([1, 0, 0, -1, -1, 0, 1, 1], [0, 1, -1]);
-*/
+// threeNumberSort([1, 0, 0, -1, -1, 0, 1, 1], [0, 1, -1]);
 
 // function fingerNumbers(n) {
 //   let fingers = ['thumb', 'index', 'middle', 'ring', 'small'];
