@@ -13,11 +13,11 @@
   /* border-top-left-radius: 48px; */
   /* border-bottom-left-radius: 48px; */
 }
-.line1::before{
-  content: "";
+.line1::before {
+  content: '';
   width: 15px;
   height: 15px;
-  background-color:red;
+  background-color: red;
   z-index: 1;
   position: absolute;
   top: 90px;

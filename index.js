@@ -3814,6 +3814,7 @@ function threeNumberSort(array, order) {
 
 //   console.log(fingers, n);
 // }
+
 function fingerNumbers(n) {
   let largestNumber = 9,
     traverseFromLast = true;
@@ -3833,3 +3834,216 @@ function fingerNumbers(n) {
 }
 
 // console.log(fingerNumbers(97));
+
+function radixSort() {}
+
+// [1556, 4, 3556, 593, 408, 4386, 902, 7, 8157, 86, 9637, 29];
+
+class MinMaxStack {
+  constructor() {
+    this.stack = [];
+  }
+
+  peek() {
+    // Write your code here.
+    return this.stack[0];
+  }
+
+  pop() {
+    // Write your code here.
+    return this.stack.shift();
+  }
+
+  push(number) {
+    // Write your code here.
+    return this.stack.unshift(number);
+  }
+
+  getMin() {
+    // Write your code here.
+    this.stack.sort((a, b) => a - b);
+    return this.stack[0];
+  }
+
+  getMax() {
+    // Write your code here.
+    this.stack.sort((a, b) => a - b);
+    return this.stack[this.stack.length - 1];
+  }
+}
+
+// let newInstance = new MinMaxStack();
+// console.log(newInstance.push(4));
+// console.log(newInstance.push(5));
+// console.log(newInstance);
+
+function minimumCharactersForWords(words) {
+  let str = words[0];
+  console.log(str);
+  for (let i = 1; i < words.length; i++) {
+    for (let j = 0; j < words[i].length; j++) {
+      if (str.includes(words[i][j])) {
+      }
+    }
+  }
+}
+
+// minimumCharactersForWords(['this', 'that', 'did', 'deed', 'them!', 'a']);
+
+function findClosestValueInBst(tree, target) {
+  console.log(tree);
+}
+// findClosestValueInBst(
+//   {
+//     tree: {
+//       nodes: [
+//         { id: '10', left: '5', right: '15', value: 10 },
+//         { id: '15', left: '13', right: '22', value: 15 },
+//         { id: '22', left: null, right: null, value: 22 },
+//         { id: '13', left: null, right: '14', value: 13 },
+//         { id: '14', left: null, right: null, value: 14 },
+//         { id: '5', left: '2', right: '5-2', value: 5 },
+//         { id: '5-2', left: null, right: null, value: 5 },
+//         { id: '2', left: '1', right: null, value: 2 },
+//         { id: '1', left: null, right: null, value: 1 },
+//       ],
+//       root: '10',
+//     },
+//     target: 12,
+//   },
+//   13
+// );
+
+class BST {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
+
+  insert(value) {
+    let newNode = new BST(value);
+    let current = this.value;
+    let leftNode = this.left;
+    let rightNode = this.right;
+    while (current) {
+      if (value > current) {
+        //right traverse
+        if (!rightNode) {
+          rightNode = newNode;
+          return this;
+        } else {
+          current = rightNode.value;
+          rightNode = rightNode.right;
+          leftNode = rightNode.left;
+        }
+      } else if (value < current) {
+        //left traverse
+        if (!leftNode) {
+          leftNode = newNode;
+          return this;
+        } else {
+          current = leftNode.value;
+          rightNode = leftNode.right;
+          leftNode = leftNode.left;
+        }
+      }
+    }
+    return this;
+    // return value;
+  }
+
+  contains(value) {
+    // Write your code here.
+  }
+
+  remove(value) {
+    // Write your code here.
+    // Do not edit the return statement of this method.
+    // return this;
+  }
+}
+
+// let bst = new BST();
+// console.log(bst.insert(10));
+// console.log(bst.insert(12));
+
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
+}
+
+class BinarySearchTree {
+  constructor() {
+    this.root = null;
+  }
+
+  insert(value) {
+    let newNode = new Node(value);
+    if (!this.root) {
+      this.root = newNode;
+      return this.root;
+    }
+    let current = this.root;
+    while (current) {
+      if (value > current.value) {
+        if (!current.right) {
+          current.right = new Node(value);
+          return this.root;
+        } else {
+          current = current.right;
+        }
+      } else if (value < current.value) {
+        if (!current.left) {
+          current.left = new Node(value);
+          return this.root;
+        } else {
+          current = current.left;
+        }
+      }
+    }
+  }
+
+  remove() {}
+
+  contains(value) {
+    let current = this.root;
+    while (current) {
+      if (value > current.value) {
+        if (!current.right && current.value < value) {
+          return false;
+        }
+        current = current.right;
+      } else if (value < current.value) {
+        if (!current.left && current.value > value) {
+          return false;
+        }
+        current = current.left;
+      } else if (value === current.value) {
+        return true;
+      }
+    }
+  }
+}
+
+let bst = new BinarySearchTree();
+// console.log(bst.insert(30));
+// console.log(bst.insert(40));
+// console.log(bst.insert(25));
+// console.log(bst.insert(29));
+// console.log(bst);
+bst.insert(8);
+bst.insert(3);
+bst.insert(10);
+bst.insert(1);
+bst.insert(6);
+bst.insert(14);
+bst.insert(4);
+bst.insert(7);
+bst.insert(13);
+// console.log(bst.contains(6));
+// console.log(bst.contains(1000));
+console.log(bst.root);
