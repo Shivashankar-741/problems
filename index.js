@@ -4051,7 +4051,7 @@ bst.insert(13);
 console.log(bst.root);
 */
 
-const radius = [4, 5, 1, 9];
+// const radius = [4, 5, 1, 9];
 
 Array.prototype.factoryFunc = function (cb) {
   let output = [];
@@ -4069,7 +4069,7 @@ Array.prototype.factoryFunc = function (cb) {
 // console.log(calculateCircumference);
 // console.log(calculateDiameter);
 
-const radius = [4, 9, 10, 2];
+const radius = [12, 4, 9, 10, 2, 24];
 
 const factoryFunction = function (logic, radius) {
   const output = [];
@@ -4083,3 +4083,143 @@ const factoryFunction = function (logic, radius) {
 // let calculateCircumference = factoryFunction((r) => 2 * Math.PI * r, radius);
 // let calculateDiameter = factoryFunction((r) => 2 * r, radius);
 // console.log(calculateArea, calculateCircumference, calculateDiameter);
+
+// radius.filter();
+// console.log('hello node');
+// console.log(this);
+// console.log(window);
+
+// const findSum = radius.reduce((acc, cur) => {
+//   console.log(acc);
+//   acc = acc + cur;
+//   return acc;
+// }, 0);
+
+function findMax(radius) {
+  let max = 0;
+
+  radius.forEach((r) => {
+    if (r > max) {
+      max = r;
+    }
+  });
+
+  console.log(max);
+}
+
+// findMax(radius);
+
+const findMaxReduce = radius.reduce((acc, cur) => {
+  if (cur > acc) {
+    acc = cur;
+  }
+  return acc;
+}, 0);
+
+// console.log(findMaxReduce);
+
+const users = [{ age: 26 }, { age: 75 }, { age: 50 }, { age: 26 }];
+
+const groupingAge = users.reduce((acc, user) => {
+  if (acc[user.age]) {
+    acc[user.age] = acc[user.age] + 1;
+  } else {
+    acc[user.age] = 1;
+  }
+  return acc;
+}, {});
+// console.log(groupingAge);
+
+class Person {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+    this.nationality = 'Indian';
+  }
+
+  isAboveEighteen() {
+    if (this.age >= 18) return `${this.name} is above 18`;
+    else {
+      return 'below 18';
+    }
+  }
+}
+
+class Employee extends Person {
+  constructor(name, age, salary) {
+    super(name, age);
+    this.salary = salary;
+  }
+}
+
+class Details extends Employee {
+  constructor(name, age, salary, company, location, birthDate) {
+    super(name, age, salary);
+    this.company = company;
+    this.location = location;
+    this.birthDate = birthDate;
+  }
+
+  changeDetail() {
+    this.name = 'Shiva';
+    this.age = 17;
+  }
+}
+
+// const s = new Person('Shiva shankar', 20);
+// const k = new Person('Karthikeyan', 24);
+// console.log(s);
+// console.log(s.isAboveEighteen());
+// console.log(k);
+
+// const salaryOfS = new Employee(s.name, s.age, 65000);
+// const salaryOfK = new Employee(k.name, k.age, 110000);
+// console.log(salaryOfS);
+// console.log(salaryOfK);
+
+// const detailOfS = new Details('Shiva shankar', 20, 65000, 'Atom EI', 'Chennai', 22);
+// console.log(detailOfS.isAboveEighteen());
+// console.log(detailOfS);
+// detailOfS.changeDetail();
+// console.log(detailOfS.isAboveEighteen());
+// console.log(detailOfS);
+
+function funcPerson(name, age) {
+  this.name = name;
+  this.age = age;
+  this.nationality = 'Indian';
+}
+
+funcPerson.prototype.getDetails = function () {
+  console.log(this);
+  return `${this.name} from ${this.nationality}`;
+};
+
+let karthik = new funcPerson('Karthik', 24);
+// console.log(karthik.getDetails());
+// console.log(karthik);
+
+function funcDetails(name, age, salary, company, location) {
+  funcPerson.call(this, name, age);
+  this.salary = salary;
+  this.company = company;
+  this.location = location;
+}
+
+Object.setPrototypeOf(funcDetails.prototype, funcPerson.prototype);
+let karthikDetails = new funcDetails('karthik', 24, 110000, 'Sketchnote', 'chennai');
+// console.log(karthikDetails);
+// console.log(karthikDetails.getDetails());
+
+function funcJob(name, age, company, location, job) {
+  // console.log(this);
+  funcPerson.call(this, name, age);
+  // funcDetails.call(this, company, location);
+  this.job = job;
+}
+
+Object.setPrototypeOf(funcJob.prototype, funcDetails.prototype);
+
+let karthikJob = new funcJob('karthiks', 24, 'Sketchnote', 'Mumbai', 'Full stack developer');
+// console.log(karthikJob);
+// console.log(karthikJob.getDetails());
