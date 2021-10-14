@@ -4035,6 +4035,8 @@ let bst = new BinarySearchTree();
 // console.log(bst.insert(25));
 // console.log(bst.insert(29));
 // console.log(bst);
+
+/*
 bst.insert(8);
 bst.insert(3);
 bst.insert(10);
@@ -4047,3 +4049,37 @@ bst.insert(13);
 // console.log(bst.contains(6));
 // console.log(bst.contains(1000));
 console.log(bst.root);
+*/
+
+const radius = [4, 5, 1, 9];
+
+Array.prototype.factoryFunc = function (cb) {
+  let output = [];
+  this.forEach((r) => {
+    output.push(cb(r));
+  });
+  return output;
+};
+
+// let calculateArea = radius.factoryFunc((radius) => Math.PI * radius * radius);
+// let calculateCircumference = radius.factoryFunc((radius) => 2 * Math.PI * radius);
+// let calculateDiameter = radius.factoryFunc((radius) => 2 * radius);
+
+// console.log(calculateArea);
+// console.log(calculateCircumference);
+// console.log(calculateDiameter);
+
+const radius = [4, 9, 10, 2];
+
+const factoryFunction = function (logic, radius) {
+  const output = [];
+  radius.forEach((r) => {
+    output.push(logic(r));
+  });
+  return output;
+};
+//
+// const calculateArea = factoryFunction((r) => Math.PI * r * r, radius);
+// let calculateCircumference = factoryFunction((r) => 2 * Math.PI * r, radius);
+// let calculateDiameter = factoryFunction((r) => 2 * r, radius);
+// console.log(calculateArea, calculateCircumference, calculateDiameter);
