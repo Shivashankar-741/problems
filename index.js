@@ -4360,7 +4360,7 @@ Function.prototype.myApply = function (...args) {
   return obj.func(...strs);
 };
 
-const output = printUser.myApply(name, ['Kol', 'WB', 'IN', 'asdf']);
-console.log(output);
+// const output = printUser.myApply(name, ['Kol', 'WB', 'IN', 'asdf']);
+// console.log(output);
 
 //Expected Output: "Mary Jane from Kol, WB, IN"
