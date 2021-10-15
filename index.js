@@ -4223,3 +4223,144 @@ Object.setPrototypeOf(funcJob.prototype, funcDetails.prototype);
 let karthikJob = new funcJob('karthiks', 24, 'Sketchnote', 'Mumbai', 'Full stack developer');
 // console.log(karthikJob);
 // console.log(karthikJob.getDetails());
+
+// write polyfill for filter, map and foreach
+
+// filter
+let arr = [2, 4, 1, 3, 98, 12, 76];
+Array.prototype.filteredArray = function (cb) {
+  let filteredArray = [];
+  this.forEach((el) => {
+    if (cb(el)) {
+      filteredArray.push(el);
+    }
+  });
+  return filteredArray;
+};
+
+// console.log(arr.filteredArray((el) => el > 20));
+
+// map
+
+Array.prototype.mapArray = function (cb) {
+  let mapArray = [];
+  this.forEach((el) => mapArray.push(cb(el)));
+  return mapArray;
+};
+
+// console.log(arr.mapArray((el) => Math.pow(el, 2)));
+
+// foreach
+
+Array.prototype.foreachArray = function (cb) {
+  for (let i = 0; i < this.length; i++) {
+    cb(this[i]);
+  }
+};
+
+// arr.foreachArray((el) => console.log(el));
+// arr.forEach((el) => console.log(el));
+
+// polyfill for call ,apply ,and bind
+
+// bind
+// var pokemon = {
+//   firstname: 'Pika',
+//   lastname: 'Chu ',
+//   getPokeName: function () {
+//     var fullname = this.firstname + ' ' + this.lastname;
+//     return fullname;
+//   },
+// };
+
+// var pokemonName = function () {
+//   console.log(this.getPokeName() + 'I choose you!');
+// };
+
+// var logPokemon = pokemonName.bind(pokemon); // creates new object and binds pokemon. 'this' of pokemon === pokemon now
+// console.log(logPokemon);
+// logPokemon(); // 'Pika Chu I choose you!'
+
+let person = {
+  name: 'Shiva shankar',
+  location: 'Chennai',
+  role: 'Front end developer',
+  details: function () {
+    return `${this.name} from ${this.location} working as ${this.role}`;
+  },
+};
+
+Function.prototype.callFunc = function (...args) {
+  let obj = this;
+  let params = args.slice(1);
+  console.log(args, params);
+  return obj.apply(args[0], params);
+};
+
+let personDetails = function (place, nextPlace, winter) {
+  return this.details() + 'would like to go ' + place + ' and ' + nextPlace + 'and' + winter;
+};
+
+// console.log(personDetails.callFunc(person, 'chennai', 'ooty', 'kanchee'));
+
+// Function.prototype.bindFunc = function (...args) {
+//   let slice = args.slice(1);
+//   let obj = this;
+//   return function (winter) {
+//     slice.push(winter);
+//     return obj.apply(args[0], slice);
+//   };
+// };
+
+// let logPerson = personDetails.bindFunc(person, 'ladakh', 'tripura', 'kochi');
+// console.log(logPerson('ooty'));
+
+// const name = {
+//   firstName: 'Mary',
+//   lastName: 'Jane',
+// };
+
+// function printUser(address, state, country) {
+//   return `${this.firstName} ${this.lastName} from ${address}, ${state}, ${country}`;
+// }
+
+// Function.prototype.myCall = function (...args) {
+//   console.log(args);
+//   if (typeof this !== 'function') {
+//     throw new Error(`${this}.myCall is not a function`);
+//   }
+//   const params = [...args];
+//   const context = params[0];
+//   console.log(context);
+//   const otherArgs = params.slice(1);
+//   context.fun = this;
+//   return context.fun(...otherArgs);
+// };
+
+// const output = printUser.myCall(name, 'Kol', 'WB', 'IN');
+// console.log(output);
+
+//Expected Output: "Mary Jane from Kol, WB, IN"
+
+const name = {
+  firstName: 'Mary',
+  lastName: 'Jane',
+};
+
+function printUser(address, state, country, asd) {
+  return `${this.firstName} ${this.lastName} from ${address}, ${state}, ${country} ${asd}`;
+}
+
+Function.prototype.myApply = function (...args) {
+  // console.log(args);
+  let obj = args[0];
+  let strs = args[1];
+  console.log(obj);
+  obj.func = this;
+  return obj.func(...strs);
+};
+
+const output = printUser.myApply(name, ['Kol', 'WB', 'IN', 'asdf']);
+console.log(output);
+
+//Expected Output: "Mary Jane from Kol, WB, IN"
