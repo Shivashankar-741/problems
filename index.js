@@ -1,12 +1,12 @@
-var findKthPositive = function (arr, k) {
-  const arr1 = [];
-  for (let i = 1; i <= arr.length + k; i++) {
-    if (!arr.includes(i)) {
-      arr1.push(i);
-    }
-  }
-  console.log(arr1[k - 1]);
-};
+// var findKthPositive = function (arr, k) {
+//   const arr1 = [];
+//   for (let i = 1; i <= arr.length + k; i++) {
+//     if (!arr.includes(i)) {
+//       arr1.push(i);
+//     }
+//   }
+//   console.log(arr1[k - 1]);
+// };
 
 // findKthPositive([2, 3, 4, 7, 11], 5);
 // findKthPositive([1, 2, 3, 4], 2);
@@ -220,20 +220,20 @@ function main(input) {
 }
 */
 
-function libraryFine(d1, m1, y1, d2, m2, y2) {
-  let fine = 0;
+// function libraryFine(d1, m1, y1, d2, m2, y2) {
+//   let fine = 0;
 
-  if (m1 === m2 && y1 === y2 && d1 > d2) {
-    fine = (d1 - d2) * 15;
-  } else if (m1 > m2 && y1 === y2) {
-    fine = (m1 - m2) * 500;
-  } else if (y1 > y2) {
-    fine = 10000;
-  } else if (m1 === m2 && y1 === y2 && d1 < d2) {
-    fine = 0;
-  }
-  console.log(fine);
-}
+//   if (m1 === m2 && y1 === y2 && d1 > d2) {
+//     fine = (d1 - d2) * 15;
+//   } else if (m1 > m2 && y1 === y2) {
+//     fine = (m1 - m2) * 500;
+//   } else if (y1 > y2) {
+//     fine = 10000;
+//   } else if (m1 === m2 && y1 === y2 && d1 < d2) {
+//     fine = 0;
+//   }
+//   console.log(fine);
+// }
 
 // libraryFine(14, 7, 2018, 5, 7, 2018);
 // libraryFine(9, 6, 2015, 6, 6, 2015);
@@ -250,30 +250,30 @@ function libraryFine(d1, m1, y1, d2, m2, y2) {
 // }
 // findDigits(124);
 
-function extraLongFactorials(n) {
-  let fact = 1;
+// function extraLongFactorials(n) {
+//   let fact = 1;
 
-  for (let i = n; i > 0; i--) {
-    fact *= i;
-  }
+//   for (let i = n; i > 0; i--) {
+//     fact *= i;
+//   }
 
-  if (Math.abs(fact) < 1.0) {
-    var e = parseInt(fact.toString().split('e-')[1]);
-    if (e) {
-      fact *= Math.pow(10, e - 1);
-      fact = '0.' + new Array(e).join('0') + fact.toString().substring(2);
-    }
-  } else {
-    var e = parseInt(fact.toString().split('+')[1]);
-    if (e > 20) {
-      e -= 20;
-      fact /= Math.pow(10, e);
-      fact += new Array(e + 1).join('0');
-    }
-  }
+//   if (Math.abs(fact) < 1.0) {
+//     var e = parseInt(fact.toString().split('e-')[1]);
+//     if (e) {
+//       fact *= Math.pow(10, e - 1);
+//       fact = '0.' + new Array(e).join('0') + fact.toString().substring(2);
+//     }
+//   } else {
+//     var e = parseInt(fact.toString().split('+')[1]);
+//     if (e > 20) {
+//       e -= 20;
+//       fact /= Math.pow(10, e);
+//       fact += new Array(e + 1).join('0');
+//     }
+//   }
 
-  return parseInt(fact);
-}
+//   return parseInt(fact);
+// }
 
 // console.log(extraLongFactorials(25));
 
@@ -310,27 +310,27 @@ function extraLongFactorials(n) {
 //   console.log(n, cases);
 // }
 
-function countApplesAndOranges(s, t, a, b, apples, oranges) {
-  apples = apples.map((el) => el + a);
-  oranges = oranges.map((el) => el + b);
+// function countApplesAndOranges(s, t, a, b, apples, oranges) {
+//   apples = apples.map((el) => el + a);
+//   oranges = oranges.map((el) => el + b);
 
-  let appleFellCount = 0;
-  let orangeFellCount = 0;
+//   let appleFellCount = 0;
+//   let orangeFellCount = 0;
 
-  for (let i = 0; i < apples.length; i++) {
-    if (apples[i] >= s && apples[i] <= t) {
-      appleFellCount++;
-    }
-  }
+//   for (let i = 0; i < apples.length; i++) {
+//     if (apples[i] >= s && apples[i] <= t) {
+//       appleFellCount++;
+//     }
+//   }
 
-  for (let j = 0; j < oranges.length; j++) {
-    if (oranges[j] >= s && oranges[j] <= t) {
-      orangeFellCount++;
-    }
-  }
+//   for (let j = 0; j < oranges.length; j++) {
+//     if (oranges[j] >= s && oranges[j] <= t) {
+//       orangeFellCount++;
+//     }
+//   }
 
-  console.log(appleFellCount, orangeFellCount);
-}
+//   console.log(appleFellCount, orangeFellCount);
+// }
 
 // countApplesAndOranges(7, 10, 4, 12, [2, 3, -4], [3, -2, -4]);
 
@@ -2207,83 +2207,83 @@ exports.findClosestValueInBst = findClosestValueInBst;
 //   console.log(arr);
 //   console.log(rem);
 // }
-function smallestDifference(arrayOne, arrayTwo) {
-  const arr = [];
-  let rem;
-  for (let i = 0; i < arrayOne.length; i++) {
-    for (let j = 0; j < arrayTwo.length; j++) {
-      if (Math.sign(arrayOne[i]) === 1 && Math.sign(arrayTwo[j]) === 1) {
-        if (rem === undefined) {
-          rem = Math.abs(arrayOne[i] - arrayTwo[j]);
-          arr[0] = arrayOne[i];
-          arr[1] = arrayTwo[j];
-        } else {
-          if (Math.abs(arrayOne[i] - arrayTwo[j]) < rem) {
-            rem = Math.abs(arrayOne[i] - arrayTwo[j]);
-            arr[0] = arrayOne[i];
-            arr[1] = arrayTwo[j];
-          }
-        }
-      } else if (Math.sign(arrayOne[i]) === -1 && Math.sign(arrayTwo[j]) === -1) {
-        if (rem === undefined) {
-          rem = Math.abs(Math.abs(arrayOne[i]) - Math.abs(arrayTwo[j]));
-          arr[0] = arrayOne[i];
-          arr[1] = arrayTwo[j];
-        } else {
-          if (Math.abs(Math.abs(arrayOne[i]) - Math.abs(arrayTwo[j])) < rem) {
-            rem = Math.abs(Math.abs(arrayOne[i]) - Math.abs(arrayTwo[j]));
-            arr[0] = arrayOne[i];
-            arr[1] = arrayTwo[j];
-          }
-        }
-      } else if (Math.sign(arrayOne[i]) === -1 && Math.sign(arrayTwo[j]) === 1) {
-        if (rem === undefined) {
-          rem = Math.abs(arrayOne[i]) + Math.abs(arrayTwo[j]);
-          arr[0] = arrayOne[i];
-          arr[1] = arrayTwo[j];
-        } else {
-          if (Math.abs(arrayOne[i]) + Math.abs(arrayTwo[j]) < rem) {
-            rem = Math.abs(arrayOne[i]) + Math.abs(arrayTwo[j]);
-            arr[0] = arrayOne[i];
-            arr[1] = arrayTwo[j];
-          }
-        }
-      } else if (Math.sign(arrayOne[i]) === 1 && Math.sign(arrayTwo[j]) === -1) {
-        if (rem === undefined) {
-          rem = Math.abs(arrayOne[i]) + Math.abs(arrayTwo[j]);
-          arr[0] = arrayOne[i];
-          arr[1] = arrayTwo[j];
-        } else {
-          if (Math.abs(arrayOne[i]) + Math.abs(arrayTwo[j]) < rem) {
-            rem = Math.abs(arrayOne[i]) + Math.abs(arrayTwo[j]);
-            arr[0] = arrayOne[i];
-            arr[1] = arrayTwo[j];
-          }
-        }
-      }
-    }
-  }
-  console.log(arr);
-  console.log(rem);
-}
+// function smallestDifference(arrayOne, arrayTwo) {
+//   const arr = [];
+//   let rem;
+//   for (let i = 0; i < arrayOne.length; i++) {
+//     for (let j = 0; j < arrayTwo.length; j++) {
+//       if (Math.sign(arrayOne[i]) === 1 && Math.sign(arrayTwo[j]) === 1) {
+//         if (rem === undefined) {
+//           rem = Math.abs(arrayOne[i] - arrayTwo[j]);
+//           arr[0] = arrayOne[i];
+//           arr[1] = arrayTwo[j];
+//         } else {
+//           if (Math.abs(arrayOne[i] - arrayTwo[j]) < rem) {
+//             rem = Math.abs(arrayOne[i] - arrayTwo[j]);
+//             arr[0] = arrayOne[i];
+//             arr[1] = arrayTwo[j];
+//           }
+//         }
+//       } else if (Math.sign(arrayOne[i]) === -1 && Math.sign(arrayTwo[j]) === -1) {
+//         if (rem === undefined) {
+//           rem = Math.abs(Math.abs(arrayOne[i]) - Math.abs(arrayTwo[j]));
+//           arr[0] = arrayOne[i];
+//           arr[1] = arrayTwo[j];
+//         } else {
+//           if (Math.abs(Math.abs(arrayOne[i]) - Math.abs(arrayTwo[j])) < rem) {
+//             rem = Math.abs(Math.abs(arrayOne[i]) - Math.abs(arrayTwo[j]));
+//             arr[0] = arrayOne[i];
+//             arr[1] = arrayTwo[j];
+//           }
+//         }
+//       } else if (Math.sign(arrayOne[i]) === -1 && Math.sign(arrayTwo[j]) === 1) {
+//         if (rem === undefined) {
+//           rem = Math.abs(arrayOne[i]) + Math.abs(arrayTwo[j]);
+//           arr[0] = arrayOne[i];
+//           arr[1] = arrayTwo[j];
+//         } else {
+//           if (Math.abs(arrayOne[i]) + Math.abs(arrayTwo[j]) < rem) {
+//             rem = Math.abs(arrayOne[i]) + Math.abs(arrayTwo[j]);
+//             arr[0] = arrayOne[i];
+//             arr[1] = arrayTwo[j];
+//           }
+//         }
+//       } else if (Math.sign(arrayOne[i]) === 1 && Math.sign(arrayTwo[j]) === -1) {
+//         if (rem === undefined) {
+//           rem = Math.abs(arrayOne[i]) + Math.abs(arrayTwo[j]);
+//           arr[0] = arrayOne[i];
+//           arr[1] = arrayTwo[j];
+//         } else {
+//           if (Math.abs(arrayOne[i]) + Math.abs(arrayTwo[j]) < rem) {
+//             rem = Math.abs(arrayOne[i]) + Math.abs(arrayTwo[j]);
+//             arr[0] = arrayOne[i];
+//             arr[1] = arrayTwo[j];
+//           }
+//         }
+//       }
+//     }
+//   }
+//   console.log(arr);
+//   console.log(rem);
+// }
 // smallestDifference([0, 20], [21, -2]);
 // smallestDifference([-1, 5, 10, 20, 28, 3], [26, 134, 135, 15, 17]);
 
-function largestRange(array) {
-  const sortedArray = array.sort((a, b) => a - b);
-  let arr = [[]];
-  let rem = 0;
-  for (let i = sortedArray[0]; i <= sortedArray[sortedArray.length - 1]; i++) {
-    if (sortedArray.includes(i)) {
-      arr[rem].push(i);
-    } else {
-      arr.push([]);
-      rem += 1;
-    }
-  }
-  const largeRange = arr.sort((a, b) => b.length - a.length);
-  console.log([largeRange[0][0], largeRange[0][largeRange[0].length - 1]]);
-}
+// function largestRange(array) {
+//   const sortedArray = array.sort((a, b) => a - b);
+//   let arr = [[]];
+//   let rem = 0;
+//   for (let i = sortedArray[0]; i <= sortedArray[sortedArray.length - 1]; i++) {
+//     if (sortedArray.includes(i)) {
+//       arr[rem].push(i);
+//     } else {
+//       arr.push([]);
+//       rem += 1;
+//     }
+//   }
+//   const largeRange = arr.sort((a, b) => b.length - a.length);
+//   console.log([largeRange[0][0], largeRange[0][largeRange[0].length - 1]]);
+// }
 
 // largestRange([1, 1, 2, 11, 3, 0, 15, 5, 2, 4, 10, 7, 12, 6]);
 
@@ -2887,914 +2887,914 @@ tree.insert(7);
 
 // condition for binarysearch is the array should be the sorted array
 
-function binarySearch(arr, elem) {
-  var start = 0;
-  var end = arr.length - 1;
-  var middle = Math.floor((start + end) / 2);
-  while (arr[middle] !== elem && start <= end) {
-    if (elem < arr[middle]) {
-      end = middle - 1;
-    } else {
-      start = middle + 1;
-    }
-    middle = Math.floor((start + end) / 2);
-  }
-  if (arr[middle] === elem) {
-    return middle;
-  }
-  return -1;
-}
+// function binarySearch(arr, elem) {
+//   var start = 0;
+//   var end = arr.length - 1;
+//   var middle = Math.floor((start + end) / 2);
+//   while (arr[middle] !== elem && start <= end) {
+//     if (elem < arr[middle]) {
+//       end = middle - 1;
+//     } else {
+//       start = middle + 1;
+//     }
+//     middle = Math.floor((start + end) / 2);
+//   }
+//   if (arr[middle] === elem) {
+//     return middle;
+//   }
+//   return -1;
+// }
 
-// console.log(binarySearch([0, 1, 21, 33, 45, 45, 61, 71, 72, 73], 33));
+// // console.log(binarySearch([0, 1, 21, 33, 45, 45, 61, 71, 72, 73], 33));
 
-function fourNumberSum(array, targetSum) {
-  const result = [];
-  const sortedArray = array.sort((a, b) => a - b);
-  for (let i = 0; i < sortedArray.length; i++) {
-    for (let j = i; j < sortedArray.length; j++) {
-      for (let k = j; k < sortedArray.length; k++) {
-        for (let l = k; l < sortedArray.length; l++) {
-          if (
-            array[i] + array[j] + array[k] + array[l] === targetSum &&
-            array[i] !== array[j] &&
-            array[j] !== array[k] &&
-            array[k] !== array[l]
-          ) {
-            result.push([array[i], array[j], array[k], array[l]]);
-          }
-        }
-      }
-    }
-  }
-  return result;
-}
+// function fourNumberSum(array, targetSum) {
+//   const result = [];
+//   const sortedArray = array.sort((a, b) => a - b);
+//   for (let i = 0; i < sortedArray.length; i++) {
+//     for (let j = i; j < sortedArray.length; j++) {
+//       for (let k = j; k < sortedArray.length; k++) {
+//         for (let l = k; l < sortedArray.length; l++) {
+//           if (
+//             array[i] + array[j] + array[k] + array[l] === targetSum &&
+//             array[i] !== array[j] &&
+//             array[j] !== array[k] &&
+//             array[k] !== array[l]
+//           ) {
+//             result.push([array[i], array[j], array[k], array[l]]);
+//           }
+//         }
+//       }
+//     }
+//   }
+//   return result;
+// }
 
-function threeNumberSum(array, targetSum) {
-  // Write your code here.
-  const result = [];
-  const sortedArray = array.sort((a, b) => a - b); //[-8, -6, 1, 2, 3, 5, 6, 12]
-  for (let i = 0; i < sortedArray.length; i++) {
-    for (let j = i; j < sortedArray.length; j++) {
-      for (let k = j; k < sortedArray.length; k++) {
-        if (
-          array[i] + array[j] + array[k] === targetSum &&
-          array[i] !== array[j] &&
-          array[j] !== array[k]
-        ) {
-          result.push([array[i], array[j], array[k]].sort((a, b) => a - b));
-        }
-      }
-    }
-  }
-  return result;
-}
-// threeNumberSum([12, 3, 1, 2, -6, 5, -8, 6], 0);
+// function threeNumberSum(array, targetSum) {
+//   // Write your code here.
+//   const result = [];
+//   const sortedArray = array.sort((a, b) => a - b); //[-8, -6, 1, 2, 3, 5, 6, 12]
+//   for (let i = 0; i < sortedArray.length; i++) {
+//     for (let j = i; j < sortedArray.length; j++) {
+//       for (let k = j; k < sortedArray.length; k++) {
+//         if (
+//           array[i] + array[j] + array[k] === targetSum &&
+//           array[i] !== array[j] &&
+//           array[j] !== array[k]
+//         ) {
+//           result.push([array[i], array[j], array[k]].sort((a, b) => a - b));
+//         }
+//       }
+//     }
+//   }
+//   return result;
+// }
+// // threeNumberSum([12, 3, 1, 2, -6, 5, -8, 6], 0);
 
-function isMonotonic(array) {
-  // Write your code here.
-  let temp;
-  for (let i = 1; i < array.length; i++) {
-    if (array[0] !== array[i]) {
-      temp = array[i] > array[0];
-      break;
-      //temp=>// false=>decreasing array // true=>increasing array
-    }
-  }
+// function isMonotonic(array) {
+//   // Write your code here.
+//   let temp;
+//   for (let i = 1; i < array.length; i++) {
+//     if (array[0] !== array[i]) {
+//       temp = array[i] > array[0];
+//       break;
+//       //temp=>// false=>decreasing array // true=>increasing array
+//     }
+//   }
 
-  if (temp) {
-    for (let i = 1; i < array.length; i++) {
-      if (array[i] < array[i - 1]) {
-        return false;
-      }
-    }
-    return true;
-  } else {
-    for (let i = 1; i < array.length; i++) {
-      if (array[i] > array[i - 1]) {
-        return false;
-      }
-    }
-    return true;
-  }
-}
+//   if (temp) {
+//     for (let i = 1; i < array.length; i++) {
+//       if (array[i] < array[i - 1]) {
+//         return false;
+//       }
+//     }
+//     return true;
+//   } else {
+//     for (let i = 1; i < array.length; i++) {
+//       if (array[i] > array[i - 1]) {
+//         return false;
+//       }
+//     }
+//     return true;
+//   }
+// }
 
-// isMonotonic([-1, -5, -10, -1100, -1100, -1101, -1102, -9001]);
+// // isMonotonic([-1, -5, -10, -1100, -1100, -1101, -1102, -9001]);
 
-function minRewards(scores) {
-  let arr = [];
-  for (let i = 0; i < scores.length; i++) {
-    if (i === 0) {
-      arr.push(1);
-    } else {
-      if (scores[i] < scores[i - 1]) {
-        arr.push(1);
-        for (let j = arr.length - 2; j >= 0; j--) {
-          if (arr[j + 1] + 1 >= arr[j]) {
-            arr[j] = arr[j + 1] + 1;
-          } else {
-            break;
-          }
-        }
-      } else if (scores[i] > scores[i - 1]) {
-        arr.push(arr[i - 1] + 1);
-      }
-    }
-  }
-  console.log(arr);
-  console.log(arr.reduce((a, b) => a + b, 0));
-}
+// function minRewards(scores) {
+//   let arr = [];
+//   for (let i = 0; i < scores.length; i++) {
+//     if (i === 0) {
+//       arr.push(1);
+//     } else {
+//       if (scores[i] < scores[i - 1]) {
+//         arr.push(1);
+//         for (let j = arr.length - 2; j >= 0; j--) {
+//           if (arr[j + 1] + 1 >= arr[j]) {
+//             arr[j] = arr[j + 1] + 1;
+//           } else {
+//             break;
+//           }
+//         }
+//       } else if (scores[i] > scores[i - 1]) {
+//         arr.push(arr[i - 1] + 1);
+//       }
+//     }
+//   }
+//   console.log(arr);
+//   console.log(arr.reduce((a, b) => a + b, 0));
+// }
 
-// // minRewards([8, 4, 2, 1, 3, 6, 7, 9, 5]);
-// minRewards([0, 4, 2, 1, 3]);
+// // // minRewards([8, 4, 2, 1, 3, 6, 7, 9, 5]);
+// // minRewards([0, 4, 2, 1, 3]);
 
-async function getStockInformation(date) {
-  let result;
+// async function getStockInformation(date) {
+//   let result;
 
-  try {
-    let response = await fetch(`https://jsonmock.hackerrank.com/api/stocks?date=${date}`);
-    result = await response.json();
-  } catch (error) {
-    result = [];
-  }
+//   try {
+//     let response = await fetch(`https://jsonmock.hackerrank.com/api/stocks?date=${date}`);
+//     result = await response.json();
+//   } catch (error) {
+//     result = [];
+//   }
 
-  console.log(result);
-  console.log(result.data);
-  console.log(result.data[0].open);
-  console.log(result.data[0].high);
-  console.log(result.data[0].low);
-  console.log(result.data[0].close);
-}
-// getStockInformation('5-January-2000');
+//   console.log(result);
+//   console.log(result.data);
+//   console.log(result.data[0].open);
+//   console.log(result.data[0].high);
+//   console.log(result.data[0].low);
+//   console.log(result.data[0].close);
+// }
+// // getStockInformation('5-January-2000');
 
-function preprocessDate(dates) {
-  // console.log(dates.length);
-  let months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-  if (dates.length === 12) {
-    let date = `0${dates[0]}`;
-    let year = `${dates[8]}${dates[9]}${dates[10]}${dates[11]}`;
-    let month = `${dates[4]}${dates[5]}${dates[6]}`;
+// function preprocessDate(dates) {
+//   // console.log(dates.length);
+//   let months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+//   if (dates.length === 12) {
+//     let date = `0${dates[0]}`;
+//     let year = `${dates[8]}${dates[9]}${dates[10]}${dates[11]}`;
+//     let month = `${dates[4]}${dates[5]}${dates[6]}`;
 
-    let monthIndex = months.indexOf(month) + 1;
-    if (monthIndex <= 9) {
-      monthIndex = `0${monthIndex}`;
-    }
+//     let monthIndex = months.indexOf(month) + 1;
+//     if (monthIndex <= 9) {
+//       monthIndex = `0${monthIndex}`;
+//     }
 
-    console.log(`${year}-${monthIndex}-${date}`);
-  } else if (dates.length === 13) {
-    let date = `${dates[0]}${dates[1]}`;
-    let year = `${dates[9]}${dates[10]}${dates[11]}${dates[12]}`;
-    let month = `${dates[5]}${dates[6]}${dates[7]}`;
+//     console.log(`${year}-${monthIndex}-${date}`);
+//   } else if (dates.length === 13) {
+//     let date = `${dates[0]}${dates[1]}`;
+//     let year = `${dates[9]}${dates[10]}${dates[11]}${dates[12]}`;
+//     let month = `${dates[5]}${dates[6]}${dates[7]}`;
 
-    let monthIndex = months.indexOf(month) + 1;
-    if (monthIndex <= 9) {
-      monthIndex = `0${monthIndex}`;
-    }
+//     let monthIndex = months.indexOf(month) + 1;
+//     if (monthIndex <= 9) {
+//       monthIndex = `0${monthIndex}`;
+//     }
 
-    console.log(`${year}-${monthIndex}-${date}`);
-  }
-}
+//     console.log(`${year}-${monthIndex}-${date}`);
+//   }
+// }
 
-function preprocessDate(dates) {
-  // console.log(dates.length);
-  let months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-  let bool = dates.length === 12;
+// function preprocessDate(dates) {
+//   // console.log(dates.length);
+//   let months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+//   let bool = dates.length === 12;
 
-  let date = bool ? `0${dates[0]}` : `${dates[0]}${dates[1]}`;
-  let year = bool
-    ? `${dates[8]}${dates[9]}${dates[10]}${dates[11]}`
-    : `${dates[9]}${dates[10]}${dates[11]}${dates[12]}`;
-  let month = bool ? `${dates[4]}${dates[5]}${dates[6]}` : `${dates[5]}${dates[6]}${dates[7]}`;
+//   let date = bool ? `0${dates[0]}` : `${dates[0]}${dates[1]}`;
+//   let year = bool
+//     ? `${dates[8]}${dates[9]}${dates[10]}${dates[11]}`
+//     : `${dates[9]}${dates[10]}${dates[11]}${dates[12]}`;
+//   let month = bool ? `${dates[4]}${dates[5]}${dates[6]}` : `${dates[5]}${dates[6]}${dates[7]}`;
 
-  let monthIndex = months.indexOf(month) + 1;
-  if (monthIndex <= 9) {
-    monthIndex = `0${monthIndex}`;
-  }
+//   let monthIndex = months.indexOf(month) + 1;
+//   if (monthIndex <= 9) {
+//     monthIndex = `0${monthIndex}`;
+//   }
 
-  console.log(`${year}-${monthIndex}-${date}`);
-}
-// preprocessDate('1st Mar 1974');
-// preprocessDate('7th Apr 1904');
-// preprocessDate('22nd Jan 2013');
+//   console.log(`${year}-${monthIndex}-${date}`);
+// }
+// // preprocessDate('1st Mar 1974');
+// // preprocessDate('7th Apr 1904');
+// // preprocessDate('22nd Jan 2013');
 
-// bind polyfill
-let reference = { name: 'Shiva shankar', age: 20, country: 'India' };
+// // bind polyfill
+// let reference = { name: 'Shiva shankar', age: 20, country: 'India' };
 
-function bio() {
-  console.log(this.name);
-}
+// function bio() {
+//   console.log(this.name);
+// }
 
-let bindFunction = bio.bind(reference);
-// bindFunction();
+// let bindFunction = bio.bind(reference);
+// // bindFunction();
 
-// Function.prototype.bindClone = (...args) => {
+// // Function.prototype.bindClone = (...args) => {
+// //   console.log(args);
+// //   console.log(this);
+// //   let func = this;
+// //   return () => {
+// //     func.bio.call(args[0]);
+// //   };
+// // };
+
+// Function.prototype.bindClone = function (...args) {
 //   console.log(args);
-//   console.log(this);
+//   // console.log(this);
 //   let func = this;
-//   return () => {
-//     func.bio.call(args[0]);
+//   return function () {
+//     func.call(args[0]);
 //   };
 // };
 
-Function.prototype.bindClone = function (...args) {
-  console.log(args);
-  // console.log(this);
-  let func = this;
-  return function () {
-    func.call(args[0]);
-  };
-};
+// // let bindFunction2 = bio.bindClone(reference, 'chennai');
+// // bindFunction2();
 
-// let bindFunction2 = bio.bindClone(reference, 'chennai');
-// bindFunction2();
+// // polyfill for filter array methods
 
-// polyfill for filter array methods
+// // let numbers = [2, 3, 3, 9, 19, 12, 34, 38, 23];
 
-// let numbers = [2, 3, 3, 9, 19, 12, 34, 38, 23];
+// // let filteredArray = numbers.filter((n) => n % 2 === 0);
+// // console.log(filteredArray);
 
-// let filteredArray = numbers.filter((n) => n % 2 === 0);
-// console.log(filteredArray);
+// Array.prototype.filterClone = function (cb) {
+//   console.log(cb);
+//   let arr = [];
+//   // console.log(this);
+//   this.forEach((el) => {
+//     // if (el % 2 === 0) {
+//     if (cb(el)) {
+//       arr.push(el);
+//     }
+//   });
+//   return arr;
+// };
 
-Array.prototype.filterClone = function (cb) {
-  console.log(cb);
-  let arr = [];
-  // console.log(this);
-  this.forEach((el) => {
-    // if (el % 2 === 0) {
-    if (cb(el)) {
-      arr.push(el);
-    }
-  });
-  return arr;
-};
+// // let filteredArray2 = numbers.filterClone((n) => n % 2 === 0);
 
-// let filteredArray2 = numbers.filterClone((n) => n % 2 === 0);
+// // console.log(filteredArray2);
 
-// console.log(filteredArray2);
+// function moveElementToEnd(array, toMove) {
+//   let filterNotEqualMove = array.filter((n) => n !== toMove);
+//   let filterEqualMove = array.filter((n) => n === toMove);
+//   console.log(filterNotEqualMove);
+//   console.log(filterEqualMove);
+//   console.log([...filterNotEqualMove, ...filterEqualMove]);
+// }
 
-function moveElementToEnd(array, toMove) {
-  let filterNotEqualMove = array.filter((n) => n !== toMove);
-  let filterEqualMove = array.filter((n) => n === toMove);
-  console.log(filterNotEqualMove);
-  console.log(filterEqualMove);
-  console.log([...filterNotEqualMove, ...filterEqualMove]);
-}
+// // moveElementToEnd([2, 1, 2, 2, 2, 3, 4, 2], 2);
 
-// moveElementToEnd([2, 1, 2, 2, 2, 3, 4, 2], 2);
+// function mergeOverlappingIntervals(array) {
+//   array.sort((a, b) => a[0] - b[0]);
 
-function mergeOverlappingIntervals(array) {
-  array.sort((a, b) => a[0] - b[0]);
+//   let arr = [];
+//   for (let i = 0; i < array.length; i++) {
+//     if (i === 0) {
+//       arr.push(array[i]);
+//     } else {
+//       let totalElements = array[i][1] - array[i][0] + 1;
+//       let temp = 0;
+//       let tempArr = [];
+//       for (let j = array[i][0]; j <= array[i][1]; j++) {
+//         if (!(j >= arr[arr.length - 1][0] && j <= arr[arr.length - 1][1])) {
+//           tempArr.push(j);
+//           temp++;
+//           if (temp === totalElements && j === array[i][1]) {
+//             arr.push([Math.min(...tempArr), Math.max(...tempArr)]);
+//             tempArr = [];
+//             temp = 0;
+//           } else if (j === array[i][1]) {
+//             arr[arr.length - 1] = [...arr[arr.length - 1], ...tempArr];
+//             arr[arr.length - 1] = [
+//               Math.min(...arr[arr.length - 1]),
+//               Math.max(...arr[arr.length - 1]),
+//             ];
+//             tempArr = [];
+//             temp = 0;
+//           }
+//         }
+//       }
+//     }
+//   }
+//   console.log(arr);
+// }
 
-  let arr = [];
-  for (let i = 0; i < array.length; i++) {
-    if (i === 0) {
-      arr.push(array[i]);
-    } else {
-      let totalElements = array[i][1] - array[i][0] + 1;
-      let temp = 0;
-      let tempArr = [];
-      for (let j = array[i][0]; j <= array[i][1]; j++) {
-        if (!(j >= arr[arr.length - 1][0] && j <= arr[arr.length - 1][1])) {
-          tempArr.push(j);
-          temp++;
-          if (temp === totalElements && j === array[i][1]) {
-            arr.push([Math.min(...tempArr), Math.max(...tempArr)]);
-            tempArr = [];
-            temp = 0;
-          } else if (j === array[i][1]) {
-            arr[arr.length - 1] = [...arr[arr.length - 1], ...tempArr];
-            arr[arr.length - 1] = [
-              Math.min(...arr[arr.length - 1]),
-              Math.max(...arr[arr.length - 1]),
-            ];
-            tempArr = [];
-            temp = 0;
-          }
-        }
-      }
-    }
-  }
-  console.log(arr);
-}
+// // mergeOverlappingIntervals([
+// //   [20, 21],
+// //   [22, 23],
+// //   [0, 1],
+// //   [3, 4],
+// //   [23, 24],
+// //   [25, 27],
+// //   [5, 6],
+// //   [7, 19],
+// // ]);
 
-// mergeOverlappingIntervals([
-//   [20, 21],
-//   [22, 23],
-//   [0, 1],
-//   [3, 4],
-//   [23, 24],
-//   [25, 27],
-//   [5, 6],
-//   [7, 19],
-// ]);
+// // mergeOverlappingIntervals([
+// //   [1, 2],
+// //   [3, 5],
+// //   [4, 7],
+// //   [6, 8],
+// //   [9, 10],
+// // ]);
 
-// mergeOverlappingIntervals([
-//   [1, 2],
-//   [3, 5],
-//   [4, 7],
-//   [6, 8],
-//   [9, 10],
-// ]);
+// // function zigzagTraverse(array) {
+// //   console.log(array);
+// // }
 
-// function zigzagTraverse(array) {
+// // zigzagTraverse([
+// //   [1, 3, 4, 10],
+// //   [2, 5, 9, 11],
+// //   [6, 8, 12, 15],
+// //   [7, 13, 14, 16],
+// // ]);
+
+// function lineThroughPoints(points) {
+//   points.sort((a, b) => a[0] - b[0]);
+//   console.log(points);
+// }
+
+// // lineThroughPoints([
+// //   [1, 1],
+// //   [2, 2],
+// //   [3, 3],
+// //   [0, 4],
+// //   [-2, 6],
+// //   [4, 0],
+// //   [2, 1],
+// // ]);
+
+// function caesarCipherEncryptor(string, key) {
+//   let str = string;
+//   const alphabets = [
+//     'a',
+//     'b',
+//     'c',
+//     'd',
+//     'e',
+//     'f',
+//     'g',
+//     'h',
+//     'i',
+//     'j',
+//     'k',
+//     'l',
+//     'm',
+//     'n',
+//     'o',
+//     'p',
+//     'q',
+//     'r',
+//     's',
+//     't',
+//     'u',
+//     'v',
+//     'w',
+//     'x',
+//     'y',
+//     'z',
+//   ];
+//   // console.log(alphabets.length);
+//   let lastElementIndex = alphabets.indexOf(str[str.length - 1]);
+//   console.log(str[str.length - 1]);
+//   console.log(lastElementIndex);
+//   for (let i = lastElementIndex + 1; i <= lastElementIndex + key; i++) {
+//     str += alphabets[i % 26];
+//   }
+
+//   console.log(str);
+//   console.log(str.slice(key));
+// }
+
+// // caesarCipherEncryptor('iwufqnkqkqoolxzzlzihqfm', 25);
+
+// function generateDocument(characters, document) {
+//   let char = {};
+//   let doc = {};
+
+//   for (let i = 0; i < characters.length; i++) {
+//     if (char[characters[i]]) {
+//       char[characters[i]] = char[characters[i]] + 1;
+//     } else {
+//       char[characters[i]] = 1;
+//     }
+//   }
+
+//   for (let i = 0; i < document.length; i++) {
+//     if (doc[document[i]]) {
+//       doc[document[i]] = doc[document[i]] + 1;
+//     } else {
+//       doc[document[i]] = 1;
+//     }
+//   }
+
+//   console.log(char);
+//   console.log(doc);
+// }
+
+// // generateDocument('Bste!hetsi ogEAxpelrt x ', 'AlgoExpert is the Best!');
+
+// function generateDocument(characters, document) {
+//   if (document === '') return true;
+
+//   let char = {};
+//   let doc = {};
+//   const docKey = [];
+//   const charKey = [];
+
+//   function generateObj(reference, holder) {
+//     for (let i = 0; i < reference.length; i++) {
+//       holder[reference[i]] ? (holder[reference[i]] += 1) : (holder[reference[i]] = 1);
+//     }
+//   }
+//   function generateKey(reference, holder) {
+//     for (const key in reference) {
+//       holder.push(key);
+//     }
+//   }
+
+//   generateObj(characters, char);
+//   generateObj(document, doc);
+//   generateKey(char, charKey);
+//   generateKey(doc, docKey);
+
+//   for (let i = 0; i < docKey.length; i++) {
+//     if (charKey.includes(docKey[i]) && !(char[docKey[i]] >= doc[docKey[i]])) {
+//       return false;
+//     } else {
+//       return false;
+//     }
+//   }
+
+//   return true;
+// }
+
+// // console.log(generateDocument('aheaollabbhb', 'hello'));
+
+// function groupAnagrams(words) {
+//   let duplicates = [...words];
+//   for (let i = 0; i < words.length; i++) {
+//     let arr = [];
+//     for (let j = 0; j < words[i].length; j++) {
+//       arr.push(words[i][j].charCodeAt());
+//       if (j === words[i].length - 1) {
+//         let str = '';
+//         arr
+//           .sort((a, b) => a - b)
+//           .forEach((el) => {
+//             str = str + String.fromCharCode(el);
+//           });
+//         words[i] = str;
+//         str = '';
+//         arr = [];
+//       }
+//     }
+//   }
+//   let keys = [];
+//   let temp = [];
+
+//   for (let i = 0; i < words.length; i++) {
+//     keys[i] = [];
+//     for (let j = 0; j < words.length; j++) {
+//       if (words[i] === words[j] && i === 0) {
+//         temp.push(j);
+//         keys[i].push(duplicates[j]);
+//       } else if (words[i] === words[j] && i !== 0 && !temp.includes(j)) {
+//         temp.push(j);
+//         keys[i].push(duplicates[j]);
+//       }
+//     }
+//   }
+
+//   console.log(keys.filter((el) => el.length >= 1));
+// }
+
+// // groupAnagrams(['yo', 'act', 'flop', 'tac', 'foo', 'cat', 'oy', 'olfp']);
+
+// function findThreeLargestNumbers(array) {
+//   if (array.every((el) => el === array[0])) return Array(3).fill(array[0]);
+//   let arr = [];
+//   let largestNumber;
+
+//   for (let i = 1; i <= 3; i++) {
+//     largestNumber = Math.max(...array);
+//     arr.unshift(largestNumber);
+//     if (array.every((el) => el === array[0])) {
+//       let lengthArr = 3 - arr.length;
+//       return [...Array(lengthArr).fill(array[0]), ...arr];
+//     }
+//     array = array.filter((el) => el !== largestNumber);
+//   }
+//   console.log(arr);
+// }
+
+// // console.log(findThreeLargestNumbers([7, 7, 7, 7, 7, 7, 8, 7, 7, 7, 7]));
+
+// function binarySearch(arr, elem) {
+//   var start = 0; //0
+//   var end = arr.length - 1; //9
+//   var middle = Math.floor((start + end) / 2); //4
+//   console.log(start, end, middle);
+//   while (arr[middle] !== elem && start <= end) {
+//     if (elem < arr[middle]) {
+//       end = middle - 1;
+//     } else {
+//       start = middle + 1;
+//     }
+//     middle = Math.floor((start + end) / 2);
+//   }
+//   if (arr[middle] === elem) {
+//     return arr[middle];
+//   }
+//   return -1;
+// }
+
+// function binarySearch(array, target) {
+//   let start = 0;
+//   let end = array.length - 1;
+//   let middle = Math.floor((start + end) / 2);
+
+//   while (array[middle] !== target && start <= end) {
+//     if (target > array[middle]) {
+//       start = start + 1;
+//     } else if (target < array[middle]) {
+//       end = middle - 1;
+//     }
+//     middle = Math.floor((start + end) / 2);
+//   }
+
+//   if (array[middle] === target) {
+//     return array[middle];
+//   }
+
+//   return -1;
+// }
+
+// // console.log(binarySearch([1, 3, 9, 27, 28, 29, 33, 38, 42, 50], 27));
+// // console.log(binarySearch([0, 1, 21, 33, 45, 45, 61, 71, 72, 73], 33));
+
+// function searchInSortedMatrix(matrix, target) {
+//   let matrixCopy = JSON.parse(JSON.stringify([...matrix]));
+
+//   let colCenter = Math.floor(matrix.length / 2);
+//   let rowCenter = Math.floor(matrix[0].length / 2);
+//   let middleElement = matrix[colCenter][rowCenter];
+
+//   function findElement(num) {
+//     for (let i = 0; i < matrixCopy.length; i++) {
+//       for (let j = 0; j < matrixCopy[i].length; j++) {
+//         if (matrixCopy[i][j] === num) {
+//           return [i, j];
+//         }
+//       }
+//     }
+//   }
+
+//   function helper(colCenter, rowCenter) {
+//     matrix.splice(colCenter, 1);
+
+//     for (let i = 0; i < matrix.length; i++) {
+//       matrix[i].splice(rowCenter, 1);
+//     }
+//     if (matrix.length === 0) {
+//       return [-1, -1];
+//     }
+
+//     colCenter = Math.floor(matrix.length / 2);
+//     rowCenter = Math.floor(matrix[0].length / 2);
+//     middleElement = matrix[colCenter][rowCenter];
+//   }
+
+//   while (matrix.length) {
+//     if (middleElement < target) {
+//       for (let i = rowCenter + 1; i <= matrix[colCenter].length - 1; i++) {
+//         if (matrix[colCenter][i] === target) {
+//           // return [colCenter, i];
+//           return findElement(target);
+//         }
+//       }
+
+//       for (let i = colCenter + 1; i <= matrix.length - 1; i++) {
+//         if (matrix[i][rowCenter] === target) {
+//           // return [i, rowCenter];
+//           return findElement(target);
+//         }
+//       }
+//       console.log(helper(colCenter, rowCenter));
+//       if (helper(colCenter, rowCenter)) {
+//         return helper(colCenter, rowCenter);
+//       } else {
+//         helper(colCenter, rowCenter);
+//       }
+//     } else if (middleElement > target) {
+//       for (let i = rowCenter - 1; i >= 0; i--) {
+//         if (matrix[colCenter][i] === target) {
+//           // return [colCenter, i];
+//           return findElement(target);
+//         }
+//       }
+//       for (let i = colCenter - 1; i >= 0; i--) {
+//         if (matrix[i][rowCenter] === target) {
+//           // return [i, rowCenter];
+//           return findElement(target);
+//         }
+//       }
+
+//       if (helper(colCenter, rowCenter).length) {
+//         return helper(colCenter, rowCenter);
+//       } else {
+//         helper(colCenter, rowCenter);
+//       }
+//     } else if (middleElement === target) {
+//       // return [colCenter, rowCenter];
+//       return findElement(target);
+//     }
+//   }
+//   return [-1, -1];
+// }
+
+// // console.log(
+// //   searchInSortedMatrix(
+// //     [
+// //       [1, 4, 7, 12, 15, 1000],
+// //       [2, 5, 19, 31, 32, 1001],
+// //       [3, 8, 24, 33, 35, 1002],
+// //       [40, 41, 42, 44, 45, 1003],
+// //       [99, 100, 103, 106, 128, 1004],
+// //     ],
+// //     43
+// //   )
+// // );
+
+// function searchInSortedMatrix(matrix, target) {
+//   // Write your code here.
+//   let matrixCopy = JSON.parse(JSON.stringify([...matrix]));
+//   let colCenter = Math.floor(matrix.length / 2);
+//   let rowCenter = Math.floor(matrix[0].length / 2);
+//   let middleElement = matrix[colCenter][rowCenter];
+
+//   function findElement(num) {
+//     for (let i = 0; i < matrixCopy.length; i++) {
+//       for (let j = 0; j < matrixCopy[i].length; j++) {
+//         if (matrixCopy[i][j] === num) {
+//           return [i, j];
+//         }
+//       }
+//     }
+//   }
+
+//   while (matrix.length) {
+//     if (middleElement < target) {
+//       for (let i = rowCenter + 1; i <= matrix[colCenter].length - 1; i++) {
+//         if (matrix[colCenter][i] === target) {
+//           // return [colCenter, i];
+//           return findElement(target);
+//         }
+//       }
+
+//       for (let i = colCenter + 1; i <= matrix.length - 1; i++) {
+//         if (matrix[i][rowCenter] === target) {
+//           // return [i, rowCenter];
+//           return findElement(target);
+//         }
+//       }
+
+//       matrix.splice(colCenter, 1);
+
+//       for (let i = 0; i < matrix.length; i++) {
+//         matrix[i].splice(rowCenter, 1);
+//       }
+
+//       if (matrix.length === 0) {
+//         return [-1, -1];
+//       }
+
+//       colCenter = Math.floor(matrix.length / 2);
+//       rowCenter = Math.floor(matrix[0].length / 2);
+//       middleElement = matrix[colCenter][rowCenter];
+//     } else if (middleElement > target) {
+//       for (let i = rowCenter - 1; i >= 0; i--) {
+//         if (matrix[colCenter][i] === target) {
+//           // return [colCenter, i];
+//           return findElement(target);
+//         }
+//       }
+//       for (let i = colCenter - 1; i >= 0; i--) {
+//         if (matrix[i][rowCenter] === target) {
+//           // return [i, rowCenter];
+//           return findElement(target);
+//         }
+//       }
+
+//       matrix.splice(colCenter, 1);
+
+//       for (let i = 0; i < matrix.length; i++) {
+//         matrix[i].splice(rowCenter, 1);
+//       }
+
+//       if (matrix.length === 0) {
+//         return [-1, -1];
+//       }
+
+//       colCenter = Math.floor(matrix.length / 2);
+//       rowCenter = Math.floor(matrix[0].length / 2);
+//       middleElement = matrix[colCenter][rowCenter];
+//     } else if (middleElement === target) {
+//       // return [colCenter, rowCenter];
+//       return findElement(target);
+//     }
+//   }
+//   return [-1, -1];
+// }
+// // console.log(
+// //   searchInSortedMatrix(
+// //     [
+// //       [1, 4, 7, 12, 15, 1000],
+// //       [2, 5, 19, 31, 32, 1001],
+// //       [3, 8, 24, 33, 35, 1002],
+// //       [40, 41, 42, 44, 45, 1003],
+// //       [99, 100, 103, 106, 128, 1004],
+// //     ],
+// //     43
+// //   )
+// // );
+
+// function searchInSortedMatrix(matrix, target) {
+//   // Write your code here.
+//   let matrixCopy = JSON.parse(JSON.stringify([...matrix]));
+//   let colCenter = Math.floor(matrix.length / 2);
+//   let rowCenter = Math.floor(matrix[0].length / 2);
+//   let middleElement = matrix[colCenter][rowCenter];
+
+//   function findElement(num) {
+//     for (let i = 0; i < matrixCopy.length; i++) {
+//       for (let j = 0; j < matrixCopy[i].length; j++) {
+//         if (matrixCopy[i][j] === num) {
+//           return [i, j];
+//         }
+//       }
+//     }
+//   }
+
+//   while (matrix.length) {
+//     if (middleElement < target) {
+//       for (let i = rowCenter + 1; i <= matrix[colCenter].length - 1; i++) {
+//         if (matrix[colCenter][i] === target) {
+//           // return [colCenter, i];
+//           return findElement(target);
+//         }
+//       }
+
+//       for (let i = colCenter + 1; i <= matrix.length - 1; i++) {
+//         if (matrix[i][rowCenter] === target) {
+//           // return [i, rowCenter];
+//           return findElement(target);
+//         }
+//       }
+
+//       matrix.splice(colCenter, 1);
+
+//       for (let i = 0; i < matrix.length; i++) {
+//         matrix[i].splice(rowCenter, 1);
+//       }
+
+//       if (matrix.length === 0) {
+//         return [-1, -1];
+//       }
+
+//       colCenter = Math.floor(matrix.length / 2);
+//       rowCenter = Math.floor(matrix[0].length / 2);
+//       middleElement = matrix[colCenter][rowCenter];
+//     } else if (middleElement > target) {
+//       for (let i = rowCenter - 1; i >= 0; i--) {
+//         if (matrix[colCenter][i] === target) {
+//           // return [colCenter, i];
+//           return findElement(target);
+//         }
+//       }
+//       for (let i = colCenter - 1; i >= 0; i--) {
+//         if (matrix[i][rowCenter] === target) {
+//           // return [i, rowCenter];
+//           return findElement(target);
+//         }
+//       }
+
+//       matrix.splice(colCenter, 1);
+
+//       for (let i = 0; i < matrix.length; i++) {
+//         matrix[i].splice(rowCenter, 1);
+//       }
+
+//       if (matrix.length === 0) {
+//         return [-1, -1];
+//       }
+
+//       colCenter = Math.floor(matrix.length / 2);
+//       rowCenter = Math.floor(matrix[0].length / 2);
+//       middleElement = matrix[colCenter][rowCenter];
+//     } else if (middleElement === target) {
+//       // return [colCenter, rowCenter];
+//       return findElement(target);
+//     }
+//   }
+//   return [-1, -1];
+// }
+
+// // function indexEqualsValue(array) {
+// //   // Write your code here.
+
+// // }
+
+// // console.log(indexEqualsValue([-5, -3, 0, 3, 4, 5, 9]));
+
+// function bubbleSort(array) {
+//   for (let i = 0; i < array.length; i++) {
+//     for (let j = 0; j < array.length; j++) {
+//       if (array[j] > array[j + 1] && j !== array.length - 1) {
+//         [array[j], array[j + 1]] = [array[j + 1], array[j]];
+//       }
+//     }
+//   }
+//   console.log(array);
+// }
+// /*
+// bubbleSort([5, 3, 4, 1, 2])
+// // let a = [5, 3, 4, 1, 2];
+// // [a[0], a[1]] = [a[1], a[0]]
+// // console.log(a);
+// */
+
+// function insertionSort(arr) {
+//   for (let i = 1; i < arr.length; i++) {
+//     let currentVal = arr[i];
+//     for (var j = i - 1; j >= 0 && arr[j] > currentVal; j--) {
+//       arr[j + 1] = arr[j];
+//     }
+//     arr[j + 1] = currentVal;
+//   }
+//   console.log(arr);
+// }
+
+// // insertionSort([5, 3, 4, 1, 2]);
+
+// function selectionSort(array) {
+//   let minElement;
+//   let minIndex;
+//   for (let i = 0; i < array.length; i++) {
+//     for (let j = i + 1; j < array.length; j++) {
+//       if (array[j] < array[i] && !minElement) {
+//         minElement = array[j];
+//         minIndex = j;
+//       } else if (array[j] < array[i]) {
+//         if (array[j] < minElement) {
+//           minElement = array[j];
+//           minIndex = j;
+//         }
+//       }
+//     }
+//     if (minElement) {
+//       [array[i], array[minIndex]] = [array[minIndex], array[i]];
+//       minElement = undefined;
+//       minIndex = undefined;
+//     }
+//     // console.log(array);
+//   }
 //   console.log(array);
 // }
 
-// zigzagTraverse([
-//   [1, 3, 4, 10],
-//   [2, 5, 9, 11],
-//   [6, 8, 12, 15],
-//   [7, 13, 14, 16],
-// ]);
-
-function lineThroughPoints(points) {
-  points.sort((a, b) => a[0] - b[0]);
-  console.log(points);
-}
-
-// lineThroughPoints([
-//   [1, 1],
-//   [2, 2],
-//   [3, 3],
-//   [0, 4],
-//   [-2, 6],
-//   [4, 0],
-//   [2, 1],
-// ]);
-
-function caesarCipherEncryptor(string, key) {
-  let str = string;
-  const alphabets = [
-    'a',
-    'b',
-    'c',
-    'd',
-    'e',
-    'f',
-    'g',
-    'h',
-    'i',
-    'j',
-    'k',
-    'l',
-    'm',
-    'n',
-    'o',
-    'p',
-    'q',
-    'r',
-    's',
-    't',
-    'u',
-    'v',
-    'w',
-    'x',
-    'y',
-    'z',
-  ];
-  // console.log(alphabets.length);
-  let lastElementIndex = alphabets.indexOf(str[str.length - 1]);
-  console.log(str[str.length - 1]);
-  console.log(lastElementIndex);
-  for (let i = lastElementIndex + 1; i <= lastElementIndex + key; i++) {
-    str += alphabets[i % 26];
-  }
-
-  console.log(str);
-  console.log(str.slice(key));
-}
-
-// caesarCipherEncryptor('iwufqnkqkqoolxzzlzihqfm', 25);
-
-function generateDocument(characters, document) {
-  let char = {};
-  let doc = {};
-
-  for (let i = 0; i < characters.length; i++) {
-    if (char[characters[i]]) {
-      char[characters[i]] = char[characters[i]] + 1;
-    } else {
-      char[characters[i]] = 1;
-    }
-  }
-
-  for (let i = 0; i < document.length; i++) {
-    if (doc[document[i]]) {
-      doc[document[i]] = doc[document[i]] + 1;
-    } else {
-      doc[document[i]] = 1;
-    }
-  }
-
-  console.log(char);
-  console.log(doc);
-}
-
-// generateDocument('Bste!hetsi ogEAxpelrt x ', 'AlgoExpert is the Best!');
-
-function generateDocument(characters, document) {
-  if (document === '') return true;
-
-  let char = {};
-  let doc = {};
-  const docKey = [];
-  const charKey = [];
-
-  function generateObj(reference, holder) {
-    for (let i = 0; i < reference.length; i++) {
-      holder[reference[i]] ? (holder[reference[i]] += 1) : (holder[reference[i]] = 1);
-    }
-  }
-  function generateKey(reference, holder) {
-    for (const key in reference) {
-      holder.push(key);
-    }
-  }
-
-  generateObj(characters, char);
-  generateObj(document, doc);
-  generateKey(char, charKey);
-  generateKey(doc, docKey);
-
-  for (let i = 0; i < docKey.length; i++) {
-    if (charKey.includes(docKey[i]) && !(char[docKey[i]] >= doc[docKey[i]])) {
-      return false;
-    } else {
-      return false;
-    }
-  }
-
-  return true;
-}
-
-// console.log(generateDocument('aheaollabbhb', 'hello'));
-
-function groupAnagrams(words) {
-  let duplicates = [...words];
-  for (let i = 0; i < words.length; i++) {
-    let arr = [];
-    for (let j = 0; j < words[i].length; j++) {
-      arr.push(words[i][j].charCodeAt());
-      if (j === words[i].length - 1) {
-        let str = '';
-        arr
-          .sort((a, b) => a - b)
-          .forEach((el) => {
-            str = str + String.fromCharCode(el);
-          });
-        words[i] = str;
-        str = '';
-        arr = [];
-      }
-    }
-  }
-  let keys = [];
-  let temp = [];
-
-  for (let i = 0; i < words.length; i++) {
-    keys[i] = [];
-    for (let j = 0; j < words.length; j++) {
-      if (words[i] === words[j] && i === 0) {
-        temp.push(j);
-        keys[i].push(duplicates[j]);
-      } else if (words[i] === words[j] && i !== 0 && !temp.includes(j)) {
-        temp.push(j);
-        keys[i].push(duplicates[j]);
-      }
-    }
-  }
-
-  console.log(keys.filter((el) => el.length >= 1));
-}
-
-// groupAnagrams(['yo', 'act', 'flop', 'tac', 'foo', 'cat', 'oy', 'olfp']);
-
-function findThreeLargestNumbers(array) {
-  if (array.every((el) => el === array[0])) return Array(3).fill(array[0]);
-  let arr = [];
-  let largestNumber;
-
-  for (let i = 1; i <= 3; i++) {
-    largestNumber = Math.max(...array);
-    arr.unshift(largestNumber);
-    if (array.every((el) => el === array[0])) {
-      let lengthArr = 3 - arr.length;
-      return [...Array(lengthArr).fill(array[0]), ...arr];
-    }
-    array = array.filter((el) => el !== largestNumber);
-  }
-  console.log(arr);
-}
-
-// console.log(findThreeLargestNumbers([7, 7, 7, 7, 7, 7, 8, 7, 7, 7, 7]));
-
-function binarySearch(arr, elem) {
-  var start = 0; //0
-  var end = arr.length - 1; //9
-  var middle = Math.floor((start + end) / 2); //4
-  console.log(start, end, middle);
-  while (arr[middle] !== elem && start <= end) {
-    if (elem < arr[middle]) {
-      end = middle - 1;
-    } else {
-      start = middle + 1;
-    }
-    middle = Math.floor((start + end) / 2);
-  }
-  if (arr[middle] === elem) {
-    return arr[middle];
-  }
-  return -1;
-}
-
-function binarySearch(array, target) {
-  let start = 0;
-  let end = array.length - 1;
-  let middle = Math.floor((start + end) / 2);
-
-  while (array[middle] !== target && start <= end) {
-    if (target > array[middle]) {
-      start = start + 1;
-    } else if (target < array[middle]) {
-      end = middle - 1;
-    }
-    middle = Math.floor((start + end) / 2);
-  }
-
-  if (array[middle] === target) {
-    return array[middle];
-  }
-
-  return -1;
-}
-
-// console.log(binarySearch([1, 3, 9, 27, 28, 29, 33, 38, 42, 50], 27));
-// console.log(binarySearch([0, 1, 21, 33, 45, 45, 61, 71, 72, 73], 33));
-
-function searchInSortedMatrix(matrix, target) {
-  let matrixCopy = JSON.parse(JSON.stringify([...matrix]));
-
-  let colCenter = Math.floor(matrix.length / 2);
-  let rowCenter = Math.floor(matrix[0].length / 2);
-  let middleElement = matrix[colCenter][rowCenter];
-
-  function findElement(num) {
-    for (let i = 0; i < matrixCopy.length; i++) {
-      for (let j = 0; j < matrixCopy[i].length; j++) {
-        if (matrixCopy[i][j] === num) {
-          return [i, j];
-        }
-      }
-    }
-  }
-
-  function helper(colCenter, rowCenter) {
-    matrix.splice(colCenter, 1);
-
-    for (let i = 0; i < matrix.length; i++) {
-      matrix[i].splice(rowCenter, 1);
-    }
-    if (matrix.length === 0) {
-      return [-1, -1];
-    }
-
-    colCenter = Math.floor(matrix.length / 2);
-    rowCenter = Math.floor(matrix[0].length / 2);
-    middleElement = matrix[colCenter][rowCenter];
-  }
-
-  while (matrix.length) {
-    if (middleElement < target) {
-      for (let i = rowCenter + 1; i <= matrix[colCenter].length - 1; i++) {
-        if (matrix[colCenter][i] === target) {
-          // return [colCenter, i];
-          return findElement(target);
-        }
-      }
-
-      for (let i = colCenter + 1; i <= matrix.length - 1; i++) {
-        if (matrix[i][rowCenter] === target) {
-          // return [i, rowCenter];
-          return findElement(target);
-        }
-      }
-      console.log(helper(colCenter, rowCenter));
-      if (helper(colCenter, rowCenter)) {
-        return helper(colCenter, rowCenter);
-      } else {
-        helper(colCenter, rowCenter);
-      }
-    } else if (middleElement > target) {
-      for (let i = rowCenter - 1; i >= 0; i--) {
-        if (matrix[colCenter][i] === target) {
-          // return [colCenter, i];
-          return findElement(target);
-        }
-      }
-      for (let i = colCenter - 1; i >= 0; i--) {
-        if (matrix[i][rowCenter] === target) {
-          // return [i, rowCenter];
-          return findElement(target);
-        }
-      }
-
-      if (helper(colCenter, rowCenter).length) {
-        return helper(colCenter, rowCenter);
-      } else {
-        helper(colCenter, rowCenter);
-      }
-    } else if (middleElement === target) {
-      // return [colCenter, rowCenter];
-      return findElement(target);
-    }
-  }
-  return [-1, -1];
-}
-
-// console.log(
-//   searchInSortedMatrix(
-//     [
-//       [1, 4, 7, 12, 15, 1000],
-//       [2, 5, 19, 31, 32, 1001],
-//       [3, 8, 24, 33, 35, 1002],
-//       [40, 41, 42, 44, 45, 1003],
-//       [99, 100, 103, 106, 128, 1004],
-//     ],
-//     43
-//   )
-// );
-
-function searchInSortedMatrix(matrix, target) {
-  // Write your code here.
-  let matrixCopy = JSON.parse(JSON.stringify([...matrix]));
-  let colCenter = Math.floor(matrix.length / 2);
-  let rowCenter = Math.floor(matrix[0].length / 2);
-  let middleElement = matrix[colCenter][rowCenter];
-
-  function findElement(num) {
-    for (let i = 0; i < matrixCopy.length; i++) {
-      for (let j = 0; j < matrixCopy[i].length; j++) {
-        if (matrixCopy[i][j] === num) {
-          return [i, j];
-        }
-      }
-    }
-  }
-
-  while (matrix.length) {
-    if (middleElement < target) {
-      for (let i = rowCenter + 1; i <= matrix[colCenter].length - 1; i++) {
-        if (matrix[colCenter][i] === target) {
-          // return [colCenter, i];
-          return findElement(target);
-        }
-      }
-
-      for (let i = colCenter + 1; i <= matrix.length - 1; i++) {
-        if (matrix[i][rowCenter] === target) {
-          // return [i, rowCenter];
-          return findElement(target);
-        }
-      }
-
-      matrix.splice(colCenter, 1);
-
-      for (let i = 0; i < matrix.length; i++) {
-        matrix[i].splice(rowCenter, 1);
-      }
-
-      if (matrix.length === 0) {
-        return [-1, -1];
-      }
-
-      colCenter = Math.floor(matrix.length / 2);
-      rowCenter = Math.floor(matrix[0].length / 2);
-      middleElement = matrix[colCenter][rowCenter];
-    } else if (middleElement > target) {
-      for (let i = rowCenter - 1; i >= 0; i--) {
-        if (matrix[colCenter][i] === target) {
-          // return [colCenter, i];
-          return findElement(target);
-        }
-      }
-      for (let i = colCenter - 1; i >= 0; i--) {
-        if (matrix[i][rowCenter] === target) {
-          // return [i, rowCenter];
-          return findElement(target);
-        }
-      }
-
-      matrix.splice(colCenter, 1);
-
-      for (let i = 0; i < matrix.length; i++) {
-        matrix[i].splice(rowCenter, 1);
-      }
-
-      if (matrix.length === 0) {
-        return [-1, -1];
-      }
-
-      colCenter = Math.floor(matrix.length / 2);
-      rowCenter = Math.floor(matrix[0].length / 2);
-      middleElement = matrix[colCenter][rowCenter];
-    } else if (middleElement === target) {
-      // return [colCenter, rowCenter];
-      return findElement(target);
-    }
-  }
-  return [-1, -1];
-}
-// console.log(
-//   searchInSortedMatrix(
-//     [
-//       [1, 4, 7, 12, 15, 1000],
-//       [2, 5, 19, 31, 32, 1001],
-//       [3, 8, 24, 33, 35, 1002],
-//       [40, 41, 42, 44, 45, 1003],
-//       [99, 100, 103, 106, 128, 1004],
-//     ],
-//     43
-//   )
-// );
-
-function searchInSortedMatrix(matrix, target) {
-  // Write your code here.
-  let matrixCopy = JSON.parse(JSON.stringify([...matrix]));
-  let colCenter = Math.floor(matrix.length / 2);
-  let rowCenter = Math.floor(matrix[0].length / 2);
-  let middleElement = matrix[colCenter][rowCenter];
-
-  function findElement(num) {
-    for (let i = 0; i < matrixCopy.length; i++) {
-      for (let j = 0; j < matrixCopy[i].length; j++) {
-        if (matrixCopy[i][j] === num) {
-          return [i, j];
-        }
-      }
-    }
-  }
-
-  while (matrix.length) {
-    if (middleElement < target) {
-      for (let i = rowCenter + 1; i <= matrix[colCenter].length - 1; i++) {
-        if (matrix[colCenter][i] === target) {
-          // return [colCenter, i];
-          return findElement(target);
-        }
-      }
-
-      for (let i = colCenter + 1; i <= matrix.length - 1; i++) {
-        if (matrix[i][rowCenter] === target) {
-          // return [i, rowCenter];
-          return findElement(target);
-        }
-      }
-
-      matrix.splice(colCenter, 1);
-
-      for (let i = 0; i < matrix.length; i++) {
-        matrix[i].splice(rowCenter, 1);
-      }
-
-      if (matrix.length === 0) {
-        return [-1, -1];
-      }
-
-      colCenter = Math.floor(matrix.length / 2);
-      rowCenter = Math.floor(matrix[0].length / 2);
-      middleElement = matrix[colCenter][rowCenter];
-    } else if (middleElement > target) {
-      for (let i = rowCenter - 1; i >= 0; i--) {
-        if (matrix[colCenter][i] === target) {
-          // return [colCenter, i];
-          return findElement(target);
-        }
-      }
-      for (let i = colCenter - 1; i >= 0; i--) {
-        if (matrix[i][rowCenter] === target) {
-          // return [i, rowCenter];
-          return findElement(target);
-        }
-      }
-
-      matrix.splice(colCenter, 1);
-
-      for (let i = 0; i < matrix.length; i++) {
-        matrix[i].splice(rowCenter, 1);
-      }
-
-      if (matrix.length === 0) {
-        return [-1, -1];
-      }
-
-      colCenter = Math.floor(matrix.length / 2);
-      rowCenter = Math.floor(matrix[0].length / 2);
-      middleElement = matrix[colCenter][rowCenter];
-    } else if (middleElement === target) {
-      // return [colCenter, rowCenter];
-      return findElement(target);
-    }
-  }
-  return [-1, -1];
-}
-
-// function indexEqualsValue(array) {
-//   // Write your code here.
-
+// function selectionSort(arr) {
+//   for (var i = 0; i < arr.length; i++) {
+//     var lowest = i;
+//     for (var j = i + 1; j < arr.length; j++) {
+//       if (arr[j] < arr[lowest]) {
+//         lowest = j;
+//       }
+//     }
+//     if (i !== lowest) {
+//       //SWAP!
+//       var temp = arr[i];
+//       arr[i] = arr[lowest];
+//       arr[lowest] = temp;
+//     }
+//   }
+//   return arr;
 // }
-
-// console.log(indexEqualsValue([-5, -3, 0, 3, 4, 5, 9]));
-
-function bubbleSort(array) {
-  for (let i = 0; i < array.length; i++) {
-    for (let j = 0; j < array.length; j++) {
-      if (array[j] > array[j + 1] && j !== array.length - 1) {
-        [array[j], array[j + 1]] = [array[j + 1], array[j]];
-      }
-    }
-  }
-  console.log(array);
-}
-/*
-bubbleSort([5, 3, 4, 1, 2])
-// let a = [5, 3, 4, 1, 2];
-// [a[0], a[1]] = [a[1], a[0]]
-// console.log(a);
-*/
-
-function insertionSort(arr) {
-  for (let i = 1; i < arr.length; i++) {
-    let currentVal = arr[i];
-    for (var j = i - 1; j >= 0 && arr[j] > currentVal; j--) {
-      arr[j + 1] = arr[j];
-    }
-    arr[j + 1] = currentVal;
-  }
-  console.log(arr);
-}
-
-// insertionSort([5, 3, 4, 1, 2]);
-
-function selectionSort(array) {
-  let minElement;
-  let minIndex;
-  for (let i = 0; i < array.length; i++) {
-    for (let j = i + 1; j < array.length; j++) {
-      if (array[j] < array[i] && !minElement) {
-        minElement = array[j];
-        minIndex = j;
-      } else if (array[j] < array[i]) {
-        if (array[j] < minElement) {
-          minElement = array[j];
-          minIndex = j;
-        }
-      }
-    }
-    if (minElement) {
-      [array[i], array[minIndex]] = [array[minIndex], array[i]];
-      minElement = undefined;
-      minIndex = undefined;
-    }
-    // console.log(array);
-  }
-  console.log(array);
-}
-
-function selectionSort(arr) {
-  for (var i = 0; i < arr.length; i++) {
-    var lowest = i;
-    for (var j = i + 1; j < arr.length; j++) {
-      if (arr[j] < arr[lowest]) {
-        lowest = j;
-      }
-    }
-    if (i !== lowest) {
-      //SWAP!
-      var temp = arr[i];
-      arr[i] = arr[lowest];
-      arr[lowest] = temp;
-    }
-  }
-  return arr;
-}
 
 // selectionSort([19, 44, 38, 5, 47, 15]);
 
-function threeNumberSort(array, order) {
-  let lengthOfArray = array.length;
-  for (let i = 0; i < order.length; i++) {
-    for (let j = 0; j < array.length; j++) {
-      if (array[j] === order[i]) {
-        let element = array.splice(j, 1);
-        array.unshift(...element);
-      }
-    }
-  }
-  for (let i = array.length - 1; i >= 0; i--) {
-    array.push(array[i]);
-  }
-  array.splice(0, lengthOfArray);
-  console.log(array);
-}
+// function threeNumberSort(array, order) {
+//   let lengthOfArray = array.length;
+//   for (let i = 0; i < order.length; i++) {
+//     for (let j = 0; j < array.length; j++) {
+//       if (array[j] === order[i]) {
+//         let element = array.splice(j, 1);
+//         array.unshift(...element);
+//       }
+//     }
+//   }
+//   for (let i = array.length - 1; i >= 0; i--) {
+//     array.push(array[i]);
+//   }
+//   array.splice(0, lengthOfArray);
+//   console.log(array);
+// }
 
 // threeNumberSort([1, 0, 0, -1, -1, 0, 1, 1], [0, 1, -1]);
 
@@ -3815,85 +3815,85 @@ function threeNumberSort(array, order) {
 //   console.log(fingers, n);
 // }
 
-function fingerNumbers(n) {
-  let largestNumber = 9,
-    traverseFromLast = true;
-  for (let i = 1; i <= n; i++) {
-    if (i <= 5 && i === n) return i;
-    else if (i > 5 && i === n) {
-      if (traverseFromLast) {
-        return largestNumber - i + 1;
-      } else if (!traverseFromLast) {
-        return 5 - (largestNumber - i);
-      }
-    } else if (i === largestNumber) {
-      largestNumber += 4;
-      traverseFromLast = !traverseFromLast;
-    }
-  }
-}
+// function fingerNumbers(n) {
+//   let largestNumber = 9,
+//     traverseFromLast = true;
+//   for (let i = 1; i <= n; i++) {
+//     if (i <= 5 && i === n) return i;
+//     else if (i > 5 && i === n) {
+//       if (traverseFromLast) {
+//         return largestNumber - i + 1;
+//       } else if (!traverseFromLast) {
+//         return 5 - (largestNumber - i);
+//       }
+//     } else if (i === largestNumber) {
+//       largestNumber += 4;
+//       traverseFromLast = !traverseFromLast;
+//     }
+//   }
+// }
 
-// console.log(fingerNumbers(97));
+// // console.log(fingerNumbers(97));
 
-function radixSort() {}
+// function radixSort() {}
 
-// [1556, 4, 3556, 593, 408, 4386, 902, 7, 8157, 86, 9637, 29];
+// // [1556, 4, 3556, 593, 408, 4386, 902, 7, 8157, 86, 9637, 29];
 
-class MinMaxStack {
-  constructor() {
-    this.stack = [];
-  }
+// class MinMaxStack {
+//   constructor() {
+//     this.stack = [];
+//   }
 
-  peek() {
-    // Write your code here.
-    return this.stack[0];
-  }
+//   peek() {
+//     // Write your code here.
+//     return this.stack[0];
+//   }
 
-  pop() {
-    // Write your code here.
-    return this.stack.shift();
-  }
+//   pop() {
+//     // Write your code here.
+//     return this.stack.shift();
+//   }
 
-  push(number) {
-    // Write your code here.
-    return this.stack.unshift(number);
-  }
+//   push(number) {
+//     // Write your code here.
+//     return this.stack.unshift(number);
+//   }
 
-  getMin() {
-    // Write your code here.
-    this.stack.sort((a, b) => a - b);
-    return this.stack[0];
-  }
+//   getMin() {
+//     // Write your code here.
+//     this.stack.sort((a, b) => a - b);
+//     return this.stack[0];
+//   }
 
-  getMax() {
-    // Write your code here.
-    this.stack.sort((a, b) => a - b);
-    return this.stack[this.stack.length - 1];
-  }
-}
+//   getMax() {
+//     // Write your code here.
+//     this.stack.sort((a, b) => a - b);
+//     return this.stack[this.stack.length - 1];
+//   }
+// }
 
 // let newInstance = new MinMaxStack();
 // console.log(newInstance.push(4));
 // console.log(newInstance.push(5));
 // console.log(newInstance);
 
-function minimumCharactersForWords(words) {
-  let str = words[0];
-  console.log(str);
-  for (let i = 1; i < words.length; i++) {
-    for (let j = 0; j < words[i].length; j++) {
-      if (str.includes(words[i][j])) {
-      }
-    }
-  }
-}
+// function minimumCharactersForWords(words) {
+//   let str = words[0];
+//   console.log(str);
+//   for (let i = 1; i < words.length; i++) {
+//     for (let j = 0; j < words[i].length; j++) {
+//       if (str.includes(words[i][j])) {
+//       }
+//     }
+//   }
+// }
 
 // minimumCharactersForWords(['this', 'that', 'did', 'deed', 'them!', 'a']);
 
-function findClosestValueInBst(tree, target) {
-  console.log(tree);
-}
-// findClosestValueInBst(
+// function findClosestValueInBst(tree, target) {
+//   console.log(tree);
+// }
+// // findClosestValueInBst(
 //   {
 //     tree: {
 //       nodes: [
@@ -3914,122 +3914,122 @@ function findClosestValueInBst(tree, target) {
 //   13
 // );
 
-class BST {
-  constructor(value) {
-    this.value = value;
-    this.left = null;
-    this.right = null;
-  }
+// class BST {
+//   constructor(value) {
+//     this.value = value;
+//     this.left = null;
+//     this.right = null;
+//   }
 
-  insert(value) {
-    let newNode = new BST(value);
-    let current = this.value;
-    let leftNode = this.left;
-    let rightNode = this.right;
-    while (current) {
-      if (value > current) {
-        //right traverse
-        if (!rightNode) {
-          rightNode = newNode;
-          return this;
-        } else {
-          current = rightNode.value;
-          rightNode = rightNode.right;
-          leftNode = rightNode.left;
-        }
-      } else if (value < current) {
-        //left traverse
-        if (!leftNode) {
-          leftNode = newNode;
-          return this;
-        } else {
-          current = leftNode.value;
-          rightNode = leftNode.right;
-          leftNode = leftNode.left;
-        }
-      }
-    }
-    return this;
-    // return value;
-  }
+//   insert(value) {
+//     let newNode = new BST(value);
+//     let current = this.value;
+//     let leftNode = this.left;
+//     let rightNode = this.right;
+//     while (current) {
+//       if (value > current) {
+//         //right traverse
+//         if (!rightNode) {
+//           rightNode = newNode;
+//           return this;
+//         } else {
+//           current = rightNode.value;
+//           rightNode = rightNode.right;
+//           leftNode = rightNode.left;
+//         }
+//       } else if (value < current) {
+//         //left traverse
+//         if (!leftNode) {
+//           leftNode = newNode;
+//           return this;
+//         } else {
+//           current = leftNode.value;
+//           rightNode = leftNode.right;
+//           leftNode = leftNode.left;
+//         }
+//       }
+//     }
+//     return this;
+//     // return value;
+//   }
 
-  contains(value) {
-    // Write your code here.
-  }
+//   contains(value) {
+//     // Write your code here.
+//   }
 
-  remove(value) {
-    // Write your code here.
-    // Do not edit the return statement of this method.
-    // return this;
-  }
-}
+//   remove(value) {
+//     // Write your code here.
+//     // Do not edit the return statement of this method.
+//     // return this;
+//   }
+// }
 
 // let bst = new BST();
 // console.log(bst.insert(10));
 // console.log(bst.insert(12));
 
-class Node {
-  constructor(value) {
-    this.value = value;
-    this.left = null;
-    this.right = null;
-  }
-}
+// class Node {
+//   constructor(value) {
+//     this.value = value;
+//     this.left = null;
+//     this.right = null;
+//   }
+// }
 
-class BinarySearchTree {
-  constructor() {
-    this.root = null;
-  }
+// class BinarySearchTree {
+//   constructor() {
+//     this.root = null;
+//   }
 
-  insert(value) {
-    let newNode = new Node(value);
-    if (!this.root) {
-      this.root = newNode;
-      return this.root;
-    }
-    let current = this.root;
-    while (current) {
-      if (value > current.value) {
-        if (!current.right) {
-          current.right = new Node(value);
-          return this.root;
-        } else {
-          current = current.right;
-        }
-      } else if (value < current.value) {
-        if (!current.left) {
-          current.left = new Node(value);
-          return this.root;
-        } else {
-          current = current.left;
-        }
-      }
-    }
-  }
+//   insert(value) {
+//     let newNode = new Node(value);
+//     if (!this.root) {
+//       this.root = newNode;
+//       return this.root;
+//     }
+//     let current = this.root;
+//     while (current) {
+//       if (value > current.value) {
+//         if (!current.right) {
+//           current.right = new Node(value);
+//           return this.root;
+//         } else {
+//           current = current.right;
+//         }
+//       } else if (value < current.value) {
+//         if (!current.left) {
+//           current.left = new Node(value);
+//           return this.root;
+//         } else {
+//           current = current.left;
+//         }
+//       }
+//     }
+//   }
 
-  remove() {}
+//   remove() {}
 
-  contains(value) {
-    let current = this.root;
-    while (current) {
-      if (value > current.value) {
-        if (!current.right && current.value < value) {
-          return false;
-        }
-        current = current.right;
-      } else if (value < current.value) {
-        if (!current.left && current.value > value) {
-          return false;
-        }
-        current = current.left;
-      } else if (value === current.value) {
-        return true;
-      }
-    }
-  }
-}
+//   contains(value) {
+//     let current = this.root;
+//     while (current) {
+//       if (value > current.value) {
+//         if (!current.right && current.value < value) {
+//           return false;
+//         }
+//         current = current.right;
+//       } else if (value < current.value) {
+//         if (!current.left && current.value > value) {
+//           return false;
+//         }
+//         current = current.left;
+//       } else if (value === current.value) {
+//         return true;
+//       }
+//     }
+//   }
+// }
 
-let bst = new BinarySearchTree();
+// let bst = new BinarySearchTree();
 // console.log(bst.insert(30));
 // console.log(bst.insert(40));
 // console.log(bst.insert(25));
@@ -4053,13 +4053,13 @@ console.log(bst.root);
 
 // const radius = [4, 5, 1, 9];
 
-Array.prototype.factoryFunc = function (cb) {
-  let output = [];
-  this.forEach((r) => {
-    output.push(cb(r));
-  });
-  return output;
-};
+// Array.prototype.factoryFunc = function (cb) {
+//   let output = [];
+//   this.forEach((r) => {
+//     output.push(cb(r));
+//   });
+//   return output;
+// };
 
 // let calculateArea = radius.factoryFunc((radius) => Math.PI * radius * radius);
 // let calculateCircumference = radius.factoryFunc((radius) => 2 * Math.PI * radius);
@@ -4069,16 +4069,16 @@ Array.prototype.factoryFunc = function (cb) {
 // console.log(calculateCircumference);
 // console.log(calculateDiameter);
 
-const radius = [12, 4, 9, 10, 2, 24];
+// const radius = [12, 4, 9, 10, 2, 24];
 
-const factoryFunction = function (logic, radius) {
-  const output = [];
-  radius.forEach((r) => {
-    output.push(logic(r));
-  });
-  return output;
-};
-//
+// const factoryFunction = function (logic, radius) {
+//   const output = [];
+//   radius.forEach((r) => {
+//     output.push(logic(r));
+//   });
+//   return output;
+// };
+// //
 // const calculateArea = factoryFunction((r) => Math.PI * r * r, radius);
 // let calculateCircumference = factoryFunction((r) => 2 * Math.PI * r, radius);
 // let calculateDiameter = factoryFunction((r) => 2 * r, radius);
@@ -4095,76 +4095,114 @@ const factoryFunction = function (logic, radius) {
 //   return acc;
 // }, 0);
 
-function findMax(radius) {
-  let max = 0;
+// function findMax(radius) {
+//   let max = 0;
 
-  radius.forEach((r) => {
-    if (r > max) {
-      max = r;
-    }
-  });
+//   radius.forEach((r) => {
+//     if (r > max) {
+//       max = r;
+//     }
+//   });
 
-  console.log(max);
-}
+//   console.log(max);
+// }
 
 // findMax(radius);
 
-const findMaxReduce = radius.reduce((acc, cur) => {
-  if (cur > acc) {
-    acc = cur;
-  }
-  return acc;
-}, 0);
+// const findMaxReduce = radius.reduce((acc, cur) => {
+//   if (cur > acc) {
+//     acc = cur;
+//   }
+//   return acc;
+// }, 0);
 
 // console.log(findMaxReduce);
 
-const users = [{ age: 26 }, { age: 75 }, { age: 50 }, { age: 26 }];
+// const users = [{ age: 26 }, { age: 75 }, { age: 50 }, { age: 26 }];
 
-const groupingAge = users.reduce((acc, user) => {
-  if (acc[user.age]) {
-    acc[user.age] = acc[user.age] + 1;
-  } else {
-    acc[user.age] = 1;
-  }
-  return acc;
-}, {});
-// console.log(groupingAge);
+// const groupingAge = users.reduce((acc, user) => {
+//   if (acc[user.age]) {
+//     acc[user.age] = acc[user.age] + 1;
+//   } else {
+//     acc[user.age] = 1;
+//   }
+//   return acc;
+// }, {});
+// // console.log(groupingAge);
 
-class Person {
-  constructor(name, age) {
-    this.name = name;
-    this.age = age;
-    this.nationality = 'Indian';
-  }
+// class Person {
+//   constructor(name, age) {
+//     this.name = name;
+//     this.age = age;
+//     this.nationality = 'Indian';
+//   }
 
-  isAboveEighteen() {
-    if (this.age >= 18) return `${this.name} is above 18`;
-    else {
-      return 'below 18';
-    }
-  }
-}
+//   isAboveEighteen() {
+//     if (this.age >= 18) return `${this.name} is above 18`;
+//     else {
+//       return 'below 18';
+//     }
+//   }
+// }
 
-class Employee extends Person {
-  constructor(name, age, salary) {
-    super(name, age);
-    this.salary = salary;
-  }
-}
+// class Employee extends Person {
+//   constructor(name, age, salary) {
+//     super(name, age);
+//     this.salary = salary;
+//   }
+// }
 
-class Details extends Employee {
-  constructor(name, age, salary, company, location, birthDate) {
-    super(name, age, salary);
-    this.company = company;
-    this.location = location;
-    this.birthDate = birthDate;
-  }
+// class Details extends Employee {
+//   constructor(name, age, salary, company, location, birthDate) {
+//     super(name, age, salary);
+//     this.company = company;
+//     this.location = location;
+//     this.birthDate = birthDate;
+//   }
 
-  changeDetail() {
-    this.name = 'Shiva';
-    this.age = 17;
-  }
-}
+//   changeDetail() {
+//     this.name = 'Shiva';
+//     this.age = 17;
+//   }
+// }
+//   constructor(name, age, salary) {
+//     super(name, age);
+//     this.salary = salary;
+//   }
+// }
+
+// class Details extends Employee {
+//   constructor(name, age, salary, company, location, birthDate) {
+//     super(name, age, salary);
+//     this.company = company;
+//     this.location = location;
+//     this.birthDate = birthDate;
+//   }
+
+//   changeDetail() {
+//     this.name = 'Shiva';
+//     this.age = 17;
+//   }
+// }
+//   constructor(name, age, salary) {
+//     super(name, age);
+//     this.salary = salary;
+//   }
+// }
+
+// class Details extends Employee {
+//   constructor(name, age, salary, company, location, birthDate) {
+//     super(name, age, salary);
+//     this.company = company;
+//     this.location = location;
+//     this.birthDate = birthDate;
+//   }
+
+//   changeDetail() {
+//     this.name = 'Shiva';
+//     this.age = 17;
+//   }
+// }
 
 // const s = new Person('Shiva shankar', 20);
 // const k = new Person('Karthikeyan', 24);
@@ -4184,79 +4222,177 @@ class Details extends Employee {
 // console.log(detailOfS.isAboveEighteen());
 // console.log(detailOfS);
 
-function funcPerson(name, age) {
-  this.name = name;
-  this.age = age;
-  this.nationality = 'Indian';
-}
+// function funcPerson(name, age) {
+//   this.name = name;
+//   this.age = age;
+//   this.nationality = 'Indian';
+// }
+// function funcPerson(name, age) {
+//   this.name = name;
+//   this.age = age;
+//   this.nationality = 'Indian';
+// }
+// function funcPerson(name, age) {
+//   this.name = name;
+//   this.age = age;
+//   this.nationality = 'Indian';
+// }
 
-funcPerson.prototype.getDetails = function () {
-  console.log(this);
-  return `${this.name} from ${this.nationality}`;
-};
+// funcPerson.prototype.getDetails = function () {
+//   console.log(this);
+//   return `${this.name} from ${this.nationality}`;
+// };
 
-let karthik = new funcPerson('Karthik', 24);
+// let karthik = new funcPerson('Karthik', 24);
+// funcPerson.prototype.getDetails = function () {
+//   console.log(this);
+//   return `${this.name} from ${this.nationality}`;
+// };
+
+// let karthik = new funcPerson('Karthik', 24);
+// funcPerson.prototype.getDetails = function () {
+//   console.log(this);
+//   return `${this.name} from ${this.nationality}`;
+// };
+
+// let karthik = new funcPerson('Karthik', 24);
 // console.log(karthik.getDetails());
 // console.log(karthik);
 
-function funcDetails(name, age, salary, company, location) {
-  funcPerson.call(this, name, age);
-  this.salary = salary;
-  this.company = company;
-  this.location = location;
-}
+// function funcDetails(name, age, salary, company, location) {
+//   funcPerson.call(this, name, age);
+//   this.salary = salary;
+//   this.company = company;
+//   this.location = location;
+// }
 
-Object.setPrototypeOf(funcDetails.prototype, funcPerson.prototype);
-let karthikDetails = new funcDetails('karthik', 24, 110000, 'Sketchnote', 'chennai');
+// Object.setPrototypeOf(funcDetails.prototype, funcPerson.prototype);
+// let karthikDetails = new funcDetails('karthik', 24, 110000, 'Sketchnote', 'chennai');
+// function funcDetails(name, age, salary, company, location) {
+//   funcPerson.call(this, name, age);
+//   this.salary = salary;
+//   this.company = company;
+//   this.location = location;
+// }
+
+// Object.setPrototypeOf(funcDetails.prototype, funcPerson.prototype);
+// let karthikDetails = new funcDetails('karthik', 24, 110000, 'Sketchnote', 'chennai');
+// function funcDetails(name, age, salary, company, location) {
+//   funcPerson.call(this, name, age);
+//   this.salary = salary;
+//   this.company = company;
+//   this.location = location;
+// }
+
+// Object.setPrototypeOf(funcDetails.prototype, funcPerson.prototype);
+// let karthikDetails = new funcDetails('karthik', 24, 110000, 'Sketchnote', 'chennai');
 // console.log(karthikDetails);
 // console.log(karthikDetails.getDetails());
 
-function funcJob(name, age, company, location, job) {
-  // console.log(this);
-  funcPerson.call(this, name, age);
-  // funcDetails.call(this, company, location);
-  this.job = job;
-}
+// function funcJob(name, age, company, location, job) {
+//   // console.log(this);
+//   funcPerson.call(this, name, age);
+//   // funcDetails.call(this, company, location);
+//   this.job = job;
+// }
+// function funcJob(name, age, company, location, job) {
+//   // console.log(this);
+//   funcPerson.call(this, name, age);
+//   // funcDetails.call(this, company, location);
+//   this.job = job;
+// }
+// function funcJob(name, age, company, location, job) {
+//   // console.log(this);
+//   funcPerson.call(this, name, age);
+//   // funcDetails.call(this, company, location);
+//   this.job = job;
+// }
 
-Object.setPrototypeOf(funcJob.prototype, funcDetails.prototype);
+// // Object.setPrototypeOf(funcJob.prototype, funcDetails.prototype);
 
-let karthikJob = new funcJob('karthiks', 24, 'Sketchnote', 'Mumbai', 'Full stack developer');
+// // let karthikJob = new funcJob('karthiks', 24, 'Sketchnote', 'Mumbai', 'Full stack developer');
+// Object.setPrototypeOf(funcJob.prototype, funcDetails.prototype);
+
+// let karthikJob = new funcJob('karthiks', 24, 'Sketchnote', 'Mumbai', 'Full stack developer');
+// Object.setPrototypeOf(funcJob.prototype, funcDetails.prototype);
+
+// let karthikJob = new funcJob('karthiks', 24, 'Sketchnote', 'Mumbai', 'Full stack developer');
 // console.log(karthikJob);
 // console.log(karthikJob.getDetails());
 
 // write polyfill for filter, map and foreach
 
 // filter
-let arr = [2, 4, 1, 3, 98, 12, 76];
-Array.prototype.filteredArray = function (cb) {
-  let filteredArray = [];
-  this.forEach((el) => {
-    if (cb(el)) {
-      filteredArray.push(el);
-    }
-  });
-  return filteredArray;
-};
+// let arr = [2, 4, 1, 3, 98, 12, 76];
+// let arr = [2, 4, 1, 3, 98, 12, 76];
+// let arr = [2, 4, 1, 3, 98, 12, 76];
+// Array.prototype.filteredArray = function (cb) {
+//   let filteredArray = [];
+//   this.forEach((el) => {
+//     if (cb(el)) {
+//       filteredArray.push(el);
+//     }
+//   });
+//   return filteredArray;
+// };
+// Array.prototype.filteredArray = function (cb) {
+//   let filteredArray = [];
+//   this.forEach((el) => {
+//     if (cb(el)) {
+//       filteredArray.push(el);
+//     }
+//   });
+//   return filteredArray;
+// };
+// Array.prototype.filteredArray = function (cb) {
+//   let filteredArray = [];
+//   this.forEach((el) => {
+//     if (cb(el)) {
+//       filteredArray.push(el);
+//     }
+//   });
+//   return filteredArray;
+// };
 
 // console.log(arr.filteredArray((el) => el > 20));
 
 // map
 
-Array.prototype.mapArray = function (cb) {
-  let mapArray = [];
-  this.forEach((el) => mapArray.push(cb(el)));
-  return mapArray;
-};
+// Array.prototype.mapArray = function (cb) {
+//   let mapArray = [];
+//   this.forEach((el) => mapArray.push(cb(el)));
+//   return mapArray;
+// };
+// Array.prototype.mapArray = function (cb) {
+//   let mapArray = [];
+//   this.forEach((el) => mapArray.push(cb(el)));
+//   return mapArray;
+// };
+// Array.prototype.mapArray = function (cb) {
+//   let mapArray = [];
+//   this.forEach((el) => mapArray.push(cb(el)));
+//   return mapArray;
+// };
 
 // console.log(arr.mapArray((el) => Math.pow(el, 2)));
 
 // foreach
 
-Array.prototype.foreachArray = function (cb) {
-  for (let i = 0; i < this.length; i++) {
-    cb(this[i]);
-  }
-};
+// Array.prototype.foreachArray = function (cb) {
+//   for (let i = 0; i < this.length; i++) {
+//     cb(this[i]);
+//   }
+// };
+// Array.prototype.foreachArray = function (cb) {
+//   for (let i = 0; i < this.length; i++) {
+//     cb(this[i]);
+//   }
+// };
+// Array.prototype.foreachArray = function (cb) {
+//   for (let i = 0; i < this.length; i++) {
+//     cb(this[i]);
+//   }
+// };
 
 // arr.foreachArray((el) => console.log(el));
 // arr.forEach((el) => console.log(el));
@@ -4281,25 +4417,25 @@ Array.prototype.foreachArray = function (cb) {
 // console.log(logPokemon);
 // logPokemon(); // 'Pika Chu I choose you!'
 
-let person = {
-  name: 'Shiva shankar',
-  location: 'Chennai',
-  role: 'Front end developer',
-  details: function () {
-    return `${this.name} from ${this.location} working as ${this.role}`;
-  },
-};
+// let person = {
+//   name: 'Shiva shankar',
+//   location: 'Chennai',
+//   role: 'Front end developer',
+//   details: function () {
+//     return `${this.name} from ${this.location} working as ${this.role}`;
+//   },
+// };
 
-Function.prototype.callFunc = function (...args) {
-  let obj = this;
-  let params = args.slice(1);
-  console.log(args, params);
-  return obj.apply(args[0], params);
-};
+// Function.prototype.callFunc = function (...args) {
+//   let obj = this;
+//   let params = args.slice(1);
+//   console.log(args, params);
+//   return obj.apply(args[0], params);
+// };
 
-let personDetails = function (place, nextPlace, winter) {
-  return this.details() + 'would like to go ' + place + ' and ' + nextPlace + 'and' + winter;
-};
+// let personDetails = function (place, nextPlace, winter) {
+//   return this.details() + 'would like to go ' + place + ' and ' + nextPlace + 'and' + winter;
+// };
 
 // console.log(personDetails.callFunc(person, 'chennai', 'ooty', 'kanchee'));
 
@@ -4342,25 +4478,449 @@ let personDetails = function (place, nextPlace, winter) {
 
 //Expected Output: "Mary Jane from Kol, WB, IN"
 
-const name = {
-  firstName: 'Mary',
-  lastName: 'Jane',
-};
+// const name = {
+//   firstName: 'Mary',
+//   lastName: 'Jane',
+// };
 
-function printUser(address, state, country, asd) {
-  return `${this.firstName} ${this.lastName} from ${address}, ${state}, ${country} ${asd}`;
-}
+// function printUser(address, state, country, asd) {
+//   return `${this.firstName} ${this.lastName} from ${address}, ${state}, ${country} ${asd}`;
+// }
 
-Function.prototype.myApply = function (...args) {
-  // console.log(args);
-  let obj = args[0];
-  let strs = args[1];
-  console.log(obj);
-  obj.func = this;
-  return obj.func(...strs);
-};
+// Function.prototype.myApply = function (...args) {
+//   // console.log(args);
+//   let obj = args[0];
+//   let strs = args[1];
+//   console.log(obj);
+//   obj.func = this;
+//   return obj.func(...strs);
+// };
 
 // const output = printUser.myApply(name, ['Kol', 'WB', 'IN', 'asdf']);
 // console.log(output);
 
 //Expected Output: "Mary Jane from Kol, WB, IN"
+
+// class BST {
+//   constructor(value) {
+//     this.value = value;
+//     this.left = null;
+//     this.right = null;
+//   }
+
+//   insert(value) {
+//     if (!this.value) {
+//       this.value = value;
+//       return this;
+//     }
+
+//     let newNode = new BST(value);
+//     let current = this.value;
+//     let leftNode = this.left;
+//     let rightNode = this.right;
+
+//     while (current) {
+//       if (value > current) {
+//         //right traverse
+//         if (!rightNode) {
+//           rightNode = newNode;
+//           return this;
+//         } else {
+//           current = rightNode.value;
+//           rightNode = rightNode.right;
+//           leftNode = rightNode.left;
+//         }
+//       } else if (value < current) {
+//         //left traverse
+//         if (!leftNode) {
+//           leftNode = newNode;
+//           return this;
+//         } else {
+//           current = leftNode.value;
+//           rightNode = leftNode.right;
+//           leftNode = leftNode.left;
+//         }
+//       }
+//     }
+//   }
+
+//   contains(value) {}
+
+//   remove(value) {}
+// }
+
+// BinarySearchTree
+
+class BST {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
+
+  insert(value) {
+    if (!this.value) {
+      this.value = value;
+      return this;
+    }
+
+    let newNode = new BST(value);
+
+    if (value < this.value) {
+      //left traverse
+      if (this.left === null) {
+        this.left = newNode;
+      } else {
+        this.left.insert(value);
+      }
+    } else if (value >= this.value) {
+      //right traverse
+      if (this.right === null) {
+        this.right = newNode;
+      } else {
+        this.right.insert(value);
+      }
+    }
+
+    return this;
+  }
+
+  contains(value) {
+    if (this.value === value) {
+      return true;
+    } else if (value > this.value) {
+      return !!this.right?.contains(value);
+    } else if (value < this.value) {
+      return !!this.left?.contains(value);
+    }
+  }
+
+  remove(value, parent = null) {
+    if (value < this.value) {
+      if (this.left !== null) {
+        this.left.remove(value, this);
+      }
+    } else if (value > this.value) {
+      if (this.right !== null) {
+        this.right.remove(value, this);
+      }
+    } else {
+      if (this.left !== null && this.right !== null) {
+        this.value = this.right.getMinValue();
+        this.right.remove(this.value, this);
+      } else if (parent === null) {
+        if (this.left !== null) {
+          this.value = this.left.value;
+          this.right = this.left.right;
+          this.left = this.left.left;
+        } else if (this.right !== null) {
+          this.value = this.right.value;
+          this.left = this.right.left;
+          this.right = this.right.right;
+        } else {
+          //single node tree, do nothing
+        }
+      } else if (parent.left === this) {
+        parent.left = this.left !== null ? this.left : this.right;
+      } else if (parent.right === this) {
+        parent.right = this.left !== null ? this.left : this.right;
+      }
+    }
+    return this;
+  }
+
+  getMinValue() {
+    if (this.left === null) {
+      return this.value;
+    } else {
+      return this.left.getMinValue();
+    }
+  }
+
+  //traversing the tree
+  BFS() {
+    let visited = [],
+      queue = [],
+      current = this;
+
+    queue.push(current);
+    while (queue.length) {
+      current = queue.shift();
+      visited.push(current.value);
+
+      if (current.left) queue.push(current.left);
+      if (current.right) queue.push(current.right);
+    }
+
+    return visited;
+  }
+
+  // validate bst
+
+  validateBstHelper(tree, minValue, maxValue) {
+    if (tree === null) return true;
+    if (tree.value < minValue || tree.value >= maxValue) return false;
+    const isLeftValid = this.validateBstHelper(tree.left, minValue, tree.value);
+    return isLeftValid && this.validateBstHelper(tree.right, tree.value, maxValue);
+  }
+
+  validateBst() {
+    return this.validateBstHelper(this, -Infinity, Infinity);
+  }
+
+  inOrderTraverse(tree, array = []) {
+    function traverse(node) {
+      if (node.left) traverse(node.left);
+      array.push(node.value);
+      if (node.right) traverse(node.right);
+    }
+    traverse(tree);
+    return array;
+  }
+  preOrderTraverse(tree, array = []) {
+    function traverse(node) {
+      array.push(node.value);
+      if (node.left) traverse(node.left);
+      if (node.right) traverse(node.right);
+    }
+    traverse(tree);
+    return array;
+  }
+  postOrderTraverse(tree, array = []) {
+    function traverse(node) {
+      if (node.left) traverse(node.left);
+      if (node.right) traverse(node.right);
+      array.push(node.value);
+    }
+    traverse(tree);
+    return array;
+  }
+}
+
+let binarySearchTree = new BST();
+// binarySearchTree.insert(10);
+// binarySearchTree.insert(5);
+binarySearchTree.insert(15);
+binarySearchTree.insert(5);
+binarySearchTree.insert(20);
+binarySearchTree.insert(2);
+binarySearchTree.insert(5);
+binarySearchTree.insert(17);
+binarySearchTree.insert(22);
+binarySearchTree.insert(1);
+// console.log(binarySearchTree.insert(3));
+// console.log(binarySearchTree.insert(1));
+// console.log(binarySearchTree.BFS()); //[ 20, 14, 57, 9, 19, 31, 62, 3, 11, 72 ]
+
+// console.log(binarySearchTree.remove(30));
+// console.log(binarySearchTree.contains(30));
+
+// console.log(binarySearchTree.validateBst());
+// console.log(binarySearchTree.inOrderTraverse(binarySearchTree));
+// console.log(binarySearchTree.preOrderTraverse(binarySearchTree));
+// console.log(binarySearchTree.postOrderTraverse(binarySearchTree));
+
+// function minHeightBst(array) {
+//   // let binarySearchTree = new BST();
+//   let middleIndex = Math.floor(array.length / 2);
+//   let middleElement = array[middleIndex];
+//   let leftArray = array.slice(0, middleIndex);
+//   let rightArray = array.slice(middleIndex + 1);
+//   binarySearchTree.insert(middleElement);
+//   while (leftArray.length && rightArray.length) {
+//     let leftMidIndex = Math.floor(leftArray.length / 2);
+//     let rightMidIndex = Math.floor(rightArray.length / 2);
+//     let leftMidElement = leftArray[leftMidIndex];
+//     let rightMidElement = rightArray[rightMidIndex];
+//     binarySearchTree.insert(leftMidElement);
+//     binarySearchTree.insert(rightMidElement);
+//     leftArray.splice(leftMidIndex, 1);
+//     rightArray.splice(rightMidIndex, 1);
+//   }
+//   return binarySearchTree;
+// }
+
+function findKthLargestValueInBst(tree, k) {
+  let visited = [],
+    current = tree.right,
+    queue = [];
+  queue.push(current);
+  while (queue.length) {
+    current = queue.shift();
+    visited.push(current.value);
+    if (current.left) queue.push(current.left);
+    if (current.right) queue.push(current.right);
+  }
+  console.log(visited);
+  let arr = visited.sort((a, b) => a - b);
+  console.log(arr[arr.length - 3]);
+}
+
+// findKthLargestValueInBst(binarySearchTree, 3);
+
+function minHeightBst(array) {
+  return constructMinHeightBst(array, 0, array.length - 1);
+}
+
+function constructMinHeightBst(array, startIdx, endIdx) {
+  if (endIdx < startIdx) return null;
+  const midIdx = Math.floor((startIdx + endIdx) / 2);
+  const bst = new BST(array[midIdx]);
+  bst.left = constructMinHeightBst(array, startIdx, midIdx - 1);
+  bst.right = constructMinHeightBst(array, midIdx + 1, endIdx);
+  return bst;
+}
+// console.log(minHeightBst([1, 2, 5, 7, 10, 13, 14, 15, 22, 28, 32, 36, 89, 92, 9000]));
+// console.log(binarySearchTree);
+// console.log(binarySearchTree.validateBst());
+/*
+
+function validateBst(tree) {
+  return validateBstHelper(tree, -Infinity, Infinity);
+}
+
+function validateBstHelper(tree, minValue, maxValue) {
+  if (tree === null) return true;
+  if (tree.value < minValue || tree.value >= maxValue) return false;
+  const leftIsValid = validateBstHelper(tree.left, minValue, tree.value);
+  return leftIsValid && validateBstHelper(tree.right, tree.value, maxValue);
+}
+
+console.log(
+  validateBst({
+    left: {
+      left: {
+        left: {
+          left: null,
+          right: null,
+          value: 1,
+        },
+        right: null,
+        value: 2,
+      },
+      right: {
+        left: null,
+        right: null,
+        value: 5,
+      },
+      value: 5,
+    },
+    right: {
+      left: {
+        left: null,
+        right: {
+          left: null,
+          right: null,
+          value: 14,
+        },
+        value: 13,
+      },
+      right: {
+        left: null,
+        right: null,
+        value: 22,
+      },
+      value: 15,
+    },
+    value: 10,
+  })
+);
+*/
+
+function findClosestValueInBst(tree, target) {
+  let current = tree,
+    queue = [],
+    closestValue,
+    temp = Infinity;
+
+  queue.push(current);
+
+  while (queue.length) {
+    current = queue.shift();
+    // visited.push(current.value);
+
+    if (Math.abs(current.value - target) < temp) {
+      temp = Math.abs(current.value - target);
+      closestValue = current.value;
+    }
+
+    if (current.left) queue.push(current.left);
+    if (current.right) queue.push(current.right);
+  }
+}
+
+// findClosestValueInBst(
+//   {
+//     tree: {
+//       nodes: [
+//         { id: '10', left: '5', right: '15', value: 10 },
+//         { id: '15', left: '13', right: '22', value: 15 },
+//         { id: '22', left: null, right: null, value: 22 },
+//         { id: '13', left: null, right: '14', value: 13 },
+//         { id: '14', left: null, right: null, value: 14 },
+//         { id: '5', left: '2', right: '5-2', value: 5 },
+//         { id: '5-2', left: null, right: null, value: 5 },
+//         { id: '2', left: '1', right: null, value: 2 },
+//         { id: '1', left: null, right: null, value: 1 },
+//       ],
+//       root: '10',
+//     },
+//   },
+//   12
+// );
+
+function validateBst(tree) {
+  let current = tree,
+    queue = [],
+    visited = [];
+  queue.push(current);
+
+  while (queue.length) {
+    current = queue.shift();
+    visited.push(current.value);
+
+    if (current.left) queue.push(current.left);
+    if (current.right) queue.push(current.right);
+  }
+}
+// console.log(validateBst());
+// let visited = [10, 5, 15, 2, 5, 22, 1, -5, -15, -5, -22, -2, -1];
+// for (let i = 1; i <= visited.length - 1; i++) {
+//   let parent = visited[Math.floor((i - 1) / 2)];
+//   if (i % 2 !== 0) {
+//     //left child
+//     if (parent > visited[i]) {
+//       continue;
+//     } else {
+//       return false;
+//     }
+//   } else if (i % 2 === 0) {
+//     // right child
+//     if (parent <= visited[i]) {
+//       continue;
+//     } else {
+//       return false;
+//     }
+//   }
+// }
+// return true;
+// {
+//   "tree": {
+//     "nodes": [
+//       {"id": "10", "left": "5", "right": "15", "value": 10},
+//       {"id": "15", "left": null, "right": "22", "value": 15},
+//       {"id": "22", "left": null, "right": null, "value": 22},
+//       {"id": "5", "left": "2", "right": "5-2", "value": 5},
+//       {"id": "5-2", "left": null, "right": null, "value": 5},
+//       {"id": "2", "left": "1", "right": null, "value": 2},
+//       {"id": "1", "left": "-5", "right": null, "value": 1},
+//       {"id": "-5", "left": "-15", "right": "-5-2", "value": -5},
+//       {"id": "-5-2", "left": null, "right": "-2", "value": -5},
+//       {"id": "-2", "left": null, "right": "-1", "value": -2},
+//       {"id": "-1", "left": null, "right": null, "value": -1},
+//       {"id": "-15", "left": "-22", "right": null, "value": -15},
+//       {"id": "-22", "left": null, "right": null, "value": -22}
+//     ],
+//     "root": "10"
+//   }
+// }
