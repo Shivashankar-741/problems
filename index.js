@@ -5488,16 +5488,16 @@ function findComment(tree, id) {
 console.log(findComment(objTree, 19));
 */
 
-const findItemNested = (arr, itemId, nestingKey) => {
-  return arr.reduce((a, item) => {
-    if (a) return a;
-    if (item.id === itemId) return item;
-    if (item[nestingKey]) return findItemNested(item[nestingKey], itemId, nestingKey);
-  }, null);
-};
+// const findItemNested = (arr, itemId, nestingKey) => {
+//   return arr.reduce((a, item) => {
+//     if (a) return a;
+//     if (item.id === itemId) return item;
+//     if (item[nestingKey]) return findItemNested(item[nestingKey], itemId, nestingKey);
+//   }, null);
+// };
 
-const res = findItemNested(objTree, 9, 'child');
-console.log(res);
+// const res = findItemNested(objTree, 9, 'child');
+// console.log(res);
 
 // let array = [1, 2, 3, 4, 5];
 
@@ -5509,3 +5509,13 @@ console.log(res);
 // };
 
 // console.log(doubleArray(array));
+
+// function sumOfAllNumbers(n, total = 1) {
+//   if (n <= 0) return 'n should not be negative';
+//   if (n === 1) {
+//     return total;
+//   }
+
+//   return sumOfAllNumbers(n - 1, n + total);
+// }
+// console.log(sumOfAllNumbers(3));
