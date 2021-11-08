@@ -113,20 +113,20 @@ var smallerNumbersThanCurrent = function (nums) {
 
 // checkBalance("())(");
 
-var isOneBitCharacter = function (bits) {
-  console.log(bits);
+// var isOneBitCharacter = function (bits) {
+//   console.log(bits);
 
-  let lastElement = bits[bits.length - 1];
-  console.log(lastElement);
+//   let lastElement = bits[bits.length - 1];
+//   console.log(lastElement);
 
-  if (lastElement === 0) {
-    if (bits[bits.length - 2] === 1) {
-      console.log(false);
-    }
-  } else {
-    console.log(true);
-  }
-};
+//   if (lastElement === 0) {
+//     if (bits[bits.length - 2] === 1) {
+//       console.log(false);
+//     }
+//   } else {
+//     console.log(true);
+//   }
+// };
 
 // isOneBitCharacter([1, 0, 0]);
 
@@ -141,57 +141,57 @@ var isOneBitCharacter = function (bits) {
 
 //258
 
-var addDigits = function (num) {
-  let number = num + '';
-  let number2 = 0;
-  let number4 = [];
+// var addDigits = function (num) {
+//   let number = num + '';
+//   let number2 = 0;
+//   let number4 = [];
 
-  if (number.length > 1) {
-    for (let i = 0; i < number.length; i++) {
-      number2 += number[i] * 1;
-    }
-    let number3 = number2 + '';
-    if (number3.length > 1) {
-      addDigits(number3);
-    }
-  } else {
-    console.log('value one');
-  }
-  number4.push(number2 * 1);
-  console.log(number4);
-};
+//   if (number.length > 1) {
+//     for (let i = 0; i < number.length; i++) {
+//       number2 += number[i] * 1;
+//     }
+//     let number3 = number2 + '';
+//     if (number3.length > 1) {
+//       addDigits(number3);
+//     }
+//   } else {
+//     console.log('value one');
+//   }
+//   number4.push(number2 * 1);
+//   console.log(number4);
+// };
 
 // addDigits(38);
 
-var threeSumClosest = function (nums, target) {
-  if (!nums.includes(target)) {
-    return target;
-  }
+// var threeSumClosest = function (nums, target) {
+//   if (!nums.includes(target)) {
+//     return target;
+//   }
 
-  const minArr = [];
-  const maxArr = [];
+//   const minArr = [];
+//   const maxArr = [];
 
-  for (let i = 0; i < nums.length; i++) {
-    if (nums[i] < target) {
-      minArr.push(nums[i]);
-    } else if (nums[i] > target) {
-      maxArr.push(nums[i]);
-    }
-  }
+//   for (let i = 0; i < nums.length; i++) {
+//     if (nums[i] < target) {
+//       minArr.push(nums[i]);
+//     } else if (nums[i] > target) {
+//       maxArr.push(nums[i]);
+//     }
+//   }
 
-  //   const changedMinArr = Math.max(...minArr);
-  //   const changedMaxArr = Math.min(...maxArr);
+//   //   const changedMinArr = Math.max(...minArr);
+//   //   const changedMaxArr = Math.min(...maxArr);
 
-  if (Math.max(...minArr) === Infinity) {
-    return Math.max(...minArr) + target;
-  } else if (Math.min(...maxArr) === Infinity) {
-    return Math.max(...minArr) + target;
-  } else if (Math.min(...maxArr) === Infinity && Math.max(...minArr) === Infinity) {
-    return target;
-  } else {
-    return Math.max(...minArr) + Math.min(...maxArr) + target;
-  }
-};
+//   if (Math.max(...minArr) === Infinity) {
+//     return Math.max(...minArr) + target;
+//   } else if (Math.min(...maxArr) === Infinity) {
+//     return Math.max(...minArr) + target;
+//   } else if (Math.min(...maxArr) === Infinity && Math.max(...minArr) === Infinity) {
+//     return target;
+//   } else {
+//     return Math.max(...minArr) + Math.min(...maxArr) + target;
+//   }
+// };
 
 // console.log(threeSumClosest([-1, 2, 1, -4], 1));
 // console.log(threeSumClosest([0, 1, 2], 3));
@@ -4128,7 +4128,18 @@ console.log(bst.root);
 //   }
 //   return acc;
 // }, {});
-// // console.log(groupingAge);
+// console.log(groupingAge);
+
+// let user = [];
+// for (let i = 0; i < users.length; i++) {
+//   if (users[i].id === id) {
+//     users[i].like = users[i].like + 1;
+//     user.push(users[i]);
+//   } else {
+//     user.push(users[i]);
+//   }
+// }
+// setUsers(user);
 
 // class Person {
 //   constructor(name, age) {
@@ -4551,163 +4562,163 @@ console.log(bst.root);
 
 // BinarySearchTree
 
-class BST {
-  constructor(value) {
-    this.value = value;
-    this.left = null;
-    this.right = null;
-  }
+// class BST {
+//   constructor(value) {
+//     this.value = value;
+//     this.left = null;
+//     this.right = null;
+//   }
 
-  insert(value) {
-    if (!this.value) {
-      this.value = value;
-      return this;
-    }
+//   insert(value) {
+//     if (!this.value) {
+//       this.value = value;
+//       return this;
+//     }
 
-    let newNode = new BST(value);
+//     let newNode = new BST(value);
 
-    if (value < this.value) {
-      //left traverse
-      if (this.left === null) {
-        this.left = newNode;
-      } else {
-        this.left.insert(value);
-      }
-    } else if (value >= this.value) {
-      //right traverse
-      if (this.right === null) {
-        this.right = newNode;
-      } else {
-        this.right.insert(value);
-      }
-    }
+//     if (value < this.value) {
+//       //left traverse
+//       if (this.left === null) {
+//         this.left = newNode;
+//       } else {
+//         this.left.insert(value);
+//       }
+//     } else if (value >= this.value) {
+//       //right traverse
+//       if (this.right === null) {
+//         this.right = newNode;
+//       } else {
+//         this.right.insert(value);
+//       }
+//     }
 
-    return this;
-  }
+//     return this;
+//   }
 
-  contains(value) {
-    if (this.value === value) {
-      return true;
-    } else if (value > this.value) {
-      return !!this.right?.contains(value);
-    } else if (value < this.value) {
-      return !!this.left?.contains(value);
-    }
-  }
+//   contains(value) {
+//     if (this.value === value) {
+//       return true;
+//     } else if (value > this.value) {
+//       return !!this.right?.contains(value);
+//     } else if (value < this.value) {
+//       return !!this.left?.contains(value);
+//     }
+//   }
 
-  remove(value, parent = null) {
-    if (value < this.value) {
-      if (this.left !== null) {
-        this.left.remove(value, this);
-      }
-    } else if (value > this.value) {
-      if (this.right !== null) {
-        this.right.remove(value, this);
-      }
-    } else {
-      if (this.left !== null && this.right !== null) {
-        this.value = this.right.getMinValue();
-        this.right.remove(this.value, this);
-      } else if (parent === null) {
-        if (this.left !== null) {
-          this.value = this.left.value;
-          this.right = this.left.right;
-          this.left = this.left.left;
-        } else if (this.right !== null) {
-          this.value = this.right.value;
-          this.left = this.right.left;
-          this.right = this.right.right;
-        } else {
-          //single node tree, do nothing
-        }
-      } else if (parent.left === this) {
-        parent.left = this.left !== null ? this.left : this.right;
-      } else if (parent.right === this) {
-        parent.right = this.left !== null ? this.left : this.right;
-      }
-    }
-    return this;
-  }
+//   remove(value, parent = null) {
+//     if (value < this.value) {
+//       if (this.left !== null) {
+//         this.left.remove(value, this);
+//       }
+//     } else if (value > this.value) {
+//       if (this.right !== null) {
+//         this.right.remove(value, this);
+//       }
+//     } else {
+//       if (this.left !== null && this.right !== null) {
+//         this.value = this.right.getMinValue();
+//         this.right.remove(this.value, this);
+//       } else if (parent === null) {
+//         if (this.left !== null) {
+//           this.value = this.left.value;
+//           this.right = this.left.right;
+//           this.left = this.left.left;
+//         } else if (this.right !== null) {
+//           this.value = this.right.value;
+//           this.left = this.right.left;
+//           this.right = this.right.right;
+//         } else {
+//           //single node tree, do nothing
+//         }
+//       } else if (parent.left === this) {
+//         parent.left = this.left !== null ? this.left : this.right;
+//       } else if (parent.right === this) {
+//         parent.right = this.left !== null ? this.left : this.right;
+//       }
+//     }
+//     return this;
+//   }
 
-  getMinValue() {
-    if (this.left === null) {
-      return this.value;
-    } else {
-      return this.left.getMinValue();
-    }
-  }
+//   getMinValue() {
+//     if (this.left === null) {
+//       return this.value;
+//     } else {
+//       return this.left.getMinValue();
+//     }
+//   }
 
-  //traversing the tree
-  BFS() {
-    let visited = [],
-      queue = [],
-      current = this;
+//   //traversing the tree
+//   BFS() {
+//     let visited = [],
+//       queue = [],
+//       current = this;
 
-    queue.push(current);
-    while (queue.length) {
-      current = queue.shift();
-      visited.push(current.value);
+//     queue.push(current);
+//     while (queue.length) {
+//       current = queue.shift();
+//       visited.push(current.value);
 
-      if (current.left) queue.push(current.left);
-      if (current.right) queue.push(current.right);
-    }
+//       if (current.left) queue.push(current.left);
+//       if (current.right) queue.push(current.right);
+//     }
 
-    return visited;
-  }
+//     return visited;
+//   }
 
-  // validate bst
+//   // validate bst
 
-  validateBstHelper(tree, minValue, maxValue) {
-    if (tree === null) return true;
-    if (tree.value < minValue || tree.value >= maxValue) return false;
-    const isLeftValid = this.validateBstHelper(tree.left, minValue, tree.value);
-    return isLeftValid && this.validateBstHelper(tree.right, tree.value, maxValue);
-  }
+//   validateBstHelper(tree, minValue, maxValue) {
+//     if (tree === null) return true;
+//     if (tree.value < minValue || tree.value >= maxValue) return false;
+//     const isLeftValid = this.validateBstHelper(tree.left, minValue, tree.value);
+//     return isLeftValid && this.validateBstHelper(tree.right, tree.value, maxValue);
+//   }
 
-  validateBst() {
-    return this.validateBstHelper(this, -Infinity, Infinity);
-  }
+//   validateBst() {
+//     return this.validateBstHelper(this, -Infinity, Infinity);
+//   }
 
-  inOrderTraverse(tree, array = []) {
-    function traverse(node) {
-      if (node.left) traverse(node.left);
-      array.push(node.value);
-      if (node.right) traverse(node.right);
-    }
-    traverse(tree);
-    return array;
-  }
-  preOrderTraverse(tree, array = []) {
-    function traverse(node) {
-      array.push(node.value);
-      if (node.left) traverse(node.left);
-      if (node.right) traverse(node.right);
-    }
-    traverse(tree);
-    return array;
-  }
-  postOrderTraverse(tree, array = []) {
-    function traverse(node) {
-      if (node.left) traverse(node.left);
-      if (node.right) traverse(node.right);
-      array.push(node.value);
-    }
-    traverse(tree);
-    return array;
-  }
-}
+//   inOrderTraverse(tree, array = []) {
+//     function traverse(node) {
+//       if (node.left) traverse(node.left);
+//       array.push(node.value);
+//       if (node.right) traverse(node.right);
+//     }
+//     traverse(tree);
+//     return array;
+//   }
+//   preOrderTraverse(tree, array = []) {
+//     function traverse(node) {
+//       array.push(node.value);
+//       if (node.left) traverse(node.left);
+//       if (node.right) traverse(node.right);
+//     }
+//     traverse(tree);
+//     return array;
+//   }
+//   postOrderTraverse(tree, array = []) {
+//     function traverse(node) {
+//       if (node.left) traverse(node.left);
+//       if (node.right) traverse(node.right);
+//       array.push(node.value);
+//     }
+//     traverse(tree);
+//     return array;
+//   }
+// }
 
-let binarySearchTree = new BST();
+// let binarySearchTree = new BST();
 // binarySearchTree.insert(10);
 // binarySearchTree.insert(5);
-binarySearchTree.insert(15);
-binarySearchTree.insert(5);
-binarySearchTree.insert(20);
-binarySearchTree.insert(2);
-binarySearchTree.insert(5);
-binarySearchTree.insert(17);
-binarySearchTree.insert(22);
-binarySearchTree.insert(1);
+// binarySearchTree.insert(15);
+// binarySearchTree.insert(5);
+// binarySearchTree.insert(20);
+// binarySearchTree.insert(2);
+// binarySearchTree.insert(5);
+// binarySearchTree.insert(17);
+// binarySearchTree.insert(22);
+// binarySearchTree.insert(1);
 // console.log(binarySearchTree.insert(3));
 // console.log(binarySearchTree.insert(1));
 // console.log(binarySearchTree.BFS()); //[ 20, 14, 57, 9, 19, 31, 62, 3, 11, 72 ]
@@ -4740,36 +4751,36 @@ binarySearchTree.insert(1);
 //   return binarySearchTree;
 // }
 
-function findKthLargestValueInBst(tree, k) {
-  let visited = [],
-    current = tree.right,
-    queue = [];
-  queue.push(current);
-  while (queue.length) {
-    current = queue.shift();
-    visited.push(current.value);
-    if (current.left) queue.push(current.left);
-    if (current.right) queue.push(current.right);
-  }
-  console.log(visited);
-  let arr = visited.sort((a, b) => a - b);
-  console.log(arr[arr.length - 3]);
-}
+// function findKthLargestValueInBst(tree, k) {
+//   let visited = [],
+//     current = tree.right,
+//     queue = [];
+//   queue.push(current);
+//   while (queue.length) {
+//     current = queue.shift();
+//     visited.push(current.value);
+//     if (current.left) queue.push(current.left);
+//     if (current.right) queue.push(current.right);
+//   }
+//   console.log(visited);
+//   let arr = visited.sort((a, b) => a - b);
+//   console.log(arr[arr.length - 3]);
+// }
 
 // findKthLargestValueInBst(binarySearchTree, 3);
 
-function minHeightBst(array) {
-  return constructMinHeightBst(array, 0, array.length - 1);
-}
+// function minHeightBst(array) {
+//   return constructMinHeightBst(array, 0, array.length - 1);
+// }
 
-function constructMinHeightBst(array, startIdx, endIdx) {
-  if (endIdx < startIdx) return null;
-  const midIdx = Math.floor((startIdx + endIdx) / 2);
-  const bst = new BST(array[midIdx]);
-  bst.left = constructMinHeightBst(array, startIdx, midIdx - 1);
-  bst.right = constructMinHeightBst(array, midIdx + 1, endIdx);
-  return bst;
-}
+// function constructMinHeightBst(array, startIdx, endIdx) {
+//   if (endIdx < startIdx) return null;
+//   const midIdx = Math.floor((startIdx + endIdx) / 2);
+//   const bst = new BST(array[midIdx]);
+//   bst.left = constructMinHeightBst(array, startIdx, midIdx - 1);
+//   bst.right = constructMinHeightBst(array, midIdx + 1, endIdx);
+//   return bst;
+// }
 // console.log(minHeightBst([1, 2, 5, 7, 10, 13, 14, 15, 22, 28, 32, 36, 89, 92, 9000]));
 // console.log(binarySearchTree);
 // console.log(binarySearchTree.validateBst());
@@ -4827,27 +4838,27 @@ console.log(
 );
 */
 
-function findClosestValueInBst(tree, target) {
-  let current = tree,
-    queue = [],
-    closestValue,
-    temp = Infinity;
+// function findClosestValueInBst(tree, target) {
+//   let current = tree,
+//     queue = [],
+//     closestValue,
+//     temp = Infinity;
 
-  queue.push(current);
+//   queue.push(current);
 
-  while (queue.length) {
-    current = queue.shift();
-    // visited.push(current.value);
+//   while (queue.length) {
+//     current = queue.shift();
+//     // visited.push(current.value);
 
-    if (Math.abs(current.value - target) < temp) {
-      temp = Math.abs(current.value - target);
-      closestValue = current.value;
-    }
+//     if (Math.abs(current.value - target) < temp) {
+//       temp = Math.abs(current.value - target);
+//       closestValue = current.value;
+//     }
 
-    if (current.left) queue.push(current.left);
-    if (current.right) queue.push(current.right);
-  }
-}
+//     if (current.left) queue.push(current.left);
+//     if (current.right) queue.push(current.right);
+//   }
+// }
 
 // findClosestValueInBst(
 //   {
@@ -4869,20 +4880,20 @@ function findClosestValueInBst(tree, target) {
 //   12
 // );
 
-function validateBst(tree) {
-  let current = tree,
-    queue = [],
-    visited = [];
-  queue.push(current);
+// function validateBst(tree) {
+//   let current = tree,
+//     queue = [],
+//     visited = [];
+//   queue.push(current);
 
-  while (queue.length) {
-    current = queue.shift();
-    visited.push(current.value);
+//   while (queue.length) {
+//     current = queue.shift();
+//     visited.push(current.value);
 
-    if (current.left) queue.push(current.left);
-    if (current.right) queue.push(current.right);
-  }
-}
+//     if (current.left) queue.push(current.left);
+//     if (current.right) queue.push(current.right);
+//   }
+// }
 // console.log(validateBst());
 // let visited = [10, 5, 15, 2, 5, 22, 1, -5, -15, -5, -22, -2, -1];
 // for (let i = 1; i <= visited.length - 1; i++) {
@@ -4924,3 +4935,577 @@ function validateBst(tree) {
 //     "root": "10"
 //   }
 // }
+
+// const Calculator = () => {
+//   const sum = (a, b) => console.log(a + b);
+//   const difference = (a, b) => a - b;
+//   const product = (a, b) => a * b;
+//   const dividend = (a, b) => a / b;
+//   return { sum, difference, product, dividend };
+// };
+
+// const calc12And5 = Calculator(12, 5);
+// calc12And5.sum(12, 5); // 17
+// calc12And5.difference(); // 7
+// calc12And5.product(); // 60
+// calc12And5.dividend();
+
+// function curryFunc(fn) {
+//   return function curry(...args) {
+//     if (fn.length <= args.length) {
+//       return fn.apply(this, args);
+//     } else {
+//       return function (...args2) {
+//         return curry.apply(this, args.concat(args2));
+//       };
+//     }
+//   };
+// }
+
+// // driver code
+// let sum = curryFunc(function (a, b, c, d) {
+//   return a + b + c + d;
+// });
+
+// sum(1)(2)(3)(4); // called like curried function
+// sum(1, 2)(3, 4);
+
+// function toggle(...args) {
+//   let obj = {};
+//   if (args.length === 1) return args[0];
+//   if (args.length > 1) {
+//     if (obj[args[0]]) {
+//       obj[args[0]] = obj[args[0]] + 1;
+//     } else {
+//       obj[args[0]] = 1;
+//     }
+//     console.log(obj);
+//   }
+//   // return args;
+// }
+
+// function toggle(...values) {
+//   let state = -1;
+//   const length = values.length;
+//   return function () {
+//     state = (state + 1) % length;
+//     console.log(state);
+//     return values[state];
+//   };
+// }
+
+// var hello = toggle('hello');
+// var onOff = toggle('on', 'off');
+// var speed = toggle('slow', 'medium', 'fast');
+
+// console.log(hello()); // "hello"
+// console.log(hello()); // "hello"
+
+// console.log(onOff()); // "on"
+// console.log(onOff()); // "off"
+// console.log(onOff()); // "on"
+
+// console.log(speed()); // "slow"
+// console.log(speed()); // "medium"
+// console.log(speed()); // "fast"
+// console.log(speed()); // "slow"
+
+// function range(start, end) {
+//   if (end === undefined) {
+//     return function (end) {
+//       return range(start, end);
+//     };
+//   }
+
+//   const arr = [];
+//   for (let i = start; i <= end; i++) {
+//     arr.push(i);
+//   }
+//   return arr;
+// }
+
+// Example
+// console.log(range(3, 6)); // [3, 4, 5, 6]
+// console.log(range(3)(5)); // [3, 4, 5]
+// console.log(range(3)(0)); // []
+
+// console.log(range(5));
+
+// function sum() {
+//   console.log(arguments);
+// }
+
+// sum(2)(4)(6); // 12
+// sum(3, 2)(5); // 10
+// sum(4)(-10, -6); // -12
+// sum(6, -3, 1);
+
+// function a(b) {
+//   setTimeout(() => {
+//     b();
+//   }, 2000);
+// }
+
+// function b() {
+//   console.log('function b');
+// }
+
+// a(b);
+
+/*
+
+function a() {
+  for (let i = 1; i <= 10; i++) {
+    setTimeout(() => {
+      b(i);
+    }, i * 1000);
+  }
+}
+
+function b(i) {
+  console.log(i);
+}
+// a();
+*/
+
+// console.log(a);
+
+// var a = 10;
+
+// let b = [1, 2, 3, 4];
+
+// let c = [5, 7, ...b];
+
+// const [d, e] = [10, 11];
+// console.log(d);
+// console.log(e);
+
+// const { f, g } = { f: 12, g: 13 };
+// console.log(f);
+// console.log(g);
+
+// // () {
+// //   return 1 + 2;
+// // }
+
+// // func2();
+
+// // func2 = () => {
+// //   return 1 + 1;
+// // };
+
+// [].sort((a, b) => a - b);
+
+// let condition = true;
+// <div id=“A” className={condition?'orderOne':'orderTwo'}>
+// 		<div id=“1”  />
+// 		<div id=“2” />
+// 	</div>
+
+//   if(condition){
+//     document.getElementById('a').style.display='flex'
+//     document.getElementById('a').style.display='order:1'
+
+//   }else{
+
+//     document.getElementById('a').style.display='flex'
+//     document.getElementById('a').style.display='order:2'
+//   }
+
+// $var a=true
+// const[state, useState]=useState(0)
+//   useEffect(()=>{
+//     console.log('hello')
+//   },[])
+//   useEffect(()=>{
+//     console.log('hello')
+//     return()=>{}
+//   })
+
+//   useEffect(()=>{},[state])
+
+// export const
+
+// INPUT:		n = 6
+// OUTPUT: 	[6,5,4,3,2,1,2,3,4,5,6]
+
+// INPUT:		n = 4
+// OUTPUT: 	[4,3,2,1,2,3,4]
+
+// INPUT:		n = 1
+// OUTPUT: 	[1]
+
+// function printIntegers(n) {
+//   let intArr = [];
+
+//   for (let i = n; i > 0; i--) {
+//     intArr.push(i);
+//   }
+
+//   for (let i = 2; i < n + 1; i++) {
+//     intArr.push(i);
+//   }
+
+//   console.log(intArr);
+// }
+
+// printIntegers(6);
+// printIntegers(7);
+// printIntegers(1);
+
+/*
+
+function squareOfN(n) {
+  let temp = 0,
+    numerator = 0,
+    denominator = 4;
+  for (let i = 1; i <= n; i++) {
+    numerator = i;
+    if (i === 1) {
+      denominator = denominator * 1;
+    } else {
+      denominator = denominator * denominator;
+    }
+    temp = temp + numerator / denominator;
+  }
+  console.log(temp);
+}
+squareOfN(1); //0.25
+squareOfN(2); //0.375
+squareOfN(3); //0.38671875;
+squareOfN(4); //0.38677978515625
+squareOfN(5); //0.3867797863204032
+
+*/
+
+// let temp = 0;
+// function recursiveSquareOfN(n) {
+//   if (n >= 1) {
+//     if (n === 1) {
+//       temp = temp + n / Math.pow(4, 1);
+//     } else {
+//       temp = temp + n / Math.pow(4, 2 * (n - 1));
+//     }
+//     recursiveSquareOfN(n - 1);
+//     return temp;
+//   }
+// }
+
+// console.log(recursiveSquareOfN(3)); //0.38671875
+// console.log(recursiveSquareOfN(1)); // 0.25
+// console.log(recursiveSquareOfN(2)); // 0.375
+// console.log(recursiveSquareOfN(4)); //
+// console.log(recursiveSquareOfN(5)); //
+
+// console.log(recursiveSquareOfN(9));
+
+// console.log(Math.pow(4 * 1, 2));
+
+// vivek@kissflow.com
+// 1/4+2/16+3/256 .... n
+
+// Math.pow(4,1)
+//4
+// Math.pow(4,2)
+//16
+// Math.pow(4,4)
+// 256
+// Math.pow(4,8)
+// 65536
+// Math.pow(4,16)
+// 4294967296
+// Math.pow(4,32)
+//18446744073709552000
+
+// let objTree = [
+//   {
+//     comment: 'comment1',
+//     id: 1,
+//     child: [
+//       {
+//         comment: 'comment4',
+//         id: 4,
+//         child: [
+//           {
+//             comment: 'comment1',
+//             id: 7,
+//             child: [],
+//           },
+//         ],
+//       },
+//       {
+//         comment: 'comment5',
+//         id: 5,
+//         child: [
+//           {
+//             comment: 'comment8',
+//             id: 8,
+//             child: [],
+//           },
+//         ],
+//       },
+//       {
+//         comment: 'comment6',
+//         id: 6,
+//         child: [],
+//       },
+//     ],
+//   },
+//   {
+//     comment: 'comment2',
+//     id: 2,
+//     child: [
+//       {
+//         comment: 'comment9',
+//         id: 9,
+//         child: [
+//           {
+//             comment: 'Notcomment19',
+//             id: 19,
+//             child: [],
+//           },
+//           {
+//             comment: 'comment29',
+//             id: 29,
+//             child: [],
+//           },
+//           {
+//             comment: 'comment9',
+//             id: 39,
+//             child: [],
+//           },
+//         ],
+//       },
+//       {
+//         comment: 'comment10',
+//         id: 10,
+//         child: [],
+//       },
+//       {
+//         comment: 'comment11',
+//         id: 11,
+//         child: [],
+//       },
+//     ],
+//   },
+//   {
+//     comment: 'comment3',
+//     id: 3,
+//     child: [
+//       {
+//         comment: 'comment12',
+//         id: 12,
+//         child: [],
+//       },
+//     ],
+//   },
+// ];
+
+// function findElement(obj) {
+//   obj.forEach((el) => {
+//     if (el.comment) {
+//       console.log(el.comment);
+//     }
+
+//     if (el.child.length) {
+//       findElement(el.child);
+//     }
+//   });
+// }
+
+// findElement(obj);
+
+// let acc = [];
+
+// function findElement(obj, id) {
+//   obj.forEach((el) => {
+//     if (el.id !== id) {
+//       acc.push(el);
+//     } else if (el.id === id) {
+//       el.comment = 'hey there';
+//       acc.push(el);
+//     } else if (el.child.length) {
+//       findElement(el.child, id);
+//     }
+//   });
+// }
+
+// findElement(obj, 9);
+// console.log(acc);
+
+// console.log(obj);
+
+// let arr = [];
+// let objt = { one: 'oneas', two: 'twoas' };
+
+// for (let key in objt) {
+//   console.log(key);
+//   console.log(key, objt[key]);
+//   arr.push(objt[key]);
+// }
+
+// console.log(arr);
+
+// let objt = [
+//   { id: 1, comment: 'comment 1' },
+//   { id: 2, comment: 'comment 2' },
+//   { id: 3, comment: 'comment 3' },
+//   { id: 4, comment: 'comment 4' },
+// ];
+
+// objt.forEach((el) => {
+//   if (el.id === 4) {
+//     el === undefined;
+//   }
+//   console.log(el);
+// });
+
+// console.log(objt);
+
+// let a = [1, 2, 3, 4, 5];
+// console.log(a.slice(1, 2));
+// console.log(a);
+
+function getNthFib(n) {
+  if (n === 2) {
+    return 1;
+  } else if (n === 1) {
+    return 0;
+  } else {
+    return getNthFib(n - 1) + getNthFib(n - 2);
+  }
+}
+
+// console.log(getNthFib(5));
+//4 => 3         2
+//   2    1    1    0
+//
+
+function factorial(n) {
+  if (n === 1 || n === 0) return 1;
+  return n * factorial(n - 1);
+}
+
+// console.log(factorial(4));
+
+let objTree = [
+  {
+    comment: 'comment1',
+    id: 1,
+    child: [
+      {
+        comment: 'comment4',
+        id: 4,
+        child: [
+          {
+            comment: 'comment1',
+            id: 7,
+            child: [],
+          },
+        ],
+      },
+      {
+        comment: 'comment5',
+        id: 5,
+        child: [
+          {
+            comment: 'comment8',
+            id: 8,
+            child: [],
+          },
+        ],
+      },
+      {
+        comment: 'comment6',
+        id: 6,
+        child: [],
+      },
+    ],
+  },
+  {
+    comment: 'comment2',
+    id: 2,
+    child: [
+      {
+        comment: 'comment9',
+        id: 9,
+        child: [
+          {
+            comment: 'Notcomment19',
+            id: 19,
+            child: [],
+          },
+          {
+            comment: 'comment29',
+            id: 29,
+            child: [],
+          },
+          {
+            comment: 'comment9',
+            id: 39,
+            child: [],
+          },
+        ],
+      },
+      {
+        comment: 'comment10',
+        id: 10,
+        child: [],
+      },
+      {
+        comment: 'comment11',
+        id: 11,
+        child: [],
+      },
+    ],
+  },
+  {
+    comment: 'comment3',
+    id: 3,
+    child: [
+      {
+        comment: 'comment12',
+        id: 12,
+        child: [],
+      },
+    ],
+  },
+];
+
+/*
+function findComment(tree, id) {
+  // console.log(tree, id);
+  tree.forEach((t) => {
+    if (t.id === id) {
+      return t;
+    }
+    if (t.child.length) {
+      // it has a child
+      return findComment(t.child, id);
+    }
+  });
+}
+console.log(findComment(objTree, 19));
+*/
+
+const findItemNested = (arr, itemId, nestingKey) => {
+  return arr.reduce((a, item) => {
+    if (a) return a;
+    if (item.id === itemId) return item;
+    if (item[nestingKey]) return findItemNested(item[nestingKey], itemId, nestingKey);
+  }, null);
+};
+
+const res = findItemNested(objTree, 9, 'child');
+console.log(res);
+
+// let array = [1, 2, 3, 4, 5];
+
+// const doubleArray = (arr) => {
+//   return arr.reduce((acc, cur) => {
+//     acc.push(cur * 2);
+//     return acc;
+//   }, []);
+// };
+
+// console.log(doubleArray(array));
