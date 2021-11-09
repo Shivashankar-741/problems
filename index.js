@@ -5376,10 +5376,29 @@ function getNthFib(n) {
   }
 }
 
-// console.log(getNthFib(5));
+// console.log(getNthFib(4));
 //4 => 3         2
 //   2    1    1    0
 //
+
+function getNthFibMemo(n, prevValues = []) {
+  // Write your code here.
+  if (prevValues[n] !== undefined) {
+    return prevValues[n];
+  }
+  let result;
+  if (n === 2) {
+    result = 1;
+  } else if (n === 1) {
+    result = 0;
+  } else {
+    result = getNthFibMemo(n - 1, prevValues) + getNthFibMemo(n - 2, prevValues);
+  }
+  prevValues[n] = result;
+  return result;
+}
+
+// console.log(getNthFibMemo(50));
 
 function factorial(n) {
   if (n === 1 || n === 0) return 1;
@@ -5519,3 +5538,90 @@ console.log(findComment(objTree, 19));
 //   return sumOfAllNumbers(n - 1, n + total);
 // }
 // console.log(sumOfAllNumbers(3));
+
+// let arr = [11, 343, 231, 233, 235, 12];
+
+// function isAllEven(arr) {
+//   if (arr.length) {
+//     if ((arr[0] / 2) % 2 === 0) {
+//       return 'there is a even number present in the array ' + arr[0];
+//     }
+//   } else {
+//     return 'there is no even number';
+//   }
+
+//   arr = arr.slice(1);
+//   return isAllEven(arr);
+// }
+
+// console.log(isAllEven(arr));
+
+// function countDown(num) {
+//   if (num === 0) {
+//     return;
+//   }
+//   console.log(num);
+//   num--;
+//   countDown(num);
+// }
+
+// countDown(5);
+// console.log(countDown(5));
+
+// function factorialRecursive(n, total = 1) {
+//   if (n === 1) return n * total;
+
+//   return factorialRecursive(n - 1, n * total);
+// }
+// function factorialRecursive(n) {
+//   console.log(n);
+//   if (n === 1) return 1;
+
+//   return n * factorialRecursive(n - 1);
+// }
+
+// console.log(factorialRecursive(1));
+
+// function power(num, pow) {
+//   if (pow === 0) {
+//     return 1;
+//   }
+//   return num * power(num, pow - 1);
+// }
+// console.log(power(3, 3));
+
+// Pure Recursion
+// function productOfArray(arr, total = 1, n = 0) {
+//   if (n === arr.length) {
+//     return total;
+//   }
+//   return productOfArray(arr, total * arr[n], n + 1);
+// }
+
+// Helper Recursion
+// function productOfArray(arr) {
+//   let total = 1;
+//   function helper(arr, i = 0) {
+//     if (i === arr.length) {
+//       return total;
+//     }
+//     total = total * arr[i];
+//     return helper(arr, i + 1);
+//   }
+//   return helper(arr);
+// }
+
+// pure recursion
+
+// function productOfArray(arr) {
+//   let total = 1;
+
+//   if (arr.length === 0) {
+//     return total;
+//   }
+
+//   total = total * arr[0] * productOfArray(arr.slice(1));
+//   return total;
+// }
+
+// console.log(productOfArray([1, 2, 3])); // 6
