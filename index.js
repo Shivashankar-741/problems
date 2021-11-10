@@ -68,22 +68,22 @@
 // // frequencySort([2, 3, 1, 3, 2]);
 
 // 1365
-var smallerNumbersThanCurrent = function (nums) {
-  const arr = [];
+// var smallerNumbersThanCurrent = function (nums) {
+//   const arr = [];
 
-  for (var i = 0; i < nums.length; i++) {
-    for (var j = 0; j < nums.length; j++) {
-      if (nums[i] > nums[j + 1]) {
-        if (!arr[i]) {
-          arr[i] = 1;
-        } else if (arr[i]) {
-          arr[i] = arr[i] + 1;
-        }
-      }
-    }
-  }
-  console.log(arr);
-};
+//   for (var i = 0; i < nums.length; i++) {
+//     for (var j = 0; j < nums.length; j++) {
+//       if (nums[i] > nums[j + 1]) {
+//         if (!arr[i]) {
+//           arr[i] = 1;
+//         } else if (arr[i]) {
+//           arr[i] = arr[i] + 1;
+//         }
+//       }
+//     }
+//   }
+//   console.log(arr);
+// };
 
 // smallerNumbersThanCurrent([8, 1, 2, 2, 3]);
 // smallerNumbersThanCurrent([6, 5, 4, 8]);
@@ -5366,130 +5366,96 @@ squareOfN(5); //0.3867797863204032
 // console.log(a.slice(1, 2));
 // console.log(a);
 
-function getNthFib(n) {
-  if (n === 2) {
-    return 1;
-  } else if (n === 1) {
-    return 0;
-  } else {
-    return getNthFib(n - 1) + getNthFib(n - 2);
-  }
-}
-
-// console.log(getNthFib(4));
-//4 => 3         2
-//   2    1    1    0
-//
-
-function getNthFibMemo(n, prevValues = []) {
-  // Write your code here.
-  if (prevValues[n] !== undefined) {
-    return prevValues[n];
-  }
-  let result;
-  if (n === 2) {
-    result = 1;
-  } else if (n === 1) {
-    result = 0;
-  } else {
-    result = getNthFibMemo(n - 1, prevValues) + getNthFibMemo(n - 2, prevValues);
-  }
-  prevValues[n] = result;
-  return result;
-}
-
-// console.log(getNthFibMemo(50));
-
-function factorial(n) {
-  if (n === 1 || n === 0) return 1;
-  return n * factorial(n - 1);
-}
+// function factorial(n) {
+//   if (n === 1 || n === 0) return 1;
+//   return n * factorial(n - 1);
+// }
 
 // console.log(factorial(4));
 
-let objTree = [
-  {
-    comment: 'comment1',
-    id: 1,
-    child: [
-      {
-        comment: 'comment4',
-        id: 4,
-        child: [
-          {
-            comment: 'comment1',
-            id: 7,
-            child: [],
-          },
-        ],
-      },
-      {
-        comment: 'comment5',
-        id: 5,
-        child: [
-          {
-            comment: 'comment8',
-            id: 8,
-            child: [],
-          },
-        ],
-      },
-      {
-        comment: 'comment6',
-        id: 6,
-        child: [],
-      },
-    ],
-  },
-  {
-    comment: 'comment2',
-    id: 2,
-    child: [
-      {
-        comment: 'comment9',
-        id: 9,
-        child: [
-          {
-            comment: 'Notcomment19',
-            id: 19,
-            child: [],
-          },
-          {
-            comment: 'comment29',
-            id: 29,
-            child: [],
-          },
-          {
-            comment: 'comment9',
-            id: 39,
-            child: [],
-          },
-        ],
-      },
-      {
-        comment: 'comment10',
-        id: 10,
-        child: [],
-      },
-      {
-        comment: 'comment11',
-        id: 11,
-        child: [],
-      },
-    ],
-  },
-  {
-    comment: 'comment3',
-    id: 3,
-    child: [
-      {
-        comment: 'comment12',
-        id: 12,
-        child: [],
-      },
-    ],
-  },
-];
+// let objTree = [
+//   {
+//     comment: 'comment1',
+//     id: 1,
+//     child: [
+//       {
+//         comment: 'comment4',
+//         id: 4,
+//         child: [
+//           {
+//             comment: 'comment1',
+//             id: 7,
+//             child: [],
+//           },
+//         ],
+//       },
+//       {
+//         comment: 'comment5',
+//         id: 5,
+//         child: [
+//           {
+//             comment: 'comment8',
+//             id: 8,
+//             child: [],
+//           },
+//         ],
+//       },
+//       {
+//         comment: 'comment6',
+//         id: 6,
+//         child: [],
+//       },
+//     ],
+//   },
+//   {
+//     comment: 'comment2',
+//     id: 2,
+//     child: [
+//       {
+//         comment: 'comment9',
+//         id: 9,
+//         child: [
+//           {
+//             comment: 'Notcomment19',
+//             id: 19,
+//             child: [],
+//           },
+//           {
+//             comment: 'comment29',
+//             id: 29,
+//             child: [],
+//           },
+//           {
+//             comment: 'comment9',
+//             id: 39,
+//             child: [],
+//           },
+//         ],
+//       },
+//       {
+//         comment: 'comment10',
+//         id: 10,
+//         child: [],
+//       },
+//       {
+//         comment: 'comment11',
+//         id: 11,
+//         child: [],
+//       },
+//     ],
+//   },
+//   {
+//     comment: 'comment3',
+//     id: 3,
+//     child: [
+//       {
+//         comment: 'comment12',
+//         id: 12,
+//         child: [],
+//       },
+//     ],
+//   },
+// ];
 
 /*
 function findComment(tree, id) {
@@ -5625,3 +5591,148 @@ console.log(findComment(objTree, 19));
 // }
 
 // console.log(productOfArray([1, 2, 3])); // 6
+
+// function palindrome(str) {
+//   let num = [0, 1];
+//   if (str.length in num) return true;
+
+//   if (str[0].toLowerCase() === str[str.length - 1].toLowerCase()) {
+//     str = str.slice(1);
+//     str = str.slice(0, -1);
+//     return palindrome(str);
+//   } else {
+//     return false;
+//   }
+// }
+
+// pure  recursion
+
+// function palindrome(str) {
+//   let num = [0, 1];
+//   if (str.length in num) return true;
+
+//   if (str[0].toLowerCase() === str[str.length - 1].toLowerCase()) {
+//     str = str.slice(1) + str.slice(0, -1) + palindrome(str);
+//   } else {
+//     return false;
+//   }
+//   // return str;
+// }
+
+// console.log(palindrome('madam'));
+// console.log(palindrome('civic'));
+// console.log(palindrome('kayak'));
+
+// helper method recursion
+// function reverseString(str) {
+//   let s = '';
+//   function helper(str) {
+//     if (str === '') return s;
+//     else {
+//       s = s + str[str.length - 1];
+//       str = str.slice(0, -1);
+//       return helper(str);
+//     }
+//   }
+//   return helper(str);
+// }
+
+// // pure recursion
+// function reverseString(str) {
+//   let s = '';
+
+//   if (str.length === 0) return s;
+
+//   s = s + str[str.length - 1] + reverseString(str.slice(0, -1));
+//   return s;
+// }
+
+// function reverseString(str) {
+//   if (str.length === 0 || str.length === 1) return str;
+//   else {
+//     return str[str.length - 1] + reverseString(str[str.length - 1]);
+//   }
+// }
+
+// console.log(reverseString('amazing')); //gnizama
+
+// function capitalizeWords(arr) {
+//   function helper(arr, n = 0) {
+//     if (n === arr.length) {
+//       return arr;
+//     }
+//     arr[n] = arr[n].toLocaleUpperCase();
+//     return helper(arr, n + 1);
+//   }
+
+//   return helper(arr);
+// }
+// function capitalizeWords(arr) {
+//   function helper(arr, n = 0) {
+//     if (n === arr.length) {
+//       return [];
+//     }
+
+//     return arr[n].toLocaleUpperCase() + helper(arr, n + 1);
+//   }
+
+//   return helper(arr);
+// }
+
+// console.log(capitalizeWords(['foo', 'bar', 'world', 'hello']));
+
+// let a = ['asdf', 'zxvc'];
+// a[1] = a[1].toLocaleUpperCase();
+// console.log(a);
+
+/*
+function flattenedArray(arr) {
+  let rem = [];
+  function helper(arr, i = 0) {
+    if (typeof arr[i] === 'object') {
+      return helper(arr[i]);
+    } else if (typeof arr[i] === 'number') {
+      rem.push(arr[i]);
+      return helper(arr[i], i++);
+    } else if (typeof arr[i] === 'undefined') {
+      return rem;
+    }
+  }
+  return helper(arr);
+}
+console.log(flattenedArray([[1], [2, 3], [4], [3, [2, 4]]])); //[1,2,3,4,3,2,4]
+*/
+
+function getNthFib(n) {
+  if (n === 2) {
+    return 1;
+  } else if (n === 1) {
+    return 0;
+  } else {
+    return getNthFib(n - 1) + getNthFib(n - 2);
+  }
+}
+
+// console.log(getNthFib(4));
+//4 => 3         2
+//   2    1    1    0
+//
+
+function getNthFibMemo(n, prevValues = []) {
+  // Write your code here.
+  if (prevValues[n] !== undefined) {
+    return prevValues[n];
+  }
+  let result;
+  if (n === 2) {
+    result = 1;
+  } else if (n === 1) {
+    result = 0;
+  } else {
+    result = getNthFibMemo(n - 1, prevValues) + getNthFibMemo(n - 2, prevValues);
+  }
+  prevValues[n] = result;
+  return result;
+}
+
+console.log(getNthFibMemo(50));
