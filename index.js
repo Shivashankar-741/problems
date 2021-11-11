@@ -5685,49 +5685,22 @@ console.log(findComment(objTree, 19));
 // a[1] = a[1].toLocaleUpperCase();
 // console.log(a);
 
-/*
-function flattenedArray(arr) {
-  let rem = [];
-  function helper(arr, i = 0) {
-    if (typeof arr[i] === 'object') {
-      return helper(arr[i]);
-    } else if (typeof arr[i] === 'number') {
-      rem.push(arr[i]);
-      return helper(arr[i], i++);
-    } else if (typeof arr[i] === 'undefined') {
-      return rem;
-    }
-  }
-  return helper(arr);
-}
-console.log(flattenedArray([[1], [2, 3], [4], [3, [2, 4]]])); //[1,2,3,4,3,2,4]
-*/
+// function fib(n) {
+//   if (n === 1 || n === 2) {
+//     return 1;
+//   }
+//   return fib(n - 1) + fib(n - 2);
+// }
 
-function getNthFib(n) {
-  if (n === 2) {
-    return 1;
-  } else if (n === 1) {
-    return 0;
-  } else {
-    return getNthFib(n - 1) + getNthFib(n - 2);
-  }
-}
-
-// console.log(getNthFib(4));
-//4 => 3         2
-//   2    1    1    0
-//
+// console.log(fib(4));
 
 function getNthFibMemo(n, prevValues = []) {
-  // Write your code here.
   if (prevValues[n] !== undefined) {
     return prevValues[n];
   }
   let result;
-  if (n === 2) {
+  if (n === 2 || n === 1) {
     result = 1;
-  } else if (n === 1) {
-    result = 0;
   } else {
     result = getNthFibMemo(n - 1, prevValues) + getNthFibMemo(n - 2, prevValues);
   }
@@ -5735,4 +5708,83 @@ function getNthFibMemo(n, prevValues = []) {
   return result;
 }
 
-console.log(getNthFibMemo(50));
+// console.log(getNthFibMemo(4));
+
+// console.log(5 + 2 + 2 * (7 - 1) + 3 + 2 * (6 + 3 * (-13 + 8) + 4));
+
+// function productSum(array) {
+//   function findDepth(n) {
+//     if (n === 1) return 1;
+//     return n * findDepth(n - 1);
+//   }
+
+//   let temp = 0,
+//     depth = 1;
+//   function helper(arr) {
+//     if (arr.length === 0) {
+//       depth = depth - 1;
+//       return temp;
+//     }
+
+//     if (Array.isArray(arr[0])) {
+//       depth = depth + 1;
+//       return helper(arr[0]);
+//     } else {
+//       temp = temp + findDepth(depth) * arr[0];
+//       arr = arr.slice(1);
+//       return helper(arr);
+//     }
+//   }
+//   return helper(array);
+// }
+
+// let a = [1, 2, 3, 4, 5];
+// a = a.slice(1);
+// console.log(a);
+
+// function productSum(array, multiplier = 1) {
+//   let sum = 0;
+//   for (const element of array) {
+//     if (Array.isArray(element)) {
+//       sum += productSum(element, multiplier + 1);
+//     } else {
+//       sum += element;
+//     }
+//   }
+//   return sum * multiplier;
+// }
+
+// function productSum(value, depth = 1) {
+//   return (
+//     depth *
+//     value.reduce((acc, cur) => {
+//       if (Array.isArray(cur)) {
+//         return acc + productSum(cur, depth + 1);
+//       } else {
+//         return acc + cur;
+//       }
+//       // return acc;
+//     }, 0)
+//   );
+// }
+
+// console.log(productSum([5, 2, [7, -1], 3, [6, [-13, 8], 4]]));
+
+// pure recursion
+// function flattenedArray(arr) {
+//   let rem = [];
+
+//   for (const element of arr) {
+//     if (Array.isArray(element)) {
+//       rem = rem.concat(flattenedArray(element));
+//     } else {
+//       rem.push(element);
+//     }
+//   }
+//   return rem;
+// }
+
+// rem = [].concat[[1]].concat([2, 3]).concat([4]).concat([3]).concat([2, 4]);
+
+// flattenedArray([[1], [2, 3], [4], [3, [2, 4]]]); //[1,2,3,4,3,2,4]
+// console.log(flattenedArray([[1], [2, 3, [5, 6, [2, 4]]], [4], [3, [2, 4]]])); //[1,2,3,4,3,2,4]
